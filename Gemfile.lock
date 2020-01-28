@@ -437,8 +437,7 @@ DEPENDENCIES
   simple_form
   slim
   spring
-  spring-watcher-listen (~> 2.0.0)
-  sqlite3
+  spring-watcher-listen (~> 2.0.0)  
   turbolinks (~> 5)
   twitter
   tzinfo-data
