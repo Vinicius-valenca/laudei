@@ -33,6 +33,7 @@ gem 'omniauth-twitter'
 gem 'rmagick'
 gem 'simple_form'
 gem 'pg'
+gem 'rails-i18n'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
