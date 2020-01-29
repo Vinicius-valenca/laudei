@@ -36,13 +36,14 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    address: “smtp.gmail.com”,
-    port: 587,
-    domain: ENV[“GMAIL_DOMAIN”],
-    authentication: “plain”,
+    address: 'mail.laudeitelemedicina.com.br',
+    port: 465,
+    openssl_verify_mode:'none',
+    authentication: 'login',
     enable_starttls_auto: true,
-    user_name: ENV[“GMAIL_USERNAME”],
-    password: ENV[“GMAIL_PASSWORD”]
+    user_name: 'noreply@laudeitelemedicina.com.br',
+    password: 'hdC*uCi=8ep(',    
+    ssl: true    
     }
 
   # Print deprecation notices to the Rails logger.

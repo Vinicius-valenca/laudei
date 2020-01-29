@@ -62,6 +62,26 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "social_login_rails_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.default_url_options = { :host => 'laudei.herokuapp.com' }
+
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.perform_caching = false
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address: 'mail.laudeitelemedicina.com.br',
+    port: 465,
+    openssl_verify_mode:'none',
+    authentication: 'login',
+    enable_starttls_auto: true,
+    user_name: 'noreply@laudeitelemedicina.com.br',
+    password: 'hdC*uCi=8ep(',    
+    ssl: true    
+    }
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
