@@ -34,6 +34,7 @@ gem 'rmagick'
 gem 'simple_form'
 gem 'pg'
 gem 'rails-i18n'
+gem 'dropzonejs-rails'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
