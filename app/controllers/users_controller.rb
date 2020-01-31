@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
   before_action :validate_authorization_for_user, only: [:edit, :update]
-
+  before_action :authenticate_user!
 
   # GET /users/1
   def show
