@@ -3,8 +3,6 @@ class UploadsController < ApplicationController
     def create
       logger.info "Processing the request..."
 
-      
-           @upload = Upload.new(file_name_cache: params[:file])
         
            logger.info params[:file].original_filename
            #@upload
