@@ -1,4 +1,5 @@
-h2
+<div class="border-form-div">
+  <h2>Sign in</h2>
   | Log in
 = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .form-inputs
@@ -8,3 +9,4 @@ h2
   .form-actions
     = f.button :submit, "Log in"
 = render "devise/shared/links"
+</div>
