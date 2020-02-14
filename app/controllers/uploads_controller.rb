@@ -8,7 +8,7 @@ class UploadsController < ApplicationController
            #@upload
           logger.info "File"
 
-          UploadMailer.new_upload_email(User.first,params[:file]).deliver
+          UploadMailer.new_upload_email(current_user,params[:file]).deliver
 
 
           # these two following comments are some useful methods to debug

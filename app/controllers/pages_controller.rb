@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
 
   def landing
-  end
-
-  
+    @current_user = current_user 
+end
 end
