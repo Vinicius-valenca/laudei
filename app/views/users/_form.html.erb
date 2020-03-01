@@ -2,8 +2,18 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name, :required => true, :autofocus => true %>
-    <%= f.input :about, :required => true %>
+    <%= f.input :name, :required => true, :autofocus => true,label: "Razão Social" %>
+    <%= f.input :username, :required => true, label: "Nome Fantasia" %>
+    <%= f.input :cnpj, :required => true,label: "CNPJ" %>
+    <%= f.input :phone, :required => true,label: "Telefone" %>
+    <%= f.input :website, :required => true,label: "Website" %>
+    <%= f.input :email, :required => true ,label: "E-mail"%>
+    <%= f.input :state, :required => true,label: "Estado" %>
+    <%= f.input :city, :required => true,label: "Cidade" %>
+    <%= f.input :district, :required => true,label: "Bairro" %>    
+    <%= f.input :location, :required => true ,label: "Endereço"%>
+    <%= f.input :legal_representatives, :required => true ,label: "Representantes Legais"%>
+
   </div>
 
   <div class="form-actions">
