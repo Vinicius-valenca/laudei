@@ -14,4 +14,5 @@
 //= require turbolinks
 //= require jquery3
 //= require dropzone
+//=require custom
 //= require bootstrap
