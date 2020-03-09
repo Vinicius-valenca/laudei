@@ -14,20 +14,19 @@ h1 style="color:green"  Exames Enviados
       - if current_user.exams.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).empty?
         p
          | Não foram enviados nenhum exame na data de hoje.
-           Thank you!
-              
-
-.container
-    table
-        tr
-          th width="250px" Data
-          th width="600px" Nome          
-        - current_user.exams.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).order('created_at DESC').each do |i|
-          tr
-            td = I18n.l(i.created_at, format: :long, locale: :'pt-BR')
-            td = i.name
-            
-            br
-        tr
+           
+      - else
+        .container
+            table
+                tr
+                  th width="250px" Data
+                  th width="600px" Nome          
+                - current_user.exams.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).order('created_at DESC').each do |i|
+                  tr
+                    td = I18n.l(i.created_at, format: :long, locale: :'pt-BR')
+                    td = i.name
+                    
+                    br
+                tr
             
    
