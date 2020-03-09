@@ -11,10 +11,13 @@ html
       .container      
         .navbar-header   
         - if user_signed_in?    
-          a.navbar-brand href="../"  Inicio
+          a.navbar-brand href="/" data-turbolinks="false" Inicio
           button.navbar-toggle data-target="#navbar-main" data-toggle="collapse" type="button"
         - if user_signed_in?
-          a.navbar-brand href="../"  Ajuda
+          a.navbar-brand href="/exams"  Exames Enviados
+          button.navbar-toggle data-target="#navbar-main" data-toggle="collapse" type="button"
+        - if user_signed_in?
+          a.navbar-brand href="/help"  Ajuda
           button.navbar-toggle data-target="#navbar-main" data-toggle="collapse" type="button"
            
         #navbar-main.navbar-collapse.collapse  

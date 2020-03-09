@@ -4,12 +4,15 @@ class UploadsController < ApplicationController
       logger.info "Processing the request..."
 
         
-           logger.info params[:file].original_filename
+           logger.info params[:file].original_filename.split('.')[0]
+           
            #@upload
           logger.info "File"
-
+          @exam = current_user.exams.new(name: params[:file].original_filename.split('.')[0],user_id: current_user.id)
+          
+          
           UploadMailer.new_upload_email(current_user,params[:file]).deliver
-
+          @exam.save
 
           # these two following comments are some useful methods to debug
           # abort pic.class.inspect -> It is similar to var_dump($variable) in PHP. 

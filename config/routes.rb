@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     authenticated :user do
       root 'pages#landing', as: :authenticated_root
+      get 'help' => 'pages#help'
+      get 'exams' => 'pages#exams'
     end
   
     unauthenticated do
