@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.0.final using JasperReports Library version 6.0.0  -->
+<!-- 2018-03-14T19:50:01 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="promisoria" pageWidth="595" pageHeight="841" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="f53fca4f-fc6a-4c76-aa8e-81766ddf7eee">
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<import value="org.apache.commons.lang.*"/>
+	<import value="util.ordinalExtenso"/>
+	<import value="org.apache.commons.lang.time.*"/>
+	<import value="br.com.caelum.stella.inwords.NumericToWordsConverter"/>
+	<import value="br.com.caelum.stella.inwords.InteiroSemFormato"/>
+	<import value="org.apache.commons.*"/>
+	<parameter name="qtd_parcelas" class="java.lang.Integer"/>
+	<parameter name="valorExtenso" class="java.lang.String"/>
+	<parameter name="dt_1_venc" class="java.util.Date"/>
+	<parameter name="dt_emissao" class="java.util.Date"/>
+	<parameter name="valor" class="java.math.BigDecimal"/>
+	<parameter name="nomeDevedor" class="java.lang.String"/>
+	<parameter name="nomeCredor" class="java.lang.String"/>
+	<parameter name="cpfcnpjCredor" class="java.lang.String"/>
+	<parameter name="cpfcnpjDevedor" class="java.lang.String"/>
+	<parameter name="local" class="java.lang.String"/>
+	<parameter name="endCompleto" class="java.lang.String"/>
+	<parameter name="nomeAval2" class="java.lang.String"/>
+	<parameter name="cpfcnpjAval2" class="java.lang.String"/>
+	<parameter name="nomeAval1" class="java.lang.String"/>
+	<parameter name="cpfcnpjAval1" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<variable name="num_parcela" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$V{REPORT_COUNT}]]></variableExpression>
+	</variable>
+	<detail>
+		<band height="280" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="cm"/>
+			<rectangle radius="5">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="5" width="595" height="270" backcolor="#E6E6E6" uuid="e14fa346-d111-487b-a2f4-6ba6a22e5fcf"/>
+			</rectangle>
+			<rectangle radius="4">
+				<reportElement x="114" y="9" width="476" height="262" backcolor="#FDFCEA" uuid="c335c6b8-29d5-4c35-82e3-74fe04260d2c"/>
+			</rectangle>
+			<textField>
+				<reportElement x="420" y="26" width="60" height="14" uuid="9da7a38a-55f2-475e-9865-0a1ab8f1f36f"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("YYYY").format(DateUtils.addMonths($P{dt_1_venc}, ($V{num_parcela}-1)))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="27" width="14" height="14" uuid="38583f36-1cab-4ba9-86a4-bf5d32809510"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nº"]]></textFieldExpression>
+			</textField>
+			<rectangle radius="6">
+				<reportElement x="133" y="27" width="60" height="14" backcolor="#E6E6E6" uuid="c6ae1c78-701d-4ff4-96df-bc37e14484eb"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="486" y="27" width="14" height="14" uuid="75ca018d-1d13-4970-ad3e-5685e448cbb8"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R$"]]></textFieldExpression>
+			</textField>
+			<rectangle radius="6">
+				<reportElement x="500" y="27" width="80" height="14" backcolor="#E6E6E6" uuid="9b8bd046-5e18-448f-98a4-b2b43cd6be23"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="510" y="27" width="60" height="14" uuid="e76b4cea-d366-4d9b-be81-0548780ecc0a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,###,##0.00").format($P{valor})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="56" width="416" height="14" uuid="439f49d4-3057-4f6b-b181-4c6eceaf0ba3"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[(new ordinalExtenso(Integer.valueOf(new SimpleDateFormat("dd").format(DateUtils.addMonths($P{dt_1_venc}, ($V{num_parcela}-1))))).resultado()+" dia do mês"+new SimpleDateFormat("' de' MMMM").format(DateUtils.addMonths($P{dt_1_venc}, ($V{num_parcela}-1)))+" do ano de "+  new NumericToWordsConverter(new InteiroSemFormato()).toWords(Integer.valueOf(new SimpleDateFormat("yyyy").format(DateUtils.addMonths($P{dt_1_venc}, ($V{num_parcela}-1)))))).toLowerCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="27" width="38" height="14" uuid="22b51813-bd61-427e-b226-861777632d93"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[String.format("%0"+((int) Math.log10($P{qtd_parcelas}) + 1)+"d", $V{num_parcela}) +"/"+ $P{qtd_parcelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="203" y="27" width="56" height="14" uuid="0e8dcd3a-9911-4ea9-8b23-de565c36ee91"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Vencimento "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="259" y="25" width="38" height="14" uuid="1ab0e793-6633-4714-b4d5-c704be9a5319"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd").format(DateUtils.addMonths($P{dt_1_venc}, ($V{num_parcela}-1)))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="297" y="27" width="14" height="14" uuid="9b5fb008-c378-4e04-b19a-3eb394a871d4"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["de"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="25" width="94" height="14" uuid="6fb2952b-20e6-4234-b177-8f19cd113aa3"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("MMMM").format(DateUtils.addMonths($P{dt_1_venc}, ($V{num_parcela}-1)))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="27" width="14" height="14" uuid="7304efdc-a25e-410a-a253-4932ec07c155"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["de"]]></textFieldExpression>
+			</textField>
+			<rectangle radius="4">
+				<reportElement x="4" y="9" width="106" height="262" backcolor="#FDFCEA" uuid="d7b87631-4e34-4b5f-8b59-adeb5627ea16"/>
+			</rectangle>
+			<textField>
+				<reportElement x="9" y="110" width="16" height="60" uuid="a16af8cb-bc52-480c-9cc6-0e4dcbdb44e4"/>
+				<textElement rotation="Left">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["AVALISTAS"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="232" width="16" height="34" uuid="f82fe056-1b41-4124-853d-4d5fa5d3606e"/>
+				<textElement rotation="Left"/>
+				<textFieldExpression><![CDATA["NOME"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="51" y="211" width="16" height="55" uuid="d575e2ce-8afd-48db-8fb6-1a3f3ccc421a"/>
+				<textElement rotation="Left"/>
+				<textFieldExpression><![CDATA["CPF/CNPJ"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="61" y="15" width="1" height="196" uuid="f5fa79ae-69b2-4a9e-b1fa-e7ba318aa014"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="90" y="211" width="16" height="55" uuid="1bfcf197-9d2c-46e6-a7b3-6948d42faa8d"/>
+				<textElement rotation="Left"/>
+				<textFieldExpression><![CDATA["CPF/CNPJ"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="100" y="15" width="1" height="196" uuid="09f95232-05fa-4cde-b34d-1d35fccc3b01"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="82" y="15" width="1" height="217" uuid="c169c7b6-1b39-4712-80c4-64c7641315d3"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="71" y="232" width="16" height="34" uuid="5174638b-2301-4aad-96fe-0d4a0fd69a24"/>
+				<textElement rotation="Left"/>
+				<textFieldExpression><![CDATA["NOME"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="57" width="25" height="14" uuid="59313a77-deee-459e-8c79-764abb08a88b"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ao(s) "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="150" y="68" width="420" height="1" uuid="29972506-4d84-4d54-88c4-c7aefdef020d"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="259" y="37" width="37" height="1" uuid="5acde376-b91f-4483-a13e-5d9254522fce"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="311" y="37" width="93" height="1" uuid="2ec8393f-e62b-49db-ae34-5b445b86c0b5"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="420" y="38" width="60" height="1" uuid="4a2aff3a-b422-4b8b-884e-462be7f0c20e"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="354" y="78" width="96" height="14" uuid="25bfbff4-66fb-4fe3-8d86-635820664fd4"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["por esta única via de "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="78" width="120" height="14" uuid="0b54c19a-a3b0-4aad-b30a-b8de8056a6c9"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["NOTA PROMISSÓRIA "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="102" width="8" height="14" uuid="2fecdba3-43c5-4235-9f20-5c238a5284d6"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["a "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="133" y="112" width="266" height="1" uuid="68de24e3-c4ec-451e-8d50-7d1f421cf826"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="125" y="123" width="134" height="14" uuid="d12088b1-e443-4f4c-9c28-551c517bbe03"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ou à sua ordem, a quantia de"]]></textFieldExpression>
+			</textField>
+			<rectangle radius="6">
+				<reportElement x="262" y="123" width="308" height="14" backcolor="#E6E6E6" uuid="9a0ca885-ddef-423f-bb72-9b1eecf89ff6"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="271" y="124" width="290" height="13" uuid="dc5bffd5-039a-4759-ba9f-b3e297081219"/>
+				<textFieldExpression><![CDATA[$P{valorExtenso}.length()>62?$P{valorExtenso}.substring( 0, $P{valorExtenso}.lastIndexOf( " ", 62 )):$P{valorExtenso}+" "+StringUtils.repeat( "*",65-$P{valorExtenso}.length())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="173" width="180" height="14" uuid="5693ef0a-88a5-47ce-bf93-1d6ba72a7b78"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["em moeda corrente deste país, pagável em "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="305" y="184" width="265" height="1" uuid="45739fc9-dc71-42cd-90d9-9b616f7f6c56"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="125" y="197" width="53" height="14" uuid="526efe37-cd67-4d1d-b3f4-a9f573c73f8b"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EMITENTE "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="178" y="207" width="242" height="1" uuid="efd9563c-5f31-4863-9fe7-6c7ffab955ae"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="420" y="197" width="94" height="14" uuid="a8043694-a8d8-481f-9b4d-87155c7eec4d"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DATA DA EMISSÃO "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="514" y="207" width="56" height="1" uuid="dd07b5a2-1763-4965-901f-988a450c56af"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="515" y="195" width="55" height="14" uuid="c1238fc2-586a-407e-afde-9caa7a126bd3"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($P{dt_emissao})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="220" width="51" height="14" uuid="f26ba86a-053e-4f9f-b884-449e00a3b228"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CPF/CNPJ "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="176" y="230" width="123" height="1" uuid="2eaaf123-1aa3-4c60-bb88-4d2fdef5c0eb"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="301" y="220" width="59" height="14" uuid="eff3eea7-b80f-45c6-8cd4-323847ef8004"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ENDEREÇO "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="360" y="230" width="210" height="1" uuid="a3d3a306-33aa-4fe4-b6d4-5feaca291e28"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="125" y="255" width="163" height="1" uuid="ba6649cf-bdd1-4037-9d53-dcf217423323"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="291" y="246" width="100" height="14" uuid="c9e8dbb1-ca86-4f4e-b3bb-94b684fd69fc"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ASS DO EMITENTE "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="391" y="255" width="179" height="1" uuid="099110f4-f8ac-4ea5-b695-8ad49dde0d53"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<rectangle radius="6">
+				<reportElement x="125" y="149" width="445" height="14" backcolor="#E6E6E6" uuid="3319d6cd-fd9d-462f-a896-d66cef0c23af"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="133" y="150" width="428" height="13" uuid="9e6a76d7-4f54-4956-a500-97aa8f4ed9a7"/>
+				<textFieldExpression><![CDATA[$P{valorExtenso}.length()>62?$P{valorExtenso}.substring( $P{valorExtenso}.lastIndexOf( " ", 62 ), $P{valorExtenso}.length())+" "+StringUtils.repeat( "*",(100-($P{valorExtenso}.length()-$P{valorExtenso}.lastIndexOf( " ", 62 )))):StringUtils.repeat( "*",120)]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="125" y="88" width="143" height="1" uuid="7c8de064-1034-455a-adfa-dcc084db7744"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="269" y="78" width="28" height="14" uuid="c9605d52-b718-42ac-b791-9d6ecf8b99d5"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["pagar"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="296" y="88" width="57" height="1" uuid="687118db-0baf-421a-994e-b04346762512"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="399" y="102" width="55" height="14" uuid="4c7f6da6-881c-4ea7-9ee6-6463d287b883"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CPF/CNPJ "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="455" y="112" width="115" height="1" uuid="07e533fd-ec87-4c56-b1eb-539fbe29c79f"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="136" y="100" width="263" height="14" uuid="9155c73f-0295-42af-bf4b-a4b94731f1af"/>
+				<textFieldExpression><![CDATA[$P{nomeCredor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="457" y="100" width="113" height="14" uuid="9d361458-7bae-42fd-86b0-0dde707fe2f6"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$P{cpfcnpjCredor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="195" width="236" height="14" uuid="864eb455-bcc5-4a8e-b217-c5cfcac940f2"/>
+				<textFieldExpression><![CDATA[$P{nomeDevedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="218" width="122" height="14" uuid="d3fbba81-ce61-4713-8c4e-5d2a69505f74"/>
+				<textFieldExpression><![CDATA[$P{cpfcnpjDevedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="172" width="263" height="14" uuid="bc0a030c-4636-4c80-9eee-dbffb800c11a"/>
+				<textFieldExpression><![CDATA[$P{local}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="218" width="208" height="14" uuid="49b17671-314b-47d2-b68f-e307bdac5fe6"/>
+				<textFieldExpression><![CDATA[$P{endCompleto}.substring( 0, $P{endCompleto}.lastIndexOf( " ", 43 ))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="15" width="13" height="215" isRemoveLineWhenBlank="true" uuid="5f3a243a-8035-4ac5-8814-f4b6de179716"/>
+				<textElement rotation="Left"/>
+				<textFieldExpression><![CDATA[$P{nomeAval1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="243" width="162" height="14" uuid="51ae8d32-afd4-4066-b580-d52b46971886"/>
+				<textFieldExpression><![CDATA[$P{endCompleto}.substring( $P{endCompleto}.lastIndexOf( " ", 43 ),$P{endCompleto}.length())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="71" y="18" width="13" height="212" isRemoveLineWhenBlank="true" uuid="6a9921ad-1ec9-441a-a3ae-cab13bd00cbf"/>
+				<textElement rotation="Left"/>
+				<textFieldExpression><![CDATA[$P{nomeAval2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="38" width="13" height="171" isRemoveLineWhenBlank="true" uuid="550e0737-cead-4075-94fc-4293e7586e2b"/>
+				<textElement rotation="Left"/>
+				<textFieldExpression><![CDATA[$P{cpfcnpjAval1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="40" width="13" height="169" isRemoveLineWhenBlank="true" uuid="20284f88-bfde-4f19-93a1-f03a64942748"/>
+				<textElement rotation="Left"/>
+				<textFieldExpression><![CDATA[$P{cpfcnpjAval2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="76" width="28" height="14" uuid="44fb9010-e0b6-46c0-a3e1-180fc58405e9"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ei"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="41" y="15" width="1" height="217" uuid="e3665fca-3383-4ed7-b324-b96ff14c4034"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>
