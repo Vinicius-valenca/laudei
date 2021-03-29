@@ -47,6 +47,12 @@
     <version>5.1.23</version>
 </dependency>
   
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>4.1.0.Final</version>
+</dependency>
 
 
 <!-- https://mvnrepository.com/artifact/javax.activation/activation -->
