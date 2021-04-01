@@ -4,12 +4,13 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">postgres://hmoyiwhhwsrlsk:3d8ce67ebbea2fbd656d1afcec163d558f72976e65c3ba0eb307b683858f9f84@ec2-18-206-20-102.compute-1.amazonaws.com:5432/d3sqgormuo70v6
-</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://hmoyiwhhwsrlsk:3d8ce67ebbea2fbd656d1afcec163d558f72976e65c3ba0eb307b683858f9f84@ec2-18-206-20-102.compute-1.amazonaws.com:5432/d3sqgormuo70v6</property>
         <property name="hibernate.connection.username">hmoyiwhhwsrlsk</property>
         <property name="hibernate.connection.password">3d8ce67ebbea2fbd656d1afcec163d558f72976e65c3ba0eb307b683858f9f84</property>
         <property name="show_sql">true</property>		
         <property name="hbm2ddl.auto">create/update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property> 
+        <property name="javax.persistence.schema-generation.database.action">create/update</property>
         <mapping class="model.User" /> 
         <mapping class="model.Pessoa" /> 
     </session-factory>
