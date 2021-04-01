@@ -26,8 +26,8 @@ public class LoginService {
         Transaction tx = null;
         User user = null;
         try {
-        	tx = session.beginTransaction();
-            
+        	tx = session.getTransaction();
+            tx.begin();
             Query query = session.createQuery("from User where userId='"+userId+"'");
             user = (User)query.uniqueResult();
             tx.commit();
@@ -47,7 +47,8 @@ public class LoginService {
         Session session = HibernateUtil.openSession();
         Transaction tx = null;        
         try {
-            tx = session.beginTransaction();
+            tx = session.getTransaction();
+            tx.begin();
             list = session.createQuery("from Pessoa").list();                        
             tx.commit();
         } catch (Exception e) {
