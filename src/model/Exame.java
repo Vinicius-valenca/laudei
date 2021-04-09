@@ -24,8 +24,12 @@ public class Exame implements Serializable {
 	@GeneratedValue
 	private Long id;
 	private String nomePaciente;
-	private String nomeClinica;
-	private String nomeMedico;
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "nomeClinica", referencedColumnName = "id")
+	private Pessoa nomeClinica;
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "nomeMedico", referencedColumnName = "id")
+	private Pessoa nomeMedico;
 	private Date dtEntrada;
 	private Date dtLaudo;
 	private String tpExame;
@@ -55,22 +59,22 @@ public class Exame implements Serializable {
 	}
 
 
-	public String getNomeClinica() {
+	public Pessoa getNomeClinica() {
 		return nomeClinica;
 	}
 
 
-	public void setNomeClinica(String nomeClinica) {
+	public void setNomeClinica(Pessoa nomeClinica) {
 		this.nomeClinica = nomeClinica;
 	}
 
 
-	public String getNomeMedico() {
+	public Pessoa getNomeMedico() {
 		return nomeMedico;
 	}
 
 
-	public void setNomeMedico(String nomeMedico) {
+	public void setNomeMedico(Pessoa nomeMedico) {
 		this.nomeMedico = nomeMedico;
 	}
 

@@ -7,9 +7,6 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.fileupload.FileItem;
 
@@ -32,9 +29,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.swing.text.html.HTMLDocument.Iterator;
 
 import org.apache.commons.fileupload.FileItem;
@@ -115,23 +109,37 @@ public class ExameServlet extends HttpServlet {
 	     PrintWriter writer = response.getWriter();
 	   
 	     System.out.println(new File(request.getServletContext().getRealPath("/")+"images/"));
+	     HttpSession session = request.getSession(true);
+	     Pessoa p = new Pessoa();
+	     p = (Pessoa)session.getAttribute("user");
+		
+		 
+		
+		 
+		 
+			
+			
 	     
 	     try {
 	         List<FileItem> items = uploadHandler.parseRequest(request);
-	         
+	         Exame exame = new Exame();
+	         exame.setNomeClinica(p);
 	         for (FileItem item : items) {   
 	                 if (item.isFormField()) {
 	                     // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
 	                     String fieldname = item.getFieldName();
 	                     String fieldvalue = item.getString();
+	                     System.out.println(fieldname);
+	                     System.out.println(fieldvalue);
 	                     // ... (do your job here)
+	                     exame.setTpExame(fieldvalue);
 	                 } else {
 	                     // Process form file field (input type="file").
 	                     String fieldname = item.getFieldName();
 	                     String filename = FilenameUtils.getName(item.getName());
 	                     InputStream filecontent = item.getInputStream();
 
-		            	 Exame exame = new Exame();
+		            	 
 		            	    byte[] examedata = new byte[(int) item.getSize()];
 		            	    try {
 		            	    

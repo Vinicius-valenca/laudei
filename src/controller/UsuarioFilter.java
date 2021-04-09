@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import model.Pessoa;
-import model.User;
 
 //@WebFilter(urlPatterns = { "/*" })
 public class UsuarioFilter implements Filter {

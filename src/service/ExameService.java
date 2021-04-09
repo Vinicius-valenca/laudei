@@ -62,9 +62,9 @@ public boolean isExameExists(Exame exame){
 		 tx = session.getTransaction();
 		 tx.begin();
 		 Query query = session.createQuery("from Exame where Id='"+exame.getId()+"'");
-		 User u = (User)query.uniqueResult();
+		 Exame e = (Exame)query.uniqueResult();
 		 tx.commit();
-		 if(u!=null) result = true;
+		 if(e!=null) result = true;
 	 }catch(Exception ex){
 		 if(tx!=null){
 			 tx.rollback();

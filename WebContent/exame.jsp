@@ -66,16 +66,13 @@
          
 				<div class="col-lg-9 col-xs-9">
 					<div class="form-group">
-						<label>Tipo Exame</label> 	<select class="selection-1" name="hora" id="hora1">
-											<option selected>Selecione um tipo</option>
-											<option value="07:00-08:00">07:00-08:00</option>
-											<option value="08:00-09:00">08:00-09:00</option>
-											<option value="09:00-10:00">09:00-10:00</option>
-											<option value="15:00-16:00">15:00-16:00</option>
-											<option value="16:00-17:00">16:00-17:00</option>
-											<option value="17:00-18:00">17:00-18:00</option>
-											<option value="18:00-19:00">18:00-19:00</option>
-											<option value="19:00-20:00">19:00-20:00</option>
+						<label>Tipo Exame</label> 	<select class="selection-1" name="tpexame" id="tpexame">						
+						<option selected>Selecione um tipo</option>
+											<option value="MAPA">MAPA</option>
+											<option value="Eletrocardiograma">Eletrocardiograma</option>
+											<option value="Teste ergométrico">Teste ergométrico</option>
+											<option value="Holter 24h">Holter 24h</option>
+											
 										</select>
 					</div>
 				</div>
