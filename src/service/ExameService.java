@@ -9,7 +9,6 @@ import org.hibernate.Transaction;
 import hibernate.util.HibernateUtil;
 import model.Exame;
 import model.Pessoa;
-import model.User;
 public class ExameService {
 	
 public boolean register(Exame exame){

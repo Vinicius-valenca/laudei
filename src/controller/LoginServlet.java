@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Pessoa;
-import model.User;
 import service.LoginService;
 import service.RegisterService;
 
@@ -86,7 +85,7 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 
-		User user = (User) session.getAttribute("user");
+		Pessoa user = (Pessoa) session.getAttribute("user");
 		Long id = Long.valueOf(request.getParameter("idUser"));
 		String userId = request.getParameter("userId");
 		String oldpassword = request.getParameter("oldpassword");
@@ -96,13 +95,13 @@ public class LoginServlet extends HttpServlet {
 		if (user.getId().equals(id)  && user.getPassword().equals(oldpassword)) {
 
 			user.setPassword(newpassword);
-			user.setUserId(userId);
+			//user.setUserId(userId);
 			RegisterService registerService = new RegisterService();
 			
 			Boolean resposta = registerService.register(user);
 			System.out.println("Salvou?" + resposta );
 			session.setAttribute("user", user);
-			session.setAttribute("userId", user.getUserId());
+			//session.setAttribute("userId", user.getUserId());
 			response.getWriter().write("True");
 		} else {
 			response.getWriter().write("False");

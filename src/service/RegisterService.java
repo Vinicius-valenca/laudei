@@ -5,10 +5,9 @@ import org.hibernate.Transaction;
 
 import hibernate.util.HibernateUtil;
 import model.Pessoa;
-import model.User;
 public class RegisterService {
 	
-public boolean register(User user){
+public boolean register(Pessoa user){
 	 Session session = HibernateUtil.openSession();
 	 if(isUserExists(user)) return false;	
 	
@@ -29,36 +28,17 @@ public boolean register(User user){
 	 return true;
 }
 
-public boolean register(Pessoa pessoa){
-	 Session session = HibernateUtil.openSession();
-	 
-	 Transaction tx = null;	
-	 try {
-		 tx = session.getTransaction();
-		 tx.begin();
-		 session.saveOrUpdate(pessoa);
-		 tx.commit();
-	 } catch (Exception e) {
-		 if (tx != null) {
-			 tx.rollback();
-		 }
-		 e.printStackTrace();
-		 return false;
-	 } finally {
-		 session.close();
-	 }	
-	 return true;
-}
 
-public boolean isUserExists(User user){
+
+public boolean isUserExists(Pessoa user){
 	 Session session = HibernateUtil.openSession();
 	 boolean result = false;
 	 Transaction tx = null;
 	 try{
 		 tx = session.getTransaction();
 		 tx.begin();
-		 Query query = session.createQuery("from User where userId='"+user.getUserId()+"'");
-		 User u = (User)query.uniqueResult();
+		 Query query = session.createQuery("from User where userId='"+user.getId()+"'");
+		 Pessoa u = (Pessoa)query.uniqueResult();
 		 tx.commit();
 		 if(u!=null) result = true;
 	 }catch(Exception ex){

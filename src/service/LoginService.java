@@ -8,7 +8,6 @@ import org.hibernate.Transaction;
 
 import hibernate.util.HibernateUtil;
 import model.Pessoa;
-import model.User;
 
 public class LoginService {
 
