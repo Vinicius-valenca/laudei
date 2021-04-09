@@ -75,7 +75,7 @@ public class SaveServlet extends HttpServlet {
 			 p.setNome_completo(request.getParameter("nome_completo"));
 				p.setEmail(request.getParameter("email").toLowerCase());
 				
-				p.setCpf(request.getParameter("cpfcnpj"));
+				p.setCpfCnpj(request.getParameter("cpfcnpj"));
 				
 				
 			

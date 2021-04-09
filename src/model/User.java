@@ -15,12 +15,23 @@ public class User implements Serializable {
     private Long id;
     private String userId;
     private String password;
+    private String cpfCnpj;
 
     public User() {
     }
 
     
-    public User(String userId, String password) {
+    public String getCpfCnpj() {
+		return cpfCnpj;
+	}
+
+
+	public void setCpfCnpj(String cpfCnpj) {
+		this.cpfCnpj = cpfCnpj;
+	}
+
+
+	public User(String userId, String password) {
 
         this.userId = userId;
         this.password = password;

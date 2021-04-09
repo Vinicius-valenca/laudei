@@ -1,14 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"    pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <title>Sistema - Cart&oacute;rio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <jsp:include page="imports.jsp" />
-<link href="css/agenda.css" rel="stylesheet">       
-<script src="js/agenda.js"></script>
+<link rel="stylesheet" href="css/promissoria.css">
+<script src="js/promissoria.js"></script>
+<script>
+
+</script>
+       
     
 </head>
 <body>
@@ -36,59 +40,68 @@
   <!-- /navbar-inner --> 
 </div>
 <!-- /navbar -->
-
 <jsp:include page="menu.jsp" />
-
-
+<!-- /subnavbar -->
 <div class="main">
   <div class="main-inner">
     <div class="container">
       <div class="row">
         <div class="span12">
           
+<div class=" col-xs-12  col-lg-12  col-md-12">
 
-    
-<div class=" col-xs-12  col-lg-5  col-md-5">
-					<div class="form-group" style="margin-top: 14px;">
-<a href="#myModal" id="btnAdicionar" role="button" class="btn" data-toggle="modal" data-backdrop="static" data-keyboard="false"> <i class='icon-large icon-plus-sign'></i> Adicionar</a>
-</div></div>
+		<div class="conteudo">
+				<form action="enviarExame" class="dropzone" id="my-awesome-dropzone" method="post" enctype="multipart/form-data;charset=UTF-8" >
+					<div class="row">
+						<div class="col-lg-12">
 
-<div class="panel panel-default">
-    <table id="table"
-           data-toggle="table"
-           data-search="true"
-           data-locale="pt-BR"
-           data-url="listarExames"
-           data-mobile-responsive="true"
-           data-check-on-init="true"
-           data-sortable="false"
-           data-sort-name="nome_completo">
-        <thead>
-        <tr>
-            
-											<th data-field="id" data-halign="center" data-width="20"
-												data-align="center" >ID</th>
-											<th data-field="nomeExame" data-halign="center" data-width="160"
-												data-align="center" >Nome Paciente</th>
-											<th data-field="exame" data-halign="center" data-align="center"
-												data-width="80" >exame</th>
-											<th data-field="dtEntrada" data-halign="center"
-												data-align="center" data-width="80" >dtEntrada</th>
-											<th data-field="anotacao" data-width="180" data-halign="center"
-												data-align="center" >Anotação</th>
-											<th data-halign="center" data-align="center"
-												data-width="40" data-formatter="actionFormatter"
-												data-events="actionEvents">Editar</th>
-        </tr>
-        </thead>
-    </table>
-    </div>
-    
-    <jsp:include page="dadosAgenda.jsp" />
 
-	<jsp:include page="dadosUsuario.jsp" />
+							<div class="panel panel-default">
 	
+	<a data-target="#item-telefones">
+		<div class="panel-heading">Dados da promiss&oacute;ria</div>
+	</a>
+	<div id="item-info" class="panel-body panel-branco collapse in">
+	
+         
+				<div class="col-lg-9 col-xs-9">
+					<div class="form-group">
+						<label>Tipo Exame</label> 	<select class="selection-1" name="hora" id="hora1">
+											<option selected>Selecione um tipo</option>
+											<option value="07:00-08:00">07:00-08:00</option>
+											<option value="08:00-09:00">08:00-09:00</option>
+											<option value="09:00-10:00">09:00-10:00</option>
+											<option value="15:00-16:00">15:00-16:00</option>
+											<option value="16:00-17:00">16:00-17:00</option>
+											<option value="17:00-18:00">17:00-18:00</option>
+											<option value="18:00-19:00">18:00-19:00</option>
+											<option value="19:00-20:00">19:00-20:00</option>
+										</select>
+					</div>
+				</div>
 
+		
+		
+					
+		
+		
+		
+		
+		
+	
+	</div>
+
+				
+
+
+
+
+						</div>
+						</div>
+						</form>
+					</div>
+    </div>
+    	<jsp:include page="dadosUsuario.jsp" />
 
     
     
@@ -103,6 +116,7 @@
   <!-- /main-inner --> 
 </div>
 <!-- /main -->
+
 
 
 <div class="footer" id="footer">
@@ -120,16 +134,6 @@
 </div>
 <!-- /footer --> 
 
-
-    <script>
-    
-    
-   
-   
-    
-    
-    
-    </script>
 
 	
 </body>

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Pessoa;
 import model.User;
 import service.LoginService;
 import service.RegisterService;
@@ -55,17 +56,17 @@ public class LoginServlet extends HttpServlet {
 
 		HttpSession session = request.getSession(true);
 
-		String userId = request.getParameter("userId");
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		LoginService loginService = new LoginService();
-		boolean result = loginService.authenticateUser(userId, password);
+		boolean result = loginService.authenticateUser(email, password);
 
 		if (result) {
-			User user = loginService.getUserByUserId(userId);
+			Pessoa p = loginService.getPessoaByEmail(email);
 
-			session.setAttribute("user", user);
-			session.setAttribute("userId", user.getUserId());
-			session.setAttribute("id", user.getId());
+			session.setAttribute("user", p);
+			session.setAttribute("userId", p.getEmail());
+			session.setAttribute("id", p.getId());
 			response.getWriter().write("True");
 		} else {
 			response.getWriter().write("False");

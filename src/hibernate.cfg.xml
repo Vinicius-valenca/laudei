@@ -10,8 +10,11 @@
         <property name="show_sql">true</property>		
         <property name="hbm2ddl.auto">create/update</property>
         <property name="hibernate.hbm2ddl.auto">create</property> 
+        
         <property name="javax.persistence.schema-generation.database.action">create/update</property>
         <mapping class="model.User" /> 
         <mapping class="model.Pessoa" /> 
+        <mapping class="model.Exame" /> 
+         <mapping class="model.ExameArquivo" /> 
     </session-factory>
 </hibernate-configuration>

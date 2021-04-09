@@ -19,9 +19,12 @@ public class Pessoa implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
-	private String nome_completo;
 	private String email;
-	private String cpf;
+	private String cpfCnpj;
+	private String password;
+	
+	
+	private String nome_completo;	
 	private String anotacao;
 	private String telefone;
 	private String celular;
@@ -33,6 +36,9 @@ public class Pessoa implements Serializable {
 	private String estado;
 	private String cidade;
 	private String complemento;
+	
+	private String tpPerfil;
+	
 
 	public Pessoa() {
 		super();
@@ -41,17 +47,22 @@ public class Pessoa implements Serializable {
 
 	
 
-	public Pessoa(Long id, String nome_completo, String email, String cpf, String anotacao, String telefone,
-			String celular, String endereco, String bairro, String cep, String numero, String estado, String cidade,
-			String complemento) {
+	
+
+
+
+	public Pessoa(Long id, String nome_completo, String email, String cpfCnpj, String anotacao, String telefone,
+			String celular, String password, String endereco, String bairro, String cep, String numero, String estado,
+			String cidade, String complemento, String tpPerfil) {
 		super();
 		this.id = id;
 		this.nome_completo = nome_completo;
 		this.email = email;
-		this.cpf = cpf;
+		this.cpfCnpj = cpfCnpj;
 		this.anotacao = anotacao;
 		this.telefone = telefone;
 		this.celular = celular;
+		this.password = password;
 		this.endereco = endereco;
 		this.bairro = bairro;
 		this.cep = cep;
@@ -59,7 +70,12 @@ public class Pessoa implements Serializable {
 		this.estado = estado;
 		this.cidade = cidade;
 		this.complemento = complemento;
+		this.tpPerfil = tpPerfil;
 	}
+
+
+
+
 
 
 
@@ -87,12 +103,12 @@ public class Pessoa implements Serializable {
 		this.email = email;
 	}
 
-	public String getCpf() {
-		return cpf;
+	public String getCpfCnpj() {
+		return cpfCnpj;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public void setCpfCnpj(String cpfCnpj) {
+		this.cpfCnpj = cpfCnpj;
 	}
 
 	
@@ -178,5 +194,31 @@ public class Pessoa implements Serializable {
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
+
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+
+	public String getTpPerfil() {
+		return tpPerfil;
+	}
+
+
+
+	public void setTpPerfil(String tpPerfil) {
+		this.tpPerfil = tpPerfil;
+	}
+	
+	
 
 }

@@ -6,10 +6,11 @@
 <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 <link href="css/font.css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
 <link href="css/font-awesome.css" rel="stylesheet">
+
 <link href="css/style.css" rel="stylesheet">
 <link href="css/pages/dashboard.css" rel="stylesheet">
 <link rel="stylesheet" href="css/noty.css">
-    
+    <link href="css/dropzone.css" rel="stylesheet">
 <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
 <link rel="stylesheet" href="css/bootstrap-datepicker3.min.css">
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -37,3 +38,4 @@
 <script src="js/mascara.js"></script>
 <script src="js/jquery.validate.min.js"></script>
 <script src="js/validador.js"></script>
+<script src="js/dropzone.js"></script>

@@ -116,7 +116,7 @@
 				
 				<div class="field">
 					<label for="username">Usuário</label>
-					<input type="text" id="userId" name="userId" value="" placeholder="Usuário" class="login username-field" autocomplete="off"/>
+					<input type="text" id="email" name="email" value="" placeholder="Usuário" class="login username-field" autocomplete="off"/>
 				</div> <!-- /field -->
 				
 				<div class="field">

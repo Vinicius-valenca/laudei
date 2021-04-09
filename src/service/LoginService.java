@@ -12,24 +12,24 @@ import model.User;
 
 public class LoginService {
 
-    public boolean authenticateUser(String userId, String password) {
-        User user = getUserByUserId(userId);          
-        if(user!=null && user.getUserId().equals(userId) && user.getPassword().equals(password)){
+    public boolean authenticateUser(String email, String password) {
+        Pessoa pessoa = getPessoaByEmail(email);          
+        if(pessoa!=null && pessoa.getEmail().equals(email) && pessoa.getPassword().equals(password)){
             return true;
         }else{ 
             return false;
         }
     }
 
-    public User getUserByUserId(String userId) {
+    public Pessoa getPessoaByEmail(String email) {
         Session session = HibernateUtil.openSession();
         Transaction tx = null;
-        User user = null;
+        Pessoa pessoa = null;
         try {
         	tx = session.getTransaction();
             tx.begin();
-            Query query = session.createQuery("from User where userId='"+userId+"'");
-            user = (User)query.uniqueResult();
+            Query query = session.createQuery("from Pessoa where email='"+email+"'");
+            pessoa = (Pessoa)query.uniqueResult();
             tx.commit();
         } catch (Exception e) {
             if (tx != null) {
@@ -39,7 +39,7 @@ public class LoginService {
         } finally {
             session.close();
         }
-        return user;
+        return pessoa;
     }
     
     public List<Pessoa> getListOfPessoa(){

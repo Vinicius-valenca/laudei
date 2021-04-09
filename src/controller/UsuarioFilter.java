@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import model.Pessoa;
 import model.User;
 
 //@WebFilter(urlPatterns = { "/*" })
@@ -36,8 +37,8 @@ public class UsuarioFilter implements Filter {
 
 			HttpSession session = ((HttpServletRequest) request).getSession(true);
 			
-			User u = (User) session.getAttribute("user");
-			if (u != null) {
+			Pessoa p = (Pessoa) session.getAttribute("user");
+			if (p != null) {
 				chain.doFilter(request, response);
 				return;
 			}

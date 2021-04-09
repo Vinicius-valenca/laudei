@@ -8,6 +8,11 @@
 		<servlet-name>LoginServlet</servlet-name>
 		<servlet-class>controller.LoginServlet</servlet-class>
 	</servlet>
+	  <servlet>
+		<display-name>ExameServlet</display-name>
+		<servlet-name>ExameServlet</servlet-name>
+		<servlet-class>controller.ExameServlet</servlet-class>
+	</servlet>
 	<servlet>
 		<display-name>PromissoriaServlet</display-name>
 		<servlet-name>PromissoriaServlet</servlet-name>
@@ -41,6 +46,11 @@
 		<servlet-name>SaveServlet</servlet-name>
 		<url-pattern>/SaveServlet</url-pattern>
 		<url-pattern>/DeleteServlet</url-pattern>
+	</servlet-mapping>
+		<servlet-mapping>
+		<servlet-name>ExameServlet</servlet-name>
+		<url-pattern>/enviarExame</url-pattern>
+		<url-pattern>/listarExames</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>login.jsp</welcome-file>
