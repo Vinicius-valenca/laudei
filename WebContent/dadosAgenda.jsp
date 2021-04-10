@@ -12,7 +12,6 @@
       <div class="conteudo">
 				<form id="form-cliente" role="form" action="SaveServlet" method="post">
 					<div class="row">
-					<div id="printThis">
 						<div class="col-lg-12">
 
 							
@@ -190,7 +189,6 @@
 			</div>
 		</div>
 	</div>
-</div>
 </div>
 </div>
 <div class="col-lg-12 col-xs-12">

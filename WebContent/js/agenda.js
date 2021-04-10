@@ -5,6 +5,16 @@
     	
     }
     
+    function actionFormatter1(value, row, index) {
+    	return "<a href='#'><i class='icon-large icon-search search'></i></a>"
+    	
+    }
+    
+    function actionFormatter2(value, row, index) {
+    	return "<a href='#'><i class='icon-large icon-trash trash'></i></a>"
+    	
+    }
+    
     window.actionEvents = {
     		'click .edit' : function(e, value, row, index) {
     			//alert(JSON.stringify(row));
@@ -15,6 +25,20 @@
     			 popularCampos(row)
     			 $("#btnDeletar" ).removeClass( "disabled" );
     			 $("#btnPrint").removeClass( "disabled" );
+    		}
+    	};
+    
+    window.actionEvents2 = {
+    		'click .trash' : function(e, value, row, index) {
+    			alert("deletar");
+					
+    		}
+    	};
+    
+    window.actionEvents1 = {
+    		'click .search' : function(e, value, row, index) {
+    			alert("search");
+					
     		}
     	};
     
@@ -49,26 +73,7 @@
    } 
    
    
-   $("#btnPrint").click(function() {
-	   if (!$(this).hasClass('disabled')) {
-	   elem = document.getElementById("printThis");
-   
-       var domClone = elem.cloneNode(true);
-       
-       var $printSection = document.getElementById("printSection");
-       
-       if (!$printSection) {
-           var $printSection = document.createElement("div");
-           $printSection.id = "printSection";
-           document.body.appendChild($printSection);
-       }
-       
-       $printSection.innerHTML = "";
-       $printSection.appendChild(domClone);
-       window.print();
-	   }
 
-	});
    
     	$("#btnSalvar").click(function() {    		
     		var form = $( "#form-cliente" );

@@ -138,7 +138,9 @@ public class ExameServlet extends HttpServlet {
 	                     String fieldname = item.getFieldName();
 	                     String filename = FilenameUtils.getName(item.getName());
 	                     InputStream filecontent = item.getInputStream();
-
+	                     int dotIndex = item.getName().lastIndexOf('.');
+	                    String nome=(dotIndex == -1) ? item.getName() : item.getName().substring(0, dotIndex);
+	                    exame.setNomePaciente(nome);
 		            	 
 		            	    byte[] examedata = new byte[(int) item.getSize()];
 		            	    try {

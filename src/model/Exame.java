@@ -36,6 +36,7 @@ public class Exame implements Serializable {
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "exameArquivo", referencedColumnName = "id")
 	private ExameArquivo exameArquivo;
+	private String laudo;
 	
 	
 
@@ -126,6 +127,30 @@ public class Exame implements Serializable {
 		this.exameArquivo = exameArquivo;
 	}
 
+
+	public String getLaudo() {
+		return laudo;
+	}
+
+
+	public void setLaudo(String laudo) {
+		this.laudo = laudo;
+	}
+
+
+	public Exame(Long id, String nomePaciente, Pessoa nomeClinica, Pessoa nomeMedico, Date dtEntrada, Date dtLaudo,
+			String tpExame, ExameArquivo exameArquivo, String laudo) {
+		super();
+		this.id = id;
+		this.nomePaciente = nomePaciente;
+		this.nomeClinica = nomeClinica;
+		this.nomeMedico = nomeMedico;
+		this.dtEntrada = dtEntrada;
+		this.dtLaudo = dtLaudo;
+		this.tpExame = tpExame;
+		this.exameArquivo = exameArquivo;
+		this.laudo = laudo;
+	}
 
 
 

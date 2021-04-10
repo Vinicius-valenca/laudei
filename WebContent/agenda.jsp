@@ -68,17 +68,27 @@
             
 											<th data-field="id" data-halign="center" data-width="20"
 												data-align="center" >ID</th>
-											<th data-field="nomeExame" data-halign="center" data-width="160"
+											<th data-field="nomePaciente" data-halign="center" data-width="160"
 												data-align="center" >Nome Paciente</th>
-											<th data-field="exame" data-halign="center" data-align="center"
-												data-width="80" >exame</th>
+											<th data-field="tpExame" data-halign="center" data-align="center"
+												data-width="80" >Tipo Exame</th>
 											<th data-field="dtEntrada" data-halign="center"
-												data-align="center" data-width="80" >dtEntrada</th>
-											<th data-field="anotacao" data-width="180" data-halign="center"
-												data-align="center" >Anotação</th>
+												data-align="center" data-width="80" >Data entrada</th>
+												<th data-field="dtEntrada" data-halign="center"
+												data-align="center" data-width="80" >Data laudo</th>
+											<th data-field="nomeMedico.id" data-width="180" data-halign="center"
+												data-align="center" >Medico</th>
+												<th data-field="nomeClinica.nome_completo" data-width="180" data-halign="center"
+												data-align="center" >Clinica</th>
+												<th data-halign="center" data-align="center"
+												data-width="40" data-formatter="actionFormatter1"
+												data-events="actionEvents">Exame</th>
 											<th data-halign="center" data-align="center"
 												data-width="40" data-formatter="actionFormatter"
-												data-events="actionEvents">Editar</th>
+												data-events="actionEvents1">Laudo</th>
+												<th data-halign="center" data-align="center"
+												data-width="40" data-formatter="actionFormatter2"
+												data-events="actionEvents2">Deletar</th>
         </tr>
         </thead>
     </table>
