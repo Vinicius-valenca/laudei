@@ -30,14 +30,29 @@
     
     window.actionEvents2 = {
     		'click .trash' : function(e, value, row, index) {
-    			alert("deletar");
-					
+    			$("#id").val(row.id);
+    			$('#myModal3').modal('show');
+    							
     		}
     	};
     
     window.actionEvents1 = {
     		'click .search' : function(e, value, row, index) {
-    			alert("search");
+    			console.log(JSON.stringify(row.exameArquivo));
+    			//$("#id").val(row.id);
+    			//$("#file").val(row.exameArquivo.exame);
+    			alert(row.exameArquivo.nomeExame)
+    			var n = row.exameArquivo.nomeExame.lastIndexOf(".");
+    			alert(n)
+    			alert(row.exameArquivo.nomeExame.substring(n, row.exameArquivo.nomeExame.length))    // retorna "zil"
+    			var bytes = new Uint8Array(row.exameArquivo.exame); // pass your byte response to this constructor
+
+    			var blob=new Blob([bytes], {type: "application/"+row.exameArquivo.nomeExame.substring(row.exameArquivo.nomeExame.length - 3)});// change resultByte to bytes
+
+    			var link=document.createElement('a');
+    			link.href=window.URL.createObjectURL(blob);
+    			link.download=row.exameArquivo.nomeExame;
+    			link.click();
 					
     		}
     	};
@@ -100,9 +115,8 @@
     		}
     	});
     	
-    	$("#btnDeletarModal").click(function() {
-    		if (!$(this).hasClass('disabled')) {
-    		$("#form-cliente").ajaxSubmit({url: 'DeleteServlet', type: 'post',success: 
+    	$("#btnDeletarModal").click(function() {    		
+    		$("#form-cliente").ajaxSubmit({url: 'deletarExame', type: 'post',success: 
    			 function(data){
    			if(data == "true"){
                    Salvo();
@@ -112,7 +126,7 @@
    		 $('#myModal').modal('hide');
    		
    			}} )
-    		}
+    		
     	});
     	
     	$("#logout").click(function() {

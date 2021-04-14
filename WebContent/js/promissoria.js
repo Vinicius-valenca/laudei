@@ -28,5 +28,11 @@ $(document).ready(function(){
 	    	});
 	
 	
-	
 });
+
+function showDiv(divId, element)
+{
+    document.getElementById(divId).style.display = element.value != 0 ? 'block' : 'none';
+    $("#tpexame").val(element.value);
+   
+}

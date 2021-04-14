@@ -2,8 +2,8 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <li class="nav-links"><a href="agenda.jsp" class="menu"><i class="icon-list-alt"></i><span>Agenda</span> </a> </li>
-        <li class="nav-links"><a href="promissoria.jsp" class="menu"><i class="icon-money"></i><span>Promissória</span> </a> </li>
+        <li class="nav-links"><a href="agenda.jsp" class="menu"><i class="icon-list-alt"></i><span>Lista</span> </a> </li>
+        
          <li class="nav-links"><a href="exame.jsp" class="menu"><i class="icon-money"></i><span>Exame</span> </a> </li>
         
       </ul>

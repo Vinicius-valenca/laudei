@@ -51,23 +51,21 @@
 <div class=" col-xs-12  col-lg-12  col-md-12">
 
 		<div class="conteudo">
-				<form action="enviarExame" class="dropzone" id="my-awesome-dropzone" method="post" enctype="multipart/form-data;charset=UTF-8" >
 					<div class="row">
 						<div class="col-lg-12">
 
 
 							<div class="panel panel-default">
-	
+		<div id="item-info" class="panel-body panel-branco collapse in">
 	<a data-target="#item-telefones">
-		<div class="panel-heading">Dados da promiss&oacute;ria</div>
+		<div class="panel-heading">Enviar exames</div>
 	</a>
-	<div id="item-info" class="panel-body panel-branco collapse in">
 	
          
 				<div class="col-lg-9 col-xs-9">
 					<div class="form-group">
-						<label>Tipo Exame</label> 	<select class="selection-1" name="tpexame" id="tpexame">						
-						<option selected>Selecione um tipo</option>
+						<label>Tipo Exame</label> 	<select class="selection-1" name="tpexame1" id="tpexame1" onchange="showDiv('hidden_div', this)">						
+						<option value="0" selected>Selecione um tipo</option>
 											<option value="MAPA">MAPA</option>
 											<option value="Eletrocardiograma">Eletrocardiograma</option>
 											<option value="Teste ergométrico">Teste ergométrico</option>
@@ -79,14 +77,21 @@
 
 		
 		
-					
-		
-		
-		
 		
 		
 	
 	</div>
+	
+					
+		<div id="hidden_div">
+
+<form action="enviarExame" class="dropzone" id="my-awesome-dropzone" method="post" enctype="multipart/form-data;charset=UTF-8" >
+					<div class="row">
+						<div class="col-lg-12">
+
+
+							
+	<input type="hidden" name="tpexame" id="tpexame">
 
 				
 
@@ -96,6 +101,12 @@
 						</div>
 						</div>
 						</form>
+
+
+</div>
+		
+		
+
 					</div>
     </div>
     	<jsp:include page="dadosUsuario.jsp" />

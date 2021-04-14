@@ -10,7 +10,7 @@
       
       
       <div class="conteudo">
-				<form id="form-cliente" role="form" action="SaveServlet" method="post">
+				<form id="form-cliente" role="form" action="deletarExame" method="post">
 					<div class="row">
 						<div class="col-lg-12">
 
@@ -28,7 +28,8 @@
           
 		 <input id="id" name="id" type="hidden"
 							class="form-control" value="${id}" readonly>
-				
+				 <input id="file" name="file" type="hidden"
+							class="form-control" value="${file}" readonly>
 
 		<div class="col-lg-12 col-xs-12">
 			<div class="row">
@@ -262,6 +263,9 @@
       </div>
       </div>
   </div>
+
+</div>
+
   <div class="modal" id="myModal3" data-backdrop="static">
 	<div class="modal-dialog">
       <div class="modal-content">
@@ -278,5 +282,4 @@
         </div>
       </div>
     </div>
-</div>
 </div>

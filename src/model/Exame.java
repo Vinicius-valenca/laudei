@@ -36,6 +36,14 @@ public class Exame implements Serializable {
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "exameArquivo", referencedColumnName = "id")
 	private ExameArquivo exameArquivo;
+	@Override
+	public String toString() {
+		return "Exame [id=" + id + ", nomePaciente=" + nomePaciente + ", nomeClinica=" + nomeClinica + ", nomeMedico="
+				+ nomeMedico + ", dtEntrada=" + dtEntrada + ", dtLaudo=" + dtLaudo + ", tpExame=" + tpExame
+				+ ", exameArquivo=" + exameArquivo + ", laudo=" + laudo + "]";
+	}
+
+
 	private String laudo;
 	
 	

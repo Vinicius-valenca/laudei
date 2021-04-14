@@ -48,10 +48,7 @@
           
 
     
-<div class=" col-xs-12  col-lg-5  col-md-5">
-					<div class="form-group" style="margin-top: 14px;">
-<a href="#myModal" id="btnAdicionar" role="button" class="btn" data-toggle="modal" data-backdrop="static" data-keyboard="false"> <i class='icon-large icon-plus-sign'></i> Adicionar</a>
-</div></div>
+
 
 <div class="panel panel-default">
     <table id="table"
@@ -78,14 +75,14 @@
 												data-align="center" data-width="80" >Data laudo</th>
 											<th data-field="nomeMedico.id" data-width="180" data-halign="center"
 												data-align="center" >Medico</th>
-												<th data-field="nomeClinica.nome_completo" data-width="180" data-halign="center"
+												<th data-field="nomeClinica.id" data-width="180" data-halign="center"
 												data-align="center" >Clinica</th>
 												<th data-halign="center" data-align="center"
 												data-width="40" data-formatter="actionFormatter1"
-												data-events="actionEvents">Exame</th>
+												data-events="actionEvents1">Exame</th>
 											<th data-halign="center" data-align="center"
 												data-width="40" data-formatter="actionFormatter"
-												data-events="actionEvents1">Laudo</th>
+												data-events="actionEvents">Laudo</th>
 												<th data-halign="center" data-align="center"
 												data-width="40" data-formatter="actionFormatter2"
 												data-events="actionEvents2">Deletar</th>

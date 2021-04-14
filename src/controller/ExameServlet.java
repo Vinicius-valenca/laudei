@@ -88,6 +88,9 @@ public class ExameServlet extends HttpServlet {
 			}else if (url.equalsIgnoreCase("/listarExames")) {
 				listarExames(request, response);
 
+			}else if (url.equalsIgnoreCase("/deletarExame")) {
+				deletarExame(request, response);
+
 			}else {
 				response.sendRedirect("/");
 			}
@@ -250,6 +253,49 @@ public class ExameServlet extends HttpServlet {
 			ex.printStackTrace();
 		}
 	}
+	
+	public void deletarExame(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		boolean resposta = false;
+		response.setContentType("text/plain; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		Gson gson = new Gson();
+		
+		try {
+			 
+			 
+			
+			
+			System.out.println("id"+request.getParameter("id"));
+			String id = request.getParameter("id");
+			 Exame e = new Exame();
+			 
+			 e.setId(Long.valueOf(id));
+			 
+			 
+				
+				ExameService exameService = new ExameService();
+				
+				resposta = exameService.delete(e);
+				
+				System.out.println("Deletou?" + resposta );
+				
+				
+			out.print(gson.toJson(resposta));
+			
+			
+			out.flush();
+			out.close();
+
+		} catch (Exception ex) {
+			
+			//ex.printStackTrace();
+			out.print(gson.toJson(resposta));
+			out.flush();
+			out.close();
+			
+		}
+	}
+	
 	
 	
 	
