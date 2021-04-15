@@ -24,10 +24,10 @@ public class Exame implements Serializable {
 	@GeneratedValue
 	private Long id;
 	private String nomePaciente;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
     @JoinColumn(name = "nomeClinica", referencedColumnName = "id")
 	private Pessoa nomeClinica;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
     @JoinColumn(name = "nomeMedico", referencedColumnName = "id")
 	private Pessoa nomeMedico;
 	private Date dtEntrada;

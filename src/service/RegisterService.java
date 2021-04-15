@@ -37,7 +37,7 @@ public boolean isUserExists(Pessoa user){
 	 try{
 		 tx = session.getTransaction();
 		 tx.begin();
-		 Query query = session.createQuery("from User where userId='"+user.getId()+"'");
+		 Query query = session.createQuery("from Pessoa where id='"+user.getId()+"'");
 		 Pessoa u = (Pessoa)query.uniqueResult();
 		 tx.commit();
 		 if(u!=null) result = true;
@@ -55,12 +55,13 @@ public Pessoa isUserExists(Long id){
 	 Session session = HibernateUtil.openSession();
 	 Pessoa pessoa=null;
 	 Transaction tx = null;
+	
 	 try{
 		 tx = session.getTransaction();
 		 tx.begin();
-		 Query query = session.createQuery("from User where Id='"+id+"'");
+		 Query query = session.createQuery("from Pessoa where Id='"+id+"'");
 		 pessoa =  (Pessoa) session.load(Pessoa.class, new Long(id));
-		 
+		 System.out.println("teste!????!" + pessoa);
 		 tx.commit();
 	 }catch(Exception ex){
 		 if(tx!=null){
@@ -69,6 +70,7 @@ public Pessoa isUserExists(Long id){
 	 }finally{
 		 session.close();
 	 }
+	 
 	 return pessoa;
 }
 
@@ -79,7 +81,7 @@ public boolean delete(Pessoa p){
 	try{
 		 tx = session.getTransaction();
 		 tx.begin();
-		 Query query = session.createQuery("from User where Id='"+p.getId()+"'");
+		 Query query = session.createQuery("from Pessoa where Id='"+p.getId()+"'");
 		  session.delete(p);
 		 result=true;
 		 tx.commit();

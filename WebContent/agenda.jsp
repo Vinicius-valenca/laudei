@@ -63,7 +63,7 @@
         <thead>
         <tr>
             
-											<th data-field="id" data-halign="center" data-width="20"
+											<th data-field="id" data-halign="center" data-width="30"
 												data-align="center" >ID</th>
 											<th data-field="nomePaciente" data-halign="center" data-width="160"
 												data-align="center" >Nome Paciente</th>
@@ -116,7 +116,7 @@
   <div class="footer-inner">
     <div class="container">
       <div class="row">
-        <div class="span12"> &copy; 2018 <a href="#">Zeitune Informática</a>. </div>
+        <div class="span12"> &copy; 2021 <a href="#">Zeitune Informática</a>. </div>
         <!-- /span12 --> 
       </div>
       <!-- /row --> 

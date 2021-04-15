@@ -13,7 +13,7 @@ public class ExameService {
 	
 public boolean register(Exame exame){
 	 Session session = HibernateUtil.openSession();
-	 if(isExameExists(exame)) return false;	
+	 //if(isExameExists(exame)) return false;	
 	
 	 Transaction tx = null;	
 	 try {
@@ -32,26 +32,6 @@ public boolean register(Exame exame){
 	 return true;
 }
 
-public boolean register(Pessoa pessoa){
-	 Session session = HibernateUtil.openSession();
-	 
-	 Transaction tx = null;	
-	 try {
-		 tx = session.getTransaction();
-		 tx.begin();
-		 session.saveOrUpdate(pessoa);
-		 tx.commit();
-	 } catch (Exception e) {
-		 if (tx != null) {
-			 tx.rollback();
-		 }
-		 e.printStackTrace();
-		 return false;
-	 } finally {
-		 session.close();
-	 }	
-	 return true;
-}
 
 public boolean isExameExists(Exame exame){
 	 Session session = HibernateUtil.openSession();
@@ -78,12 +58,13 @@ public Exame isExameExists(Long id){
 	 Session session = HibernateUtil.openSession();
 	 Exame exame=null;
 	 Transaction tx = null;
+	 
 	 try{
 		 tx = session.getTransaction();
 		 tx.begin();
 		 Query query = session.createQuery("from Exame where Id='"+id+"'");
 		 exame =  (Exame) session.load(Exame.class, new Long(id));
-		 
+		 System.out.println("teste!!!!!!!!!!!!!!!!!!!!" + exame);
 		 tx.commit();
 	 }catch(Exception ex){
 		 if(tx!=null){

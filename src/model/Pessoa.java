@@ -16,6 +16,17 @@ import javax.persistence.Transient;
 @Table(name = "Pessoa")
 public class Pessoa implements Serializable {
 
+	@Override
+	public String toString() {
+		return "Pessoa [id=" + id + ", email=" + email + ", cpfCnpj=" + cpfCnpj + ", password=" + password
+				+ ", nome_completo=" + nome_completo + ", anotacao=" + anotacao + ", telefone=" + telefone
+				+ ", celular=" + celular + ", endereco=" + endereco + ", bairro=" + bairro + ", cep=" + cep
+				+ ", numero=" + numero + ", estado=" + estado + ", cidade=" + cidade + ", complemento=" + complemento
+				+ ", tpPerfil=" + tpPerfil + "]";
+	}
+
+
+
 	@Id
 	@GeneratedValue
 	private Long id;

@@ -18,13 +18,17 @@
     window.actionEvents = {
     		'click .edit' : function(e, value, row, index) {
     			//alert(JSON.stringify(row));
+    			
+
+    			
 					$('#form-cliente').each (function(){
 									  this.reset();
 									});
+					$("#id").val(row.id);
+					$("#idPessoa").val($("#idPessoa1").val());
+					
 					$('#myModal').modal('show');
-    			 popularCampos(row)
     			 $("#btnDeletar" ).removeClass( "disabled" );
-    			 $("#btnPrint").removeClass( "disabled" );
     		}
     	};
     
@@ -94,7 +98,7 @@
     		var form = $( "#form-cliente" );
     		form.validate();    		
     		if(form.valid()){
-    			$("#form-cliente").ajaxSubmit({url: 'SaveServlet', type: 'post',success: 
+    			$("#form-cliente").ajaxSubmit({url: 'salvarLaudo', type: 'post',success: 
        			 function(data){
        			if(data == "true"){
                        Salvo();

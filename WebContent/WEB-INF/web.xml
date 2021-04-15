@@ -24,9 +24,9 @@
 		<servlet-class>controller.AgendaServlet</servlet-class>
 	</servlet>
 	<servlet>
-		<display-name>SaveServlet</display-name>
-		<servlet-name>SaveServlet</servlet-name>
-		<servlet-class>controller.SaveServlet</servlet-class>
+		<display-name>LaudoServlet</display-name>
+		<servlet-name>LaudoServlet</servlet-name>
+		<servlet-class>controller.LaudoServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
@@ -43,9 +43,8 @@
 		<url-pattern>/AgendaServlet</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>SaveServlet</servlet-name>
-		<url-pattern>/SaveServlet</url-pattern>
-		<url-pattern>/DeleteServlet</url-pattern>
+		<servlet-name>LaudoServlet</servlet-name>
+		<url-pattern>/salvarLaudo</url-pattern>
 	</servlet-mapping>
 		<servlet-mapping>
 		<servlet-name>ExameServlet</servlet-name>
