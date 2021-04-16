@@ -4,9 +4,9 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://ec2-18-206-20-102.compute-1.amazonaws.com:5432/d3sqgormuo70v6</property>
-        <property name="hibernate.connection.username">hmoyiwhhwsrlsk</property>
-        <property name="hibernate.connection.password">3d8ce67ebbea2fbd656d1afcec163d558f72976e65c3ba0eb307b683858f9f84</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://ec2-54-163-254-204.compute-1.amazonaws.com:5432/dd1t0batksrue5</property>
+        <property name="hibernate.connection.username">rraermpicqnybe</property>
+        <property name="hibernate.connection.password">5ab9c7d0b19956eec3f0ed807aa8664e117eb46a3847ae43df8549022917aa08</property>
         <property name="show_sql">true</property>		
         <property name="hbm2ddl.auto">create/update</property>
         <property name="hibernate.hbm2ddl.auto">create/update</property>
