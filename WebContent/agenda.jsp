@@ -63,8 +63,7 @@
         <thead>
         <tr>
             
-											<th data-field="id" data-halign="center" data-width="30"
-												data-align="center" >ID</th>
+											
 											<th data-field="nomePaciente" data-halign="center" data-width="160"
 												data-align="center" >Nome Paciente</th>
 											<th data-field="tpExame" data-halign="center" data-align="center"
@@ -73,9 +72,9 @@
 												data-align="center" data-width="80" >Data entrada</th>
 												<th data-field="dtEntrada" data-halign="center"
 												data-align="center" data-width="80" >Data laudo</th>
-											<th data-field="nomeMedico.id" data-width="180" data-halign="center"
+											<th data-field="nomeMedico.nome_completo" data-width="180" data-halign="center"
 												data-align="center" >Medico</th>
-												<th data-field="nomeClinica.id" data-width="180" data-halign="center"
+												<th data-field="nomeClinica.nome_completo" data-width="180" data-halign="center"
 												data-align="center" >Clinica</th>
 												<th data-halign="center" data-align="center"
 												data-width="40" data-formatter="actionFormatter1"
