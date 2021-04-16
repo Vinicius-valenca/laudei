@@ -27,6 +27,9 @@
     			
           <input id="idPessoa" name="idPessoa" type="hidden"
 							class="form-control" value="<%=session.getAttribute("id") %>" readonly>
+							
+							<input id="tpperfil" name="tpperfil" type="hidden"
+							class="form-control" value="<%=session.getAttribute("tpperfil") %>" readonly>
           
 		 <input id="id" name="id" type="hidden"
 							class="form-control" value="${id}" readonly>
@@ -69,28 +72,16 @@
         <div class="row">
         
         <div class="col-lg-12 col-xs-12">
-        			<div class="col-lg-2 col-xs-2 ">
-					<div class="form-group">
-        <button type="button" id="btnPrint" class="btn btn-default disabled">Imprimir</button>
-        </div>
-			</div>
+        			
 			
-					<div class="col-lg-2 col-xs-2">
+					<div class="col-lg-4 col-xs-4">
 					<div class="form-group">
         <button type="submit" id="btnSalvar" class="btn btn-primary">Salvar</button>
         </div>
 			</div>
-			<div class="col-lg-2 col-xs-2">
-					<div class="form-group">
-        <button type="reset" id="btnLimpar" class="btn btn-primary">Limpar</button>
-                </div>
-			</div>
-			<div class="col-lg-2 col-xs-2">
-					<div class="form-group">
-        <button type="button" id="btnDeletar" class="btn btn-danger disabled">Deletar</button>
-                </div>
-			</div>
-			<div class="col-lg-2 col-xs-2">
+			
+			
+			<div class="col-lg-6 col-xs-6">
 					<div class="form-group">
         <button type="button" id="btnClose" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
      </div>

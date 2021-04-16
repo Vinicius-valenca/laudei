@@ -65,6 +65,7 @@ public class LoginServlet extends HttpServlet {
 
 			session.setAttribute("user", p);
 			session.setAttribute("userId", p.getEmail());
+			session.setAttribute("tpperfil", p.getTpPerfil());
 			session.setAttribute("id", p.getId());
 			response.getWriter().write("True");
 		} else {

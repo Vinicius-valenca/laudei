@@ -26,9 +26,17 @@
 									});
 					$("#id").val(row.id);
 					$("#idPessoa").val($("#idPessoa1").val());
+					$("#laudo").val(row.laudo);
+					if($("#tpperfil").val()==="2"){
+						$("#btnSalvar" ).addClass( "disabled" );
+						$("#btnSalvar").prop("disabled",true);
+					}else{
+						$("#btnSalvar" ).removeClass( "disabled" );
+						$("#btnSalvar" ).prop("disabled",false);
+					}
 					
 					$('#myModal').modal('show');
-    			 $("#btnDeletar" ).removeClass( "disabled" );
+    			 
     		}
     	};
     
