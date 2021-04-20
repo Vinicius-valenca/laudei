@@ -27,6 +27,12 @@
 					$("#id").val(row.id);
 					$("#idPessoa").val($("#idPessoa1").val());
 					$("#laudo").val(row.laudo);
+					var ta = document.querySelector('textarea');
+			    	ta.style.display = 'none';
+			    	autosize(ta);
+			    	ta.style.display = '';
+
+			    	autosize.update(ta);
 					if($("#tpperfil").val()==="2"){
 						$("#btnSalvar" ).addClass( "disabled" );
 						$("#btnSalvar").prop("disabled",true);
@@ -53,10 +59,10 @@
     			console.log(JSON.stringify(row.exameArquivo));
     			//$("#id").val(row.id);
     			//$("#file").val(row.exameArquivo.exame);
-    			alert(row.exameArquivo.nomeExame)
+    			//alert(row.exameArquivo.nomeExame)
     			var n = row.exameArquivo.nomeExame.lastIndexOf(".");
-    			alert(n)
-    			alert(row.exameArquivo.nomeExame.substring(n, row.exameArquivo.nomeExame.length))    // retorna "zil"
+    			//alert(n)
+    			//alert(row.exameArquivo.nomeExame.substring(n, row.exameArquivo.nomeExame.length))    // retorna "zil"
     			var bytes = new Uint8Array(row.exameArquivo.exame); // pass your byte response to this constructor
 
     			var blob=new Blob([bytes], {type: "application/"+row.exameArquivo.nomeExame.substring(row.exameArquivo.nomeExame.length - 3)});// change resultByte to bytes
@@ -64,7 +70,8 @@
     			var link=document.createElement('a');
     			link.href=window.URL.createObjectURL(blob);
     			link.download=row.exameArquivo.nomeExame;
-    			link.click();
+    			//link.click();
+    			window.open(link, '_blank').focus();
 					
     		}
     	};
@@ -123,7 +130,8 @@
     	
     	$("#btnDeletar").click(function() {
     		if (!$(this).hasClass('disabled')) {
-    			$('#myModal3').modal('toggle');
+    			
+    			$('#myModal3').modal('toogle');
     		}
     	});
     	
@@ -171,60 +179,12 @@ $("#perfil").click(function() {
     		
     	});
     	
-    	$("#btnAdicionar").click(function() {
-    		$('#id').val('');
-    		$('#form-cliente').each (function(){
-				  this.reset();
-				});
-    		
-
-    		var ta = document.querySelector('textarea');
-    		autosize.destroy(ta);
-    		ta.style.display = 'none';
-    		autosize(ta);
-    		ta.style.display = '';
-
-    		// Call the update method to recalculate the size:
-    		autosize.update(ta);
-
-    	});
+    
     		
     	});
     
  
-    function popularCampos(pessoa) {
-    	$("#id").val(pessoa.id);
-    	$("#nome_completo").val(pessoa.nome_completo);
-    	$("#email").val(pessoa.email);
-    	$("#dt_nascimento").val(pessoa.dt_nascimentoFormat);
-    	$("#identidade").val(pessoa.identidade);
-    	$("#cpfcnpj").val(pessoa.cpf);
-    	$("#telefone").val(pessoa.telefone);
-    	$("#celular").val(pessoa.celular);
-    	$("#anotacao").val(pessoa.anotacao);
-    	
-    	$("#dt_emissao").val( pessoa.dt_emissaoFormat);
-    	$("#emissor").val(pessoa.emissor);
-    	$("#estado_civil").val(pessoa.estado_civil);
-    	$("#nacionalidade").val(pessoa.nacionalidade);
-    	$("#naturalidade").val(pessoa.naturalidade);
-    	$("#profissao").val(pessoa.profissao);
-
-    	$("#cep").val(pessoa.cep);
-    	$("#numero").val(pessoa.numero);
-    	$("#endereco").val(pessoa.endereco);
-    	$("#estado").val(pessoa.estado);
-    	$("#cidade").val(pessoa.cidade);
-    	$("#bairro").val(pessoa.bairro);
-    	$("#complemento").val(pessoa.complemento);
-
-    	var ta = document.querySelector('textarea');
-    	ta.style.display = 'none';
-    	autosize(ta);
-    	ta.style.display = '';
-
-    	autosize.update(ta);
-    }
+    
     
     $(document).ready(function(){
        $('#salvarbtn').click(function()

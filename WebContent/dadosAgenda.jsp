@@ -1,4 +1,20 @@
-
+  <div class="modal" id="myModal3" role="dialog"  >
+	<div class="modal-dialog myModal3">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+          <h4 class="modal-title">Confirmar Exclusão</h4>
+        </div><div class="container"></div>
+        <div class="modal-body">
+          Tem certeza que deseja deletar o cadastro ?
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Não</a>
+          <a href="#" data-dismiss="modal" class="btn btn-primary" id=btnDeletarModal>Sim</a>
+        </div>
+      </div>
+    </div>
+</div>
 
 <div id="myModal" class="modal" role="dialog">
   <div class="modal-dialog myModal">
@@ -95,20 +111,3 @@
 
 </div>
 
-  <div class="modal" id="myModal3" data-backdrop="static">
-	<div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title">Confirmar Exclusão</h4>
-        </div><div class="container"></div>
-        <div class="modal-body">
-          Tem certeza que deseja deletar o cadastro ?
-        </div>
-        <div class="modal-footer">
-          <a href="#" data-dismiss="modal" class="btn">Não</a>
-          <a href="#" data-dismiss="modal" class="btn btn-primary" id=btnDeletarModal>Sim</a>
-        </div>
-      </div>
-    </div>
-</div>

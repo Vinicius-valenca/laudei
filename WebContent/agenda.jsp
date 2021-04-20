@@ -70,7 +70,7 @@
 												data-width="80" >Tipo Exame</th>
 											<th data-field="dtEntrada" data-halign="center"
 												data-align="center" data-width="80" >Data entrada</th>
-												<th data-field="dtEntrada" data-halign="center"
+												<th data-field="dtLaudo" data-halign="center"
 												data-align="center" data-width="80" >Data laudo</th>
 											<th data-field="nomeMedico.nome_completo" data-width="180" data-halign="center"
 												data-align="center" >Medico</th>
@@ -89,10 +89,10 @@
         </thead>
     </table>
     </div>
-    
+    	<jsp:include page="dadosUsuario.jsp" />
     <jsp:include page="dadosAgenda.jsp" />
 
-	<jsp:include page="dadosUsuario.jsp" />
+
 	
 
 
