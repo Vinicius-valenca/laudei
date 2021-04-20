@@ -9,7 +9,7 @@ public class RegisterService {
 	
 public boolean register(Pessoa user){
 	 Session session = HibernateUtil.openSession();
-	 if(isUserExists(user)) return false;	
+	 
 	
 	 Transaction tx = null;	
 	 try {

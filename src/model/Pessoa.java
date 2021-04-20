@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -30,7 +31,9 @@ public class Pessoa implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Column(unique=true)
 	private String email;
+	@Column(unique=true)
 	private String cpfCnpj;
 	private String password;
 	

@@ -87,10 +87,15 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession(false);
 
 		Pessoa user = (Pessoa) session.getAttribute("user");
+		System.out.println("Pessoa?" + user );
 		Long id = Long.valueOf(request.getParameter("idUser"));
+		System.out.println("id?" + id );
 		String userId = request.getParameter("userId");
+		System.out.println("userId?" + userId );
 		String oldpassword = request.getParameter("oldpassword");
+		System.out.println("oldpassword?" + oldpassword );
 		String newpassword = request.getParameter("newpassword");
+		System.out.println("newpassword?" + newpassword );
 
 		
 		if (user.getId().equals(id)  && user.getPassword().equals(oldpassword)) {
