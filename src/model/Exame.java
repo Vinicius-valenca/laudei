@@ -35,6 +35,7 @@ public class Exame implements Serializable {
 	private String tpExame;
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "exameArquivo", referencedColumnName = "id")
+	@Transient
 	private ExameArquivo exameArquivo;
 	@Override
 	public String toString() {
