@@ -25,6 +25,7 @@ public class LoginService {
         Transaction tx = null;
         Pessoa pessoa = null;
         try {
+        	System.out.println("teste");
         	tx = session.getTransaction();
             tx.begin();
             Query query = session.createQuery("from Pessoa where email='"+email+"'");
