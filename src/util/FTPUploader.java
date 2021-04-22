@@ -42,6 +42,13 @@ public class FTPUploader {
 		this.ftp.storeFile(hostDir + fileName, input);
 		
 	}
+	
+	public void deleteFile( String fileName)
+			throws Exception {
+		
+		this.ftp.deleteFile("/"+fileName);
+		
+	}
 
 	public void disconnect(){
 		if (this.ftp.isConnected()) {

@@ -49,6 +49,9 @@
           
 		 <input id="id" name="id" type="hidden"
 							class="form-control" value="${id}" readonly>
+							
+							 <input id="examenome" name="examenome" type="hidden"
+							class="form-control" value="${examenome}" readonly>
 				 <input id="file" name="file" type="hidden"
 							class="form-control" value="${file}" readonly>
 

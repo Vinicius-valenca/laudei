@@ -49,7 +49,9 @@
     window.actionEvents2 = {
     		'click .trash' : function(e, value, row, index) {
     			$("#id").val(row.id);
+    			$("#examenome").val(row.examenome);
     			$('#myModal3').modal('show');
+    			
     							
     		}
     	};
@@ -57,13 +59,11 @@
     window.actionEvents1 = {
     		'click .search' : function(e, value, row, index) {
     			console.log(row)
-    			//var n = row.examenome.lastIndexOf(".");    			
-
+    			
     			let a= document.createElement('a');
     			a.target= '_blank';
     			a.href= 'http://sys.laudeitelemedicina.com.br/'+row.examenome;
     			a.click();
-    			   			
 					
     		}
     	};

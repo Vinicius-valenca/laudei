@@ -37,6 +37,7 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.net.ftp.FTPClient;
 
 import model.Exame;
 import model.Pessoa;
@@ -271,14 +272,19 @@ public class ExameServlet extends HttpServlet {
 			
 			
 			System.out.println("id"+request.getParameter("id"));
+			System.out.println("Examenome"+request.getParameter("examenome"));
 			String id = request.getParameter("id");
-			 Exame e = new Exame();
-			 
+			Exame e = new Exame(); 
+			 ExameService exameService = new ExameService();
 			 e.setId(Long.valueOf(id));
-			 
-			 
+			
+     		
+			 FTPClient client = new FTPClient();
+			 client.connect("ftp.zeituneinformatica.com.br", 21);
+			 client.login("laudeisistema@laudeitelemedicina.com.br", "Pa6?Eo%D8#ix");
+			 client.deleteFile("/"+request.getParameter("examenome"));
+			 client.disconnect();
 				
-				ExameService exameService = new ExameService();
 				
 				resposta = exameService.delete(e);
 				
