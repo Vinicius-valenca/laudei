@@ -64,7 +64,6 @@ public Exame isExameExists(Long id){
 		 tx.begin();
 		 Query query = session.createQuery("from Exame where Id='"+id+"'");
 		 exame =  (Exame) session.load(Exame.class, new Long(id));
-		 System.out.println("teste!!!!!!!!!!!!!!!!!!!!" + exame);
 		 tx.commit();
 	 }catch(Exception ex){
 		 if(tx!=null){
@@ -75,6 +74,8 @@ public Exame isExameExists(Long id){
 	 }
 	 return exame;
 }
+
+
 
 public boolean delete(Exame e){  
 	Session session = HibernateUtil.openSession();

@@ -29,7 +29,7 @@ public class UsuarioFilter implements Filter {
 			return;
 		}
 
-		else if (path.contains("/login.jsp") || path.contains("/Login")) {
+		else if (path.contains("/login.jsp") || path.contains("/Login")|| path.contains("/exames/")) {
 			chain.doFilter(request, response);
 			return;
 		} else {

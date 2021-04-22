@@ -39,11 +39,11 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.FilenameUtils;
 
 import model.Exame;
-import model.ExameArquivo;
 import model.Pessoa;
 import service.ExameService;
 import service.LoginService;
 import service.RegisterService;
+import util.FTPUploader;
 
 
 
@@ -100,7 +100,7 @@ public class ExameServlet extends HttpServlet {
 	}
 
 	
-	public void save(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void save(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		if (!ServletFileUpload.isMultipartContent(request)) {
 	         throw new IllegalArgumentException("Request is not multipart, please 'multipart/form-data' enctype for your form.");
 	     }
@@ -153,17 +153,19 @@ public class ExameServlet extends HttpServlet {
 		            	    } catch (Exception e) {
 		            	    e.printStackTrace();
 		            	    }
-		            	    //String nome[] = item.getName().split(".");
-		            	    //System.out.println(nome.toString());
-		            	    ExameArquivo exameArquivo = new ExameArquivo();
-		            	    exameArquivo.setExame(examedata);
-		            	    exameArquivo.setNomeExame(item.getName());
-		            	    exame.setExameArquivo(exameArquivo);
-		            	    
-		            	    exame.setDtEntrada(new java.sql.Date(System.currentTimeMillis()));
-		            	    //exame.setNomePaciente((item.getName().split("."))[0]);
 		            	    
 		            	   
+		            	    System.out.println(filename);
+		            	    exame.setExamenome(item.getName());
+		            	    exame.setDtEntrada(new java.sql.Date(System.currentTimeMillis()));
+		            	    exame.setNomePaciente(filename);
+		            	    
+		            	    FTPUploader ftpUploader = new FTPUploader("ftp.zeituneinformatica.com.br", "laudeisistema@laudeitelemedicina.com.br", "Pa6?Eo%D8#ix");
+		            		//FTP server path is relative. So if FTP account HOME directory is "/home/pankaj/public_html/" and you need to upload 
+		            		// files to "/home/pankaj/public_html/wp-content/uploads/image2/", you should pass directory parameter as "/wp-content/uploads/image2/"
+		            		ftpUploader.uploadFile(item.getInputStream(), item.getName(), "/");
+		            		ftpUploader.disconnect();
+		            		System.out.println("Done");
 		            	   
 		            	    ExameService exameService = new ExameService();
 		            	 
@@ -241,6 +243,9 @@ public class ExameServlet extends HttpServlet {
 			Gson gson = new Gson();
 			ExameService exameService = new ExameService();
 			List<Exame> list =  exameService.getListOfExame();
+			
+			
+			
 			
 			System.out.println(list);
 			

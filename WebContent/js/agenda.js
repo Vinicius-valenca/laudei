@@ -56,22 +56,14 @@
     
     window.actionEvents1 = {
     		'click .search' : function(e, value, row, index) {
-    			console.log(JSON.stringify(row.exameArquivo));
-    			//$("#id").val(row.id);
-    			//$("#file").val(row.exameArquivo.exame);
-    			//alert(row.exameArquivo.nomeExame)
-    			var n = row.exameArquivo.nomeExame.lastIndexOf(".");
-    			//alert(n)
-    			//alert(row.exameArquivo.nomeExame.substring(n, row.exameArquivo.nomeExame.length))    // retorna "zil"
-    			var bytes = new Uint8Array(row.exameArquivo.exame); // pass your byte response to this constructor
+    			console.log(row)
+    			//var n = row.examenome.lastIndexOf(".");    			
 
-    			var blob=new Blob([bytes], {type: "application/"+row.exameArquivo.nomeExame.substring(row.exameArquivo.nomeExame.length - 3)});// change resultByte to bytes
-
-    			var link=document.createElement('a');
-    			link.href=window.URL.createObjectURL(blob);
-    			link.download=row.exameArquivo.nomeExame;
-    			//link.click();
-    			window.open(link, '_blank').focus();
+    			let a= document.createElement('a');
+    			a.target= '_blank';
+    			a.href= 'http://sys.laudeitelemedicina.com.br/'+row.examenome;
+    			a.click();
+    			   			
 					
     		}
     	};
