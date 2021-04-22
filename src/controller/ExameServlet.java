@@ -132,7 +132,7 @@ public class ExameServlet extends HttpServlet {
 	                 if (item.isFormField()) {
 	                     // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
 	                     String fieldname = item.getFieldName();
-	                     String fieldvalue = item.getString();
+	                     String fieldvalue = item.getString("UTF-8").trim();
 	                     System.out.println(fieldname);
 	                     System.out.println(fieldvalue);
 	                     // ... (do your job here)
