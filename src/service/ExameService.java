@@ -58,12 +58,14 @@ public Exame isExameExists(Long id){
 	 Session session = HibernateUtil.openSession();
 	 Exame exame=null;
 	 Transaction tx = null;
-	 
+	 System.out.println("teste");
 	 try{
 		 tx = session.getTransaction();
 		 tx.begin();
 		 Query query = session.createQuery("from Exame where Id='"+id+"'");
 		 exame =  (Exame) session.load(Exame.class, new Long(id));
+		 System.out.println("teste222");
+		 System.out.println(exame);
 		 tx.commit();
 	 }catch(Exception ex){
 		 if(tx!=null){

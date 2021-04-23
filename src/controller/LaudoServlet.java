@@ -73,6 +73,7 @@ public class LaudoServlet extends HttpServlet {
 			Exame exame = null;
 			exame = exameService.isExameExists(Long.valueOf(idExame));
 			System.out.println(exame);
+			System.out.println("laudo "+laudo);
 			exame.setLaudo(laudo);
 
 			exame.setDtLaudo(new java.sql.Date(System.currentTimeMillis()));
