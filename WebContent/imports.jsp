@@ -35,6 +35,7 @@
 <script src="js/autosize.js"></script>
 <script src="js/jquery.mask.min.js"></script>
 <script src="js/jquery.maskMoney.js"></script>
+<script src="js/moment.js"></script>
 <script src="js/mascara.js"></script>
 <script src="js/jquery.validate.min.js"></script>
 <script src="js/validador.js"></script>

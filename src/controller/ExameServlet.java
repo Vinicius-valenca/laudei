@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -157,14 +158,14 @@ public class ExameServlet extends HttpServlet {
 		            	    
 		            	   
 		            	    System.out.println(filename);
-		            	    exame.setExamenome(item.getName());
+		            	    exame.setExamenome( removerAcentos(item.getName()));
 		            	    exame.setDtEntrada(new java.sql.Date(System.currentTimeMillis()));
-		            	    exame.setNomePaciente(filename);
+		            	    exame.setNomePaciente( removerAcentos(filename));
 		            	    
 		            	    FTPUploader ftpUploader = new FTPUploader("ftp.zeituneinformatica.com.br", "laudeisistema@laudeitelemedicina.com.br", "Pa6?Eo%D8#ix");
 		            		//FTP server path is relative. So if FTP account HOME directory is "/home/pankaj/public_html/" and you need to upload 
 		            		// files to "/home/pankaj/public_html/wp-content/uploads/image2/", you should pass directory parameter as "/wp-content/uploads/image2/"
-		            		ftpUploader.uploadFile(item.getInputStream(), item.getName(), "/");
+		            		ftpUploader.uploadFile(item.getInputStream(), removerAcentos(item.getName()), "/");
 		            		ftpUploader.disconnect();
 		            		System.out.println("Done");
 		            	   
@@ -307,7 +308,9 @@ public class ExameServlet extends HttpServlet {
 		}
 	}
 	
-	
+	public static String removerAcentos(String str) {
+	    return Normalizer.normalize(str, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+	}
 	
 	
 }

@@ -3,7 +3,7 @@ package model;
 
 import java.io.Serializable;
 import java.sql.Blob;
-import java.sql.Date;
+import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 @Entity
@@ -30,7 +32,9 @@ public class Exame implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "nomeMedico", referencedColumnName = "id")
 	private Pessoa nomeMedico;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtEntrada;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtLaudo;
 	private String tpExame;
 	private String examenome;

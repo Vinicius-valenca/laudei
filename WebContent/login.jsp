@@ -116,12 +116,12 @@
 				
 				<div class="field">
 					<label for="username">Usuário</label>
-					<input type="text" id="email" name="email" value="" placeholder="Usuário" class="login username-field" autocomplete="off"/>
+					<input type="text" id="email" name="email" value="" placeholder="Usuário" class="login username-field" autocomplete="off" onkeydown="handleEnter(event)"/>
 				</div> <!-- /field -->
 				
 				<div class="field">
 					<label for="password">Senha:</label>
-					<input type="password" id="password" name="password" value="" placeholder="Senhas" class="login password-field"/>
+					<input type="password" id="password" name="password" value="" placeholder="Senhas" class="login password-field" onkeydown="handleEnter(event)"/>
 				</div> <!-- /password -->
 				
 			</div> <!-- /login-fields -->
@@ -160,5 +160,22 @@
 
 
 </body>
+<script>
+function handleEnter(e) {
+  if(e.keyCode === 13){
+	  $("#login").ajaxSubmit({url: 'Login', type: 'post',success: 
+			 function(data){
+			if(data == "True"){
+				$(location).attr('href','agenda.jsp')
+          }else{
+         	 Erro()
+          } 
+       }
+        });
+  }
 
+
+
+}
+</script>
 </html>
