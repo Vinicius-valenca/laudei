@@ -88,8 +88,8 @@
            text: 'Salvo com sucesso',
        }).show();
 	   $("#btnDeletar" ).addClass( "disabled" );
-	   $("#btnPrint" ).addClass( "disabled" );
-	   $("#table").bootstrapTable('refresh');
+	   //$("#btnPrint" ).addClass( "disabled" );
+	   //$("#table").bootstrapTable('refresh');
    } 
    
    function Erro(){
@@ -171,7 +171,7 @@ $("#perfil").click(function() {
     		$('#myModal').modal('hide');
     		$("#btnDeletar" ).addClass( "disabled" );
     		$("#btnPrint" ).addClass( "disabled" );
-    		$("#table").bootstrapTable('refresh');
+    		//$("#table").bootstrapTable('refresh');
     		$("#form-cliente").find('.has-error').css('border-color', '').removeClass('has-error');
     		$("#form-cliente").validate().resetForm();
     		

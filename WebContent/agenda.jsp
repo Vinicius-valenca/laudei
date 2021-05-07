@@ -58,8 +58,18 @@
            data-url="listarExames"
            data-mobile-responsive="true"
            data-check-on-init="true"
-           data-sortable="false"
-           data-sort-name="nome_completo">
+           data-sortable="true"
+           data-sort-name="nome_completo"
+           data-toggle="table"
+											data-classes="table table-condensed"
+											data-sort-name="stargazers_count" data-sort-order="desc"
+											data-pagination="true" data-search="true"
+											data-show-columns="true" data-page-size="15"
+											data-page-list="[5, 10, 20, 50, 100, 200]"
+											data-pagination-first-text="Primeiro"
+											data-pagination-pre-text="<i class='glyphicon glyphicon glyphicon-chevron-left'></i>"
+											data-pagination-next-text="<i class='glyphicon glyphicon glyphicon-chevron-right'></i>"
+											data-pagination-last-text="Último" data-locale="pt-BR">
         <thead>
         <tr>
             
@@ -67,15 +77,15 @@
 											<th data-field="nomePaciente" data-halign="center" data-width="160"
 												data-align="center" >Nome Paciente</th>
 											<th data-field="tpExame" data-halign="center" data-align="center"
-												data-width="80" >Tipo Exame</th>
+												data-width="80" data-sortable="true">Tipo Exame</th>
 											<th data-field="dtEntrada" data-halign="center"
-												data-align="center" data-width="80" >Data entrada</th>
+												data-align="center" data-width="80" data-sortable="true">Data entrada</th>
 												<th data-field="dtLaudo" data-halign="center"
-												data-align="center" data-width="80" >Data laudo</th>
+												data-align="center" data-width="80" data-sortable="true">Data laudo</th>
 											<th data-field="nomeMedico.nome_completo" data-width="180" data-halign="center"
-												data-align="center" >Medico</th>
+												data-align="center" data-sortable="true">Medico</th>
 												<th data-field="nomeClinica.nome_completo" data-width="180" data-halign="center"
-												data-align="center" >Clinica</th>
+												data-align="center" data-sortable="true">Clinica</th>
 												<th data-halign="center" data-align="center"
 												data-width="40" data-formatter="actionFormatter1"
 												data-events="actionEvents1">Exame</th>
