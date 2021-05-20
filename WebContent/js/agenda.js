@@ -32,6 +32,9 @@
 									});
 					$("#id").val(row.id);
 					$("#idPessoa").val($("#idPessoa1").val());
+					$('#nomeLaudo').append(" - "+row.tpExame);
+					$('#nomeLaudo').append(" - "+row.nomePaciente);
+					$("#examenome").val(row.examenome);
 					$("#laudo").val(row.laudo);
 					var ta = document.querySelector('textarea');
 			    	ta.style.display = 'none';
