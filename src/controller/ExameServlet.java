@@ -87,7 +87,14 @@ public class ExameServlet extends HttpServlet {
 			} else if (url.equalsIgnoreCase("/atualizarExame")) {
 				delete(request, response);
 
-			}else if (url.equalsIgnoreCase("/listarExames")) {
+			}else if (url.equalsIgnoreCase("/listarExamesSemLaudo")) {
+				listarExamesSemLaudo(request, response);
+
+			}else if (url.equalsIgnoreCase("/listarExamesComLaudo")) {
+				listarExamesComLaudo(request, response);
+
+			}
+			else if (url.equalsIgnoreCase("/listarExames")) {
 				listarExames(request, response);
 
 			}else if (url.equalsIgnoreCase("/deletarExame")) {
@@ -237,6 +244,57 @@ public class ExameServlet extends HttpServlet {
 	}
 	
 	public void listarExames(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			 
+			 
+			response.setContentType("text/plain; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			Gson gson = new Gson();
+			ExameService exameService = new ExameService();
+			List<Exame> list =  exameService.getListOfExame();
+			
+			
+			
+			
+			System.out.println(list);
+			
+
+			out.print(gson.toJson(list));
+			out.flush();
+			out.close();
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	
+	public void listarExamesSemLaudo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			 
+			 
+			response.setContentType("text/plain; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			Gson gson = new Gson();
+			ExameService exameService = new ExameService();
+			List<Exame> list =  exameService.getListOfExameSemLaudo();
+			
+			
+			
+			
+			System.out.println(list);
+			
+
+			out.print(gson.toJson(list));
+			out.flush();
+			out.close();
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	public void listarExamesComLaudo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			 
 			 

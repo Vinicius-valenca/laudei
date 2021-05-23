@@ -19,6 +19,11 @@
     function dateFormat(value, row, index) {
     	   return moment(value).format('DD/MM/YYYY');
     	}
+    
+    function nomeFormat(value, row, index) {
+    	
+    	  return value.split('.')[0]
+    	}
  
     
     window.actionEvents = {

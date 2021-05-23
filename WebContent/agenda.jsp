@@ -55,7 +55,7 @@
            data-toggle="table"
            data-search="true"
            data-locale="pt-BR"
-           data-url="listarExames"
+           data-url="listarExamesComLaudo"
            data-mobile-responsive="true"
            data-check-on-init="true"
            data-sortable="true"
@@ -64,7 +64,7 @@
 											data-classes="table table-condensed"
 											data-sort-name="stargazers_count" data-sort-order="desc"
 											data-pagination="true" data-search="true"
-											data-show-columns="true" data-page-size="15"
+											data-show-columns="true" data-page-size="7"
 											data-page-list="[5, 10, 20, 50, 100, 200]"
 											data-pagination-first-text="Primeiro"
 											data-pagination-pre-text="<i class='glyphicon glyphicon glyphicon-chevron-left'></i>"
@@ -75,7 +75,7 @@
             
 											
 											<th data-field="nomePaciente" data-halign="center" data-width="160"
-												data-align="center" >Nome Paciente</th>
+												data-align="left" data-formatter="nomeFormat">Nome Paciente</th>
 											<th data-field="tpExame" data-halign="center" data-align="center"
 												data-width="80" data-sortable="true">Tipo Exame</th>
 											<th data-field="dtEntrada" data-halign="center"
@@ -99,6 +99,57 @@
         </thead>
     </table>
     </div>
+    
+    <div class="panel panel-default">
+    <table id="table"
+           data-toggle="table"
+           data-search="true"
+           data-locale="pt-BR"
+           data-url="listarExamesSemLaudo"
+           data-mobile-responsive="true"
+           data-check-on-init="true"
+           data-sortable="true"
+           data-sort-name="nome_completo"
+           data-toggle="table"
+											data-classes="table table-condensed"
+											data-sort-name="stargazers_count" data-sort-order="desc"
+											data-pagination="true" data-search="true"
+											data-show-columns="true" data-page-size="7"
+											data-page-list="[5, 10, 20, 50, 100, 200]"
+											data-pagination-first-text="Primeiro"
+											data-pagination-pre-text="<i class='glyphicon glyphicon glyphicon-chevron-left'></i>"
+											data-pagination-next-text="<i class='glyphicon glyphicon glyphicon-chevron-right'></i>"
+											data-pagination-last-text="Último" data-locale="pt-BR">
+        <thead>
+        <tr>
+            
+											
+											<th data-field="nomePaciente" data-halign="center" data-width="160"
+												data-align="left" data-formatter="nomeFormat" >Nome Paciente</th>
+											<th data-field="tpExame" data-halign="center" data-align="center"
+												data-width="80" data-sortable="true">Tipo Exame</th>
+											<th data-field="dtEntrada" data-halign="center"
+												data-align="center" data-width="80" data-sortable="true">Data entrada</th>
+												<th data-field="dtLaudo" data-halign="center"
+												data-align="center" data-width="80" data-sortable="true">Data laudo</th>
+											<th data-field="nomeMedico.nome_completo" data-width="180" data-halign="center"
+												data-align="center" data-sortable="true">Medico</th>
+												<th data-field="nomeClinica.nome_completo" data-width="180" data-halign="center"
+												data-align="center" data-sortable="true">Clinica</th>
+												<th data-halign="center" data-align="center"
+												data-width="40" data-formatter="actionFormatter1"
+												data-events="actionEvents1">Exame</th>
+											<th data-halign="center" data-align="center"
+												data-width="40" data-formatter="actionFormatter"
+												data-events="actionEvents">Laudo</th>
+												<th data-halign="center" data-align="center"
+												data-width="40" data-formatter="actionFormatter2"
+												data-events="actionEvents2">Deletar</th>
+        </tr>
+        </thead>
+    </table>
+    </div>
+    
     	<jsp:include page="dadosUsuario.jsp" />
     <jsp:include page="dadosAgenda.jsp" />
 

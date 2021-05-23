@@ -52,6 +52,9 @@
 		<url-pattern>/listarExames</url-pattern>
 		<url-pattern>/deletarExame</url-pattern>
 		<url-pattern>/exameArquivo</url-pattern>
+		<url-pattern>/listarExamesSemLaudo</url-pattern>
+		<url-pattern>/listarExamesComLaudo</url-pattern>
+		
 	</servlet-mapping>
 
 	<welcome-file-list>
