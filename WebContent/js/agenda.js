@@ -36,11 +36,9 @@
 									  this.reset();
 									});
 					$("#id").val(row.id);
-					$('#nomeLaudo').remove();
+					$('#nomeLaudo').replaceWith("Laudo - "+row.tpExame+" - "+row.nomePaciente.split('.')[0]);
 					$("#idPessoa").val($("#idPessoa1").val());
-					$('#nomeLaudo').append("Laudo - ");
-					$('#nomeLaudo').append(" - "+row.tpExame);
-					$('#nomeLaudo').append(" - "+row.nomePaciente);
+					
 					$("#examenome").val(row.examenome);
 					$("#laudo").val(row.laudo);
 					var ta = document.querySelector('textarea');
