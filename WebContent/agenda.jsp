@@ -50,7 +50,7 @@
     
 <div class=" col-xs-12  col-lg-5  col-md-5">
 					<div class="form-group" style="margin-top: 14px;">
-<b>Exames com laudo</b>
+<p style="text-decoration: underline; font-weight:bold;">Exames com laudo</p>
 </div></div>
 
 <div class="panel panel-default">
@@ -105,7 +105,7 @@
     
     <div class=" col-xs-12  col-lg-5  col-md-5">
 					<div class="form-group" style="margin-top: 14px;">
-<b>Exames sem laudo</b>
+<p style="text-decoration: underline; font-weight:bold;">Exames sem laudo</p>
 </div></div>
     
     <div class="panel panel-default">
