@@ -141,6 +141,26 @@ public List<Exame> getListOfExameSemLaudo(){
     return list;
 }
 
+public List<Exame> getListOfExameComLaudo(){
+    List<Exame> list = new ArrayList<Exame>();
+    Session session = HibernateUtil.openSession();
+    Transaction tx = null;        
+    try {
+        tx = session.getTransaction();
+        tx.begin();
+        list = session.createQuery("from Exame where laudo is NOT NULL").list();                        
+        tx.commit();
+    } catch (Exception e) {
+        if (tx != null) {
+            tx.rollback();
+        }
+        e.printStackTrace();
+    } finally {
+        session.close();
+    }
+    return list;
+}
+
 
 
  }

@@ -302,7 +302,7 @@ public class ExameServlet extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			Gson gson = new Gson();
 			ExameService exameService = new ExameService();
-			List<Exame> list =  exameService.getListOfExame();
+			List<Exame> list =  exameService.getListOfExameComLaudo();
 			
 			
 			
