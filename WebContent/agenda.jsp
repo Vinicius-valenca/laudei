@@ -62,7 +62,6 @@
            data-mobile-responsive="true"
            data-check-on-init="true"
            data-sortable="true"
-           data-sort-name="nome_completo"
            data-toggle="table"
 											data-classes="table table-condensed"
 											data-sort-name="stargazers_count" data-sort-order="desc"
@@ -109,7 +108,7 @@
 </div></div>
     
     <div class="panel panel-default">
-    <table id="table"
+    <table id="table2"
            data-toggle="table"
            data-search="true"
            data-locale="pt-BR"
@@ -117,7 +116,6 @@
            data-mobile-responsive="true"
            data-check-on-init="true"
            data-sortable="true"
-           data-sort-name="nome_completo"
            data-toggle="table"
 											data-classes="table table-condensed"
 											data-sort-name="stargazers_count" data-sort-order="desc"
@@ -140,8 +138,7 @@
 												data-align="center" data-width="90" data-sortable="true" data-formatter="dateFormat">Data entrada</th>
 												<th data-field="dtLaudo" data-halign="center"
 												data-align="center" data-width="90" data-sortable="true" data-formatter="dateFormat">Data laudo</th>
-											<th data-field="nomeMedico.nome_completo" data-width="120" data-halign="center"
-												data-align="center" data-sortable="true">Medico</th>
+											
 												<th data-field="nomeClinica.nome_completo" data-width="120" data-halign="center"
 												data-align="center" data-sortable="true">Clinica</th>
 												<th data-halign="center" data-align="center"

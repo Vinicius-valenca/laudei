@@ -28,8 +28,8 @@
     
     window.actionEvents = {
     		'click .edit' : function(e, value, row, index) {
-    			alert(moment(JSON.stringify(row.dtEntrada)).format('DD/MM/YYYY hh:mm'));
-    			console.log(moment(JSON.stringify(row.dtEntrada)))
+    			
+    			console.log(JSON.stringify(row))
     			
 
     			
