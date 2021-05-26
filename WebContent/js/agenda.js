@@ -17,7 +17,7 @@
     
     
     function dateFormat(value, row, index) {
-    	   return moment(value).format('DD/MM/YYYY');
+    	   return moment(value).format('DD/MM/YYYY hh:mm');
     	}
     
     function nomeFormat(value, row, index) {
@@ -28,7 +28,8 @@
     
     window.actionEvents = {
     		'click .edit' : function(e, value, row, index) {
-    			//alert(JSON.stringify(row));
+    			alert(moment(JSON.stringify(row.dtEntrada)).format('DD/MM/YYYY hh:mm'));
+    			console.log(moment(JSON.stringify(row.dtEntrada)))
     			
 
     			

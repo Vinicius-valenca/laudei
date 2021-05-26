@@ -77,26 +77,26 @@
         <tr>
             
 											
-											<th data-field="nomePaciente" data-halign="center" data-width="160"
+											<th data-field="nomePaciente" data-halign="center" data-width="150"
 												data-align="left" data-formatter="nomeFormat">Nome Paciente</th>
 											<th data-field="tpExame" data-halign="center" data-align="center"
-												data-width="80" data-sortable="true">Tipo Exame</th>
+												data-width="110" data-sortable="true">Tipo Exame</th>
 											<th data-field="dtEntrada" data-halign="center"
-												data-align="center" data-width="80" data-sortable="true">Data entrada</th>
+												data-align="center" data-width="90" data-sortable="true" data-formatter="dateFormat">Data entrada</th>
 												<th data-field="dtLaudo" data-halign="center"
-												data-align="center" data-width="80" data-sortable="true">Data laudo</th>
-											<th data-field="nomeMedico.nome_completo" data-width="180" data-halign="center"
+												data-align="center" data-width="90" data-sortable="true" data-formatter="dateFormat">Data laudo</th>
+											<th data-field="nomeMedico.nome_completo" data-width="120" data-halign="center"
 												data-align="center" data-sortable="true">Medico</th>
-												<th data-field="nomeClinica.nome_completo" data-width="180" data-halign="center"
+												<th data-field="nomeClinica.nome_completo" data-width="120" data-halign="center"
 												data-align="center" data-sortable="true">Clinica</th>
 												<th data-halign="center" data-align="center"
-												data-width="40" data-formatter="actionFormatter1"
+												data-width="60" data-formatter="actionFormatter1"
 												data-events="actionEvents1">Exame</th>
 											<th data-halign="center" data-align="center"
-												data-width="40" data-formatter="actionFormatter"
+												data-width="60" data-formatter="actionFormatter"
 												data-events="actionEvents">Laudo</th>
 												<th data-halign="center" data-align="center"
-												data-width="40" data-formatter="actionFormatter2"
+												data-width="60" data-formatter="actionFormatter2"
 												data-events="actionEvents2">Deletar</th>
         </tr>
         </thead>
@@ -132,26 +132,26 @@
         <tr>
             
 											
-											<th data-field="nomePaciente" data-halign="center" data-width="160"
-												data-align="left" data-formatter="nomeFormat" >Nome Paciente</th>
+											<th data-field="nomePaciente" data-halign="center" data-width="150"
+												data-align="left" data-formatter="nomeFormat">Nome Paciente</th>
 											<th data-field="tpExame" data-halign="center" data-align="center"
-												data-width="80" data-sortable="true">Tipo Exame</th>
+												data-width="110" data-sortable="true">Tipo Exame</th>
 											<th data-field="dtEntrada" data-halign="center"
-												data-align="center" data-width="80" data-sortable="true">Data entrada</th>
+												data-align="center" data-width="90" data-sortable="true" data-formatter="dateFormat">Data entrada</th>
 												<th data-field="dtLaudo" data-halign="center"
-												data-align="center" data-width="80" data-sortable="true">Data laudo</th>
-											<th data-field="nomeMedico.nome_completo" data-width="180" data-halign="center"
+												data-align="center" data-width="90" data-sortable="true" data-formatter="dateFormat">Data laudo</th>
+											<th data-field="nomeMedico.nome_completo" data-width="120" data-halign="center"
 												data-align="center" data-sortable="true">Medico</th>
-												<th data-field="nomeClinica.nome_completo" data-width="180" data-halign="center"
+												<th data-field="nomeClinica.nome_completo" data-width="120" data-halign="center"
 												data-align="center" data-sortable="true">Clinica</th>
 												<th data-halign="center" data-align="center"
-												data-width="40" data-formatter="actionFormatter1"
+												data-width="60" data-formatter="actionFormatter1"
 												data-events="actionEvents1">Exame</th>
 											<th data-halign="center" data-align="center"
-												data-width="40" data-formatter="actionFormatter"
+												data-width="60" data-formatter="actionFormatter"
 												data-events="actionEvents">Laudo</th>
 												<th data-halign="center" data-align="center"
-												data-width="40" data-formatter="actionFormatter2"
+												data-width="60" data-formatter="actionFormatter2"
 												data-events="actionEvents2">Deletar</th>
         </tr>
         </thead>
