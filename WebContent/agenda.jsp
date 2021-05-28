@@ -46,7 +46,32 @@
       <div class="row">
         <div class="span12">
           
+<div class="col-lg-12">
+										<div class="row">
+											<div class="col-xs-12 col-lg-4">
+												<div class="form-group">
+													<label>Mês de Referência</label>
+													<div class="input-group date" data-provide="datepicker"
+													data-date-format="mm/yyyy" data-date-start-view="months"
+														data-date-min-view-mode="months" data-date-autoclose="true">
+														<input id="mes_referencia" name="mes_referencia" 
+															type="text" class="form-control format_data_mes_ref">
+														<div class="input-group-addon">
+															<span class="glyphicon glyphicon-th"></span>
+														</div>
+													</div>
+												</div>
+											</div>
 
+											<div class="col-xs-12 col-lg-2">
+												<div class="form-group">
+													<label class=""></label>
+													<button type="button" id="btnBuscar"
+														class="btn btn-primary btn-sm btn-block">Buscar</button>
+												</div>
+											</div>
+										</div>
+									</div>
     
 <div class=" col-xs-12  col-lg-5  col-md-5">
 					<div class="form-group" style="margin-top: 14px;">
@@ -58,9 +83,7 @@
            data-toggle="table"
            data-search="true"
            data-locale="pt-BR"
-           data-url="listarExamesComLaudo"
            data-mobile-responsive="true"
-           data-check-on-init="true"
            data-sortable="true"
            data-toggle="table"
 											data-classes="table table-condensed"
@@ -112,9 +135,7 @@
            data-toggle="table"
            data-search="true"
            data-locale="pt-BR"
-           data-url="listarExamesSemLaudo"
            data-mobile-responsive="true"
-           data-check-on-init="true"
            data-sortable="true"
            data-toggle="table"
 											data-classes="table table-condensed"

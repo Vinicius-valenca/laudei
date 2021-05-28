@@ -24,7 +24,18 @@
     	
     	  return value.split('.')[0]
     	}
- 
+    startDateFormat = moment(moment().utc().valueOf()).format('MM/YYYY');
+	$('#mes_referencia').datepicker({
+		format: "mm/yyyy",
+	    startView: 1,
+	    minViewMode: 1,
+	    startDate: startDateFormat,
+		language : "pt-BR"
+	});
+	
+	$('.date').datepicker({
+		language : "pt-BR"
+	 });
     
     window.actionEvents = {
     		'click .edit' : function(e, value, row, index) {
@@ -218,6 +229,47 @@ $("#perfil").click(function() {
             }).show();
         } 
        
+       
+       $("#btnBuscar").click(function() {
+   		mes_ref = $('#mes_referencia').val();  
+   		
+   		$.ajax({
+   			type : 'GET',
+   			url : 'listarExamesComLaudo',
+   			data: { mes_ref : $('#mes_referencia').val() } ,
+   			contentType : 'application/json; charset=utf-8',
+   			dataType : 'json',
+   			success : function(retornoJson) {
+   				$('#table').bootstrapTable('load', retornoJson);
+   				
+   			
+   					console.log("retornoJson", retornoJson);
+   					//var lista= JSON.parse(retornoJson);	
+   					//console.log("lista", lista);
+   					//popularCampos(lista);
+   					
+   				
+   			}
+   		});
+   		
+   		$.ajax({
+   			type : 'GET',
+   			url : 'listarExamesSemLaudo',
+   			data: { mes_ref : mes_ref } ,
+   			contentType : 'application/json; charset=utf-8',
+   			dataType : 'json',
+   			success : function(retornoJson) {
+   				$('#table2').bootstrapTable('load', retornoJson);
+   				
+   					console.log("retornoJson", retornoJson);
+   					//var lista= JSON.parse(retornoJson);	
+   					//console.log("lista", lista);
+   					//popularCampos(lista);
+   					
+   				
+   			}
+   		});
+       });
        
     });
     

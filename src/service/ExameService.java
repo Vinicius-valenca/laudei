@@ -1,4 +1,5 @@
 package service;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -121,14 +122,14 @@ public List<Exame> getListOfExame(){
     return list;
 }
 
-public List<Exame> getListOfExameSemLaudo(){
+public List<Exame> getListOfExameSemLaudo(Date mes_ref,Date mes_ref2){
     List<Exame> list = new ArrayList<Exame>();
     Session session = HibernateUtil.openSession();
     Transaction tx = null;        
     try {
         tx = session.getTransaction();
         tx.begin();
-        list = session.createQuery("from Exame where laudo is NULL").list();                        
+        list = session.createQuery("from Exame where laudo is NULL AND cast(dtEntrada, date) BETWEEN '"+mes_ref+"' AND '"+mes_ref2+"'").list();                        
         tx.commit();
     } catch (Exception e) {
         if (tx != null) {
@@ -141,14 +142,14 @@ public List<Exame> getListOfExameSemLaudo(){
     return list;
 }
 
-public List<Exame> getListOfExameComLaudo(){
+public List<Exame> getListOfExameComLaudo(Date mes_ref,Date mes_ref2){
     List<Exame> list = new ArrayList<Exame>();
     Session session = HibernateUtil.openSession();
     Transaction tx = null;        
     try {
         tx = session.getTransaction();
         tx.begin();
-        list = session.createQuery("from Exame where laudo is NOT NULL").list();                        
+        list = session.createQuery("from Exame where laudo is NOT NULL AND cast(dtEntrada, date) BETWEEN '"+mes_ref+"' AND '"+mes_ref2+"'").list();                        
         tx.commit();
     } catch (Exception e) {
         if (tx != null) {
