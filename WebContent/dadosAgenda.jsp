@@ -95,7 +95,7 @@
 			
 					<div class="col-lg-4 col-xs-4">
 					<div class="form-group">
-        <button type="submit" id="btnSalvar" class="btn btn-primary">Salvar</button>
+        <button type="button" id="btnSalvar" class="btn btn-primary">Salvar</button>
         </div>
 			</div>
 			
