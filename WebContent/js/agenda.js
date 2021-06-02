@@ -133,8 +133,7 @@
     		if(form.valid()){
     			$("#form-cliente").ajaxSubmit({url: 'salvarLaudo', type: 'post',success: 
        			 function(data){
-       			if(data == "true"){
-       				alert("entrou")
+       			if(data == "true"){       				
                        Salvo();
                        	    		
                    }else{
