@@ -36,7 +36,7 @@
 							<div class="panel panel-default">
 	
 	<a data-target="#item-telefones">
-		<div class="panel-heading" ><div id="nomeLaudo">Laudo</div></div>
+		<div class="panel-heading" ><div id="nomeLaudo"></div></div>
 	</a>
 	<div id="item-info" class="panel-body panel-branco collapse in">
 	

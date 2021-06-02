@@ -41,14 +41,15 @@
     		'click .edit' : function(e, value, row, index) {
     			
     			console.log(JSON.stringify(row))
-    			
+    					
 
     			
 					$('#form-cliente').each (function(){
 									  this.reset();
 									});
 					$("#id").val(row.id);
-					$('#nomeLaudo').replaceWith("Laudo - "+row.tpExame+" - "+row.nomePaciente.split('.')[0]);
+					 $('#nomeLaudo').empty();
+					 $('#nomeLaudo').append("Laudo - "+row.tpExame+" - "+row.nomePaciente.split('.')[0]);
 					$("#idPessoa").val($("#idPessoa1").val());
 					
 					$("#examenome").val(row.examenome);
