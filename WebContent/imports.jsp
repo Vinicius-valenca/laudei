@@ -13,6 +13,10 @@
     <link href="css/dropzone.css" rel="stylesheet">
 <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
 <link rel="stylesheet" href="css/bootstrap-datepicker3.min.css">
+<link rel=  "stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+<link rel="stylesheet" href="css/wysiwyg.min.css">
+<link rel="stylesheet" href="css/highlight.min.css">
+
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -40,3 +44,6 @@
 <script src="js/jquery.validate.min.js"></script>
 <script src="js/validador.js"></script>
 <script src="js/dropzone.js"></script>
+
+<script src="js/highlight.js"></script>
+<script src="js/wysiwyg.min.js"></script>

@@ -62,10 +62,12 @@
 		
 
 			<div class="col-lg-12 col-xs-12">
-					<div class="form-group">
-						<textarea id="laudo" name="laudo"
-							type="textarea" class="form-control" rows="8"></textarea>
-					</div>
+					
+    <div class="form-group">
+        <label class="control-label" for="editor">Message:</label>
+        <textarea id="editor" class="form-control" rows="3"></textarea>
+    </div>
+
 				</div>
 		
 
