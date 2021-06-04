@@ -50,6 +50,8 @@
 <script src="js/commands.js"></script>
 <script src="js/templates.js"></script>
 <script src="js/bootstrap3-wysihtml5.min.js"></script>
+<script src="js/bootstrap-wysihtml5.pt-BR.js"></script>
+
 
 
 

@@ -65,7 +65,7 @@
 					
     <div class="form-group">
         
-        <textarea id="editor" class="form-control editor" rows="3"></textarea>
+        <textarea id="editor" name="laudo" class="form-control editor" rows="3"></textarea>
     </div>
 
 				</div>

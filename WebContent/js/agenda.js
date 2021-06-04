@@ -55,7 +55,15 @@
 					$("#idPessoa").val($("#idPessoa1").val());
 					
 					$("#examenome").val(row.examenome);
-					$("#editor").html( row.laudo);
+					
+					
+					
+					if(row.laudo===undefined){
+						$("#editor").html("");
+						
+					}else{
+						$("#editor").html( row.laudo);
+					}
 					
 					if($("#tpperfil").val()==="2"){
 						$("#btnSalvar" ).addClass( "disabled" );
@@ -100,7 +108,10 @@
     $(document).ready(function(){
     	
     	 // For init plugin use:
-        $('.editor').wysihtml5();
+        $('.editor').wysihtml5({locale: "pt-BR",  toolbar: {
+           
+            "color": true
+          },stylesheets: ["css/bootstrap3-wysiwyg5-color.css"]});
     	
    function Salvo(){
 	   new Noty({
