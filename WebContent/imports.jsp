@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
 <link rel="stylesheet" href="css/bootstrap-datepicker3.min.css">
 <link rel=  "stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-<link rel="stylesheet" href="css/wysiwyg.min.css">
-<link rel="stylesheet" href="css/highlight.min.css">
+<link rel="stylesheet" href="css/bootstrap3-wysihtml5.min.css"/>
+
 
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -45,5 +45,12 @@
 <script src="js/validador.js"></script>
 <script src="js/dropzone.js"></script>
 
-<script src="js/highlight.js"></script>
-<script src="js/wysiwyg.min.js"></script>
+<script src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
+<script src="js/bootstrap3-wysihtml5.all.js"></script>
+<script src="js/commands.js"></script>
+<script src="js/templates.js"></script>
+<script src="js/bootstrap3-wysihtml5.min.js"></script>
+
+
+
+

@@ -64,8 +64,8 @@
 			<div class="col-lg-12 col-xs-12">
 					
     <div class="form-group">
-        <label class="control-label" for="editor">Message:</label>
-        <textarea id="editor" class="form-control" rows="3"></textarea>
+        
+        <textarea id="editor" class="form-control editor" rows="3"></textarea>
     </div>
 
 				</div>

@@ -1,5 +1,7 @@
  
-    
+      $.fn.datepicker.defaults.language = 'pt-BR';
+      
+      
     function actionFormatter(value, row, index) {
     	return "<a href='#'><i class='icon-large icon-edit edit'></i></a>"
     	
@@ -53,15 +55,8 @@
 					$("#idPessoa").val($("#idPessoa1").val());
 					
 					$("#examenome").val(row.examenome);
-					 $('#editor').wysiwyg('setContent', row.laudo);
-
-					//$("#editor").val(row.laudo);
-					var ta = document.querySelector('textarea');
-			    	ta.style.display = 'none';
-			    	autosize(ta);
-			    	ta.style.display = '';
-
-			    	autosize.update(ta);
+					$("#editor").html( row.laudo);
+					
 					if($("#tpperfil").val()==="2"){
 						$("#btnSalvar" ).addClass( "disabled" );
 						$("#btnSalvar").prop("disabled",true);
@@ -74,6 +69,8 @@
     			 
     		}
     	};
+    
+
     
     window.actionEvents2 = {
     		'click .trash' : function(e, value, row, index) {
@@ -103,29 +100,7 @@
     $(document).ready(function(){
     	
     	 // For init plugin use:
-        $('#editor').wysiwyg({
-            toolbar: [
-                ['mode'],
-                ['operations', ['undo', 'rendo', 'cut', 'copy', 'paste']],
-                ['styles'],
-                ['fonts', ['select', 'size']],
-                ['text', ['bold', 'italic', 'underline', 'strike', 'subscript', 'superscript', 'font-color', 'bg-color']],
-                ['align', ['left', 'center', 'right', 'justify']],
-                ['lists', ['unordered', 'ordered', 'indent', 'outdent']],
-                ['components', ['table']],
-                ['intervals', ['line-height', 'letter-spacing']],
-                ['insert', ['emoji', 'link', 'image', 'video', 'symbol']],
-                ['special', ['print', 'unformat', 'visual', 'clean']],
-            ],
-            fontSizes: ['8px', ... '48px'],
-            fontSizeDefault: '12px',
-            fontFamilies: ['Open Sans', 'Arial', ... 'Times New Roman', 'Verdana'],
-            fontFamilyDefault: 'Open Sans',
-            mode: 'editor',
-            highlight: true,
-            debug: false
-        });
-       
+        $('.editor').wysihtml5();
     	
    function Salvo(){
 	   new Noty({
