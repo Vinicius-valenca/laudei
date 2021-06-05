@@ -108,10 +108,10 @@
     $(document).ready(function(){
     	
     	 // For init plugin use:
-        $('.editor').wysihtml5({locale: "pt-BR",  toolbar: {
+       // $('.editor').wysihtml5({locale: "pt-BR",  toolbar: {
            
-            "color": true
-          },stylesheets: ["css/bootstrap3-wysiwyg5-color.css"]});
+         //   "color": true
+          //},stylesheets: ["css/bootstrap3-wysiwyg5-color.css"]});
     	
    function Salvo(){
 	   new Noty({
