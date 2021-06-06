@@ -36,7 +36,7 @@
 <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-datepicker.pt-BR.min.js"></script>
 <script src="js/buscar-cep.js"></script> 
-<script src="js/autosize.js"></script>
+
 <script src="js/jquery.mask.min.js"></script>
 <script src="js/jquery.maskMoney.js"></script>
 <script src="js/moment.js"></script>
@@ -53,6 +53,6 @@
 <script src="js/bootstrap-wysihtml5.pt-BR.js"></script>
 
 
-
+<script src="js/autosize.js"></script>
 
 

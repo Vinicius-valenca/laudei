@@ -63,13 +63,14 @@
 						$("#editor").val("");
 					}else{
 						//$("#editor").html( row.laudo);
-						$("#editor").val(row.laudo);
-						var ta = document.querySelector('textarea');
-				    	ta.style.display = 'none';
-				    	autosize(ta);
-				    	ta.style.display = '';
+						//$("#editor").val(row.laudo);
+						
+						var ta = document.querySelector('#editor');
+						
 
-				    	autosize.update(ta);
+						// Change value
+						ta.value = row.laudo;
+						autosize.update(ta);
 					}
 					
 					if($("#tpperfil").val()==="2"){
