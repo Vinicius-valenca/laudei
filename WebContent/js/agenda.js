@@ -60,10 +60,10 @@
 					
 					if(row.laudo===undefined){
 						//$("#editor").html("");
-						$("#laudo").val("");
+						$("#editor").val("");
 					}else{
 						//$("#editor").html( row.laudo);
-						$("#laudo").val(row.laudo);
+						$("#editor").val(row.laudo);
 						var ta = document.querySelector('textarea');
 				    	ta.style.display = 'none';
 				    	autosize(ta);
