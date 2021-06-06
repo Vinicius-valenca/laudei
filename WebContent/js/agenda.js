@@ -59,10 +59,17 @@
 					
 					
 					if(row.laudo===undefined){
-						$("#editor").html("");
-						
+						//$("#editor").html("");
+						$("#laudo").val("");
 					}else{
-						$("#editor").html( row.laudo);
+						//$("#editor").html( row.laudo);
+						$("#laudo").val(row.laudo);
+						var ta = document.querySelector('textarea');
+				    	ta.style.display = 'none';
+				    	autosize(ta);
+				    	ta.style.display = '';
+
+				    	autosize.update(ta);
 					}
 					
 					if($("#tpperfil").val()==="2"){
