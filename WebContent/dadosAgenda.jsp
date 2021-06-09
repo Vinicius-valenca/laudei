@@ -69,6 +69,15 @@
     </div>
 
 				</div>
+				
+				<div class="col-lg-12 col-xs-12">
+					<h5>Obs:</h2>
+    <div class="form-group">
+        
+        <textarea id="obs" name="lauobsdo" class="form-control" rows="3">SEM FUNCIONAR</textarea>
+    </div>
+
+				</div>
 		
 
 	</div>
