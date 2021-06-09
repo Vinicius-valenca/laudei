@@ -58,6 +58,14 @@
 					
 					
 					
+					if(row.obs===undefined){
+						$("#obs").val("");
+					}else{
+				        $("#obs").html( row.obs);
+						
+					
+					}
+					
 					if(row.laudo===undefined){
 						$("#editor").html("");
 						$("#editor").val("");
@@ -65,20 +73,17 @@
 				        $("#editor").html( row.laudo);
 						$("#editor").val(row.laudo);
 						
-						var ta = document.querySelector('#editor');
-						
-
-						// Change value
-						//ta.value = row.laudo;
-						//autosize.update(ta);
+					
 					}
 					
-					if($("#tpperfil").val()==="2"){
-						$("#btnSalvar" ).addClass( "disabled" );
-						$("#btnSalvar").prop("disabled",true);
+					if($("#tpperfil").val()==="2"){	
+						//$('#editor').data('wysihtml5').editor.composer.disable();
+						//$('#editor').attr('contenteditable', false);
+						$('textarea[name="laudoobs"]').prop('disabled', false); // disable
 					}else{
-						$("#btnSalvar" ).removeClass( "disabled" );
-						$("#btnSalvar" ).prop("disabled",false);
+						
+						//$('#editor').data('wysihtml5').editor.composer.enable();
+						$('textarea[name="laudoobs"]').prop('disabled', true); // disable
 					}
 					
 					$('#myModal').modal('show');

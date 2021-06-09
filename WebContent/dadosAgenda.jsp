@@ -52,8 +52,7 @@
 							
 							 <input id="examenome" name="examenome" type="hidden"
 							class="form-control" value="${examenome}" readonly>
-				 <input id="file" name="file" type="hidden"
-							class="form-control" value="${file}" readonly>
+				
 
 		
 <div class="col-lg-12 col-xs-12">
@@ -71,10 +70,10 @@
 				</div>
 				
 				<div class="col-lg-12 col-xs-12">
-					<h5>Obs:</h2>
+					<h5>Observação:</h2>
     <div class="form-group">
         
-        <textarea id="obs" name="lauobsdo" class="form-control" rows="3">SEM FUNCIONAR</textarea>
+        <textarea id="obs" name="obs" class="form-control" rows="3">SEM FUNCIONAR</textarea>
     </div>
 
 				</div>

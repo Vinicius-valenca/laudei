@@ -64,6 +64,7 @@ public class LaudoServlet extends HttpServlet {
 			String idExame = request.getParameter("id");
 			String id = request.getParameter("idPessoa");
 			String laudo = request.getParameter("laudo");
+			String obs = request.getParameter("obs");
 			Pessoa p = null;
 			
 			
@@ -74,11 +75,16 @@ public class LaudoServlet extends HttpServlet {
 			exame = exameService.isExameExists(Long.valueOf(idExame));
 			System.out.println(exame);
 			System.out.println("laudo "+laudo);
-			exame.setLaudo(laudo);
+			if(p.getTpPerfil().equals("2")){
+				exame.setObs(obs);
+				System.out.println("obs "+obs);
+			}else{
+				exame.setLaudo(laudo);
+				exame.setDtLaudo(new java.sql.Date(System.currentTimeMillis()));
 
-			exame.setDtLaudo(new java.sql.Date(System.currentTimeMillis()));
-
-			exame.setNomeMedico(p);
+				exame.setNomeMedico(p);
+			}
+			
 
 			resposta = exameService.register(exame);
 

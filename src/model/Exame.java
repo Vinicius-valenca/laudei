@@ -37,6 +37,7 @@ public class Exame implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtLaudo;
 	private String tpExame;
+	private String obs;
 	private String examenome;
 	private String exameLink;
 	private Boolean laudoVisto;
@@ -45,12 +46,22 @@ public class Exame implements Serializable {
 
 	
 
+
+
+	public String getObs() {
+		return obs;
+	}
+
+	public void setObs(String obs) {
+		this.obs = obs;
+	}
+
 	@Override
 	public String toString() {
 		return "Exame [id=" + id + ", nomePaciente=" + nomePaciente + ", nomeClinica=" + nomeClinica + ", nomeMedico="
-				+ nomeMedico + ", dtEntrada=" + dtEntrada + ", dtLaudo=" + dtLaudo + ", tpExame=" + tpExame
-				+ ", examenome=" + examenome + ", exameLink=" + exameLink + ", laudoVisto=" + laudoVisto + ", laudo="
-				+ laudo + "]";
+				+ nomeMedico + ", dtEntrada=" + dtEntrada + ", dtLaudo=" + dtLaudo + ", tpExame=" + tpExame + ", obs="
+				+ obs + ", examenome=" + examenome + ", exameLink=" + exameLink + ", laudoVisto=" + laudoVisto
+				+ ", laudo=" + laudo + "]";
 	}
 
 	private String laudo;
@@ -127,7 +138,7 @@ public class Exame implements Serializable {
 	}
 
 	public Exame(Long id, String nomePaciente, Pessoa nomeClinica, Pessoa nomeMedico, Date dtEntrada, Date dtLaudo,
-			String tpExame, String examenome, String exameLink, Boolean laudoVisto, String laudo) {
+			String tpExame, String examenome, String exameLink, Boolean laudoVisto, String laudo, String obs) {
 		super();
 		this.id = id;
 		this.nomePaciente = nomePaciente;
@@ -140,6 +151,7 @@ public class Exame implements Serializable {
 		this.exameLink = exameLink;
 		this.laudoVisto = laudoVisto;
 		this.laudo = laudo;
+		this.obs = obs;
 	}
 
 	public String getExamenome() {
