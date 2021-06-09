@@ -73,7 +73,7 @@
 					<h5>Observação:</h2>
     <div class="form-group">
         
-        <textarea id="obs" name="obs" class="form-control" rows="3">SEM FUNCIONAR</textarea>
+        <textarea id="obs" name="obs" class="form-control" rows="3"></textarea>
     </div>
 
 				</div>
