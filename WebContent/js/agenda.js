@@ -59,18 +59,18 @@
 					
 					
 					if(row.laudo===undefined){
-						//$("#editor").html("");
+						$("#editor").html("");
 						$("#editor").val("");
 					}else{
-						//$("#editor").html( row.laudo);
-						//$("#editor").val(row.laudo);
+				        $("#editor").html( row.laudo);
+						$("#editor").val(row.laudo);
 						
 						var ta = document.querySelector('#editor');
 						
 
 						// Change value
-						ta.value = row.laudo;
-						autosize.update(ta);
+						//ta.value = row.laudo;
+						//autosize.update(ta);
 					}
 					
 					if($("#tpperfil").val()==="2"){
@@ -116,10 +116,10 @@
     $(document).ready(function(){
     	
     	 // For init plugin use:
-       // $('.editor').wysihtml5({locale: "pt-BR",  toolbar: {
+        $('.editor').wysihtml5({locale: "pt-BR",  toolbar: {
            
-         //   "color": true
-          //},stylesheets: ["css/bootstrap3-wysiwyg5-color.css"]});
+            "color": true
+          },stylesheets: ["css/bootstrap3-wysiwyg5-color.css"]});
     	
    function Salvo(){
 	   new Noty({
