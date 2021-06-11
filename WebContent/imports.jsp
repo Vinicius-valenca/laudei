@@ -51,6 +51,8 @@
 <script src="js/templates.js"></script>
 <script src="js/bootstrap3-wysihtml5.min.js"></script>
 <script src="js/bootstrap-wysihtml5.pt-BR.js"></script>
+<script src="js/jquery.wysihtml5_size_matters.js"></script>
+
 
 
 <script src="js/autosize.js"></script>
