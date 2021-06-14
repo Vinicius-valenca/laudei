@@ -590,7 +590,7 @@
 					}else{
 				        $("#editor").html( row.laudo);
 						$("#editor").val(row.laudo);
-						
+						copyClipboard(row.laudo)
 					
 					}
 					
@@ -635,8 +635,14 @@
     		}
     	};
     
-	
-	
+    function copyClipboard(text) {
+    	var $temp = $("<input>");
+    	  $("body").append($temp);
+    	  $temp.val($(text).text()).select();
+    	  document.execCommand("copy");
+    	  $temp.remove();
+
+    }
     
     $(document).ready(function(){
     	
