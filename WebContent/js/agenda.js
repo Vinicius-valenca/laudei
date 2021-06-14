@@ -595,7 +595,7 @@
 					}
 					
 					if($("#tpperfil").val()==="2"){	
-						 $('#editor').data("wysihtml5").disable();
+						 //$('#editor').data("wysihtml5").disable();
 						
 						//$('#editor').data('wysihtml5').editor.composer.disable();
 						//$('#editor').attr('contenteditable', false);
