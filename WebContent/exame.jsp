@@ -3,7 +3,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<title>Sistema - Cart&oacute;rio</title>
+<title>Sistema - LaudeiTelemedicina</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <jsp:include page="imports.jsp" />
