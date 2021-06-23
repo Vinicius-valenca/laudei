@@ -37,3 +37,8 @@ function showDiv(divId, element)
    
 }
 
+
+//"myAwesomeDropzone" is the camelized version of the HTML element's ID
+Dropzone.options.myAwesomeDropzone = {
+		timeout:6000
+  };

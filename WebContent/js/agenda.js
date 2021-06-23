@@ -629,6 +629,9 @@
     	},stylesheets: ["css/bootstrap3-wysiwyg5-color.css"] ,parserRules:   wysihtml5ParserRules,});
         
     
+        
+       
+        
     	
    function Salvo(){
 	   new Noty({
