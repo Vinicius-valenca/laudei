@@ -74,6 +74,8 @@
     <div class="form-group">
         
         <textarea id="obs" name="obs" class="form-control" rows="3"></textarea>
+        
+        <textarea name="hide" id="hide" style="display:none;"></textarea>
     </div>
 
 				</div>
@@ -103,14 +105,26 @@
         <div class="col-lg-12 col-xs-12">
         			
 			
-					<div class="col-lg-4 col-xs-4">
+					<div class="col-lg-3 col-xs-3">
 					<div class="form-group">
         <button type="button" id="btnSalvar" class="btn btn-primary">Salvar</button>
         </div>
 			</div>
 			
+						<div class="col-lg-3 col-xs-3">
+					<div class="form-group">
+        <button type="button" id="btnsformatacao" class="btn btn-primary">Copiar sem formatação</button>
+        </div>
+			</div>
 			
-			<div class="col-lg-6 col-xs-6">
+				<div class="col-lg-3 col-xs-3">
+					<div class="form-group">
+        <button type="button" id="btncformatacao" class="btn btn-primary">Copiar com formatação</button>
+        </div>
+			</div>
+			
+			
+			<div class="col-lg-3 col-xs-3">
 					<div class="form-group">
         <button type="button" id="btnClose" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
      </div>

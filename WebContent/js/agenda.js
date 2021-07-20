@@ -604,7 +604,7 @@
     	};
     
     function copyClipboard(text) {
-    	alert($('#editor').wysihtml5());
+    	
     	var $temp = $("<input>");
     	  $("body").append($temp);
     	  $temp.val($($('#editor').wysihtml5()).text()).select();
@@ -752,6 +752,55 @@ $("#perfil").click(function() {
            });
          });
        
+       
+       $('#btncformatacao').click(function()
+    	       {
+    	   copyRichText($("#editor").val());    	   
+    	         });
+       
+       
+       
+       $('#btnsformatacao').click(function()
+    	       {
+    	   copyToClipboard($("#editor").val())
+    	         });
+       
+       
+       
+       
+       function copyToClipboard(text) {
+    	   
+    	   const listener = function(ev) {
+    	     ev.preventDefault();
+    	     ev.clipboardData.setData('text/plain', remove_tags(text));
+    	   };
+    	   document.addEventListener('copy', listener);
+    	   document.execCommand('copy');
+    	   document.removeEventListener('copy', listener);
+    	 }
+       
+       function copyRichText(text) {
+    	   const listener = function(ev) {
+    	     ev.preventDefault();
+    	     ev.clipboardData.setData('text/html', text);
+    	     ev.clipboardData.setData('text/plain', text);
+    	   };
+    	   document.addEventListener('copy', listener);
+    	   document.execCommand('copy');
+    	   document.removeEventListener('copy', listener);
+    	 }
+       
+       function remove_tags(html) {
+           html = html.replace(/<br>/g, "");
+           html = html.replace(/(?:\r\n|\r|\n)/g, '');
+           var tmp = document.createElement("DIV");
+           tmp.innerHTML = html;
+           html = tmp.textContent || tmp.innerText;
+           html = html.replace(/\$br\$/g, "");
+           return html;
+       }
+
+    	 
        
        
        function Erro(){
