@@ -64,7 +64,7 @@
 					
     <div class="form-group">
         
-        <textarea id="editor" name="laudo" class="form-control editor" rows="3"></textarea>
+        <textarea id="editor" name="laudo" class="form-control editor" rows="3" style="overflow: hidden" onkeyup="this.style.height='24px'; this.style.height = this.scrollHeight + 12 + 'px';"></textarea>
     </div>
 
 				</div>

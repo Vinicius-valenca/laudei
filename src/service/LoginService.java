@@ -24,8 +24,7 @@ public class LoginService {
         Session session = HibernateUtil.openSession();
         Transaction tx = null;
         Pessoa pessoa = null;
-        try {
-        	System.out.println("teste");
+        try {        	
         	tx = session.getTransaction();
             tx.begin();
             Query query = session.createQuery("from Pessoa where email='"+email+"'");

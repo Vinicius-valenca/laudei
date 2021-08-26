@@ -488,6 +488,8 @@
       $.fn.datepicker.defaults.language = 'pt-BR';
       
       
+      
+      
     function actionFormatter(value, row, index) {
     	return "<a href='#'><i class='icon-large icon-edit edit'></i></a>"
     	
@@ -552,6 +554,10 @@
 					
 					}
 					
+				
+						 					
+						 				
+					
 					if(row.laudo===undefined){
 						$("#editor").html("");
 						$("#editor").val("");
@@ -559,7 +565,9 @@
 				        $("#editor").html( row.laudo);
 						$("#editor").val(row.laudo);
 						//copyClipboard(row.laudo)
-					
+
+						$("#editor").style.height = '0px';     //Reset height, so that it not only grows but also shrinks
+						$("#editor").style.height = ($("#editor").scrollHeight+10) + 'px';    //Set new height
 					}
 					
 					if($("#tpperfil").val()==="2"){	
@@ -579,7 +587,9 @@
     		}
     	};
     
-
+ 
+    
+    
     
     window.actionEvents2 = {
     		'click .trash' : function(e, value, row, index) {
@@ -616,17 +626,7 @@
     $(document).ready(function(){
     	
     	 // For init plugin use:
-        $('.editor').wysihtml5({locale: "pt-BR",  toolbar: {
-           
-            "color": true,
-           },"events": {
-       		"load": function() { 
-    			console.log("Loaded!");
-    		},
-    		"blur": function() { 
-    			console.log("Blured");
-    		}
-    	},stylesheets: ["css/bootstrap3-wysiwyg5-color.css"] ,parserRules:   wysihtml5ParserRules,});
+      
         
     
         
