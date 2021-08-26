@@ -566,8 +566,7 @@
 						$("#editor").val(row.laudo);
 						//copyClipboard(row.laudo)
 
-						$("#editor").style.height = '0px';     //Reset height, so that it not only grows but also shrinks
-						$("#editor").style.height = ($("#editor").scrollHeight+10) + 'px';    //Set new height
+						
 					}
 					
 					if($("#tpperfil").val()==="2"){	
