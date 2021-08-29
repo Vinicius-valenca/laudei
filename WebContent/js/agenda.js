@@ -549,7 +549,7 @@
 					if(row.obs===undefined){
 						$("#obs").val("");
 					}else{
-				        $("#obs").html( row.obs);
+				        $("#obs").val( row.obs);
 						
 					
 					}
@@ -559,10 +559,10 @@
 						 				
 					
 					if(row.laudo===undefined){
-						$("#editor").html("");
+						
 						$("#editor").val("");
 					}else{
-				        $("#editor").html( row.laudo);
+				        
 						$("#editor").val(row.laudo);
 						//copyClipboard(row.laudo)
 
