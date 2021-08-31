@@ -81,6 +81,8 @@ public class LaudoServlet extends HttpServlet {
 			}else{
 				exame.setLaudo(laudo);
 				exame.setDtLaudo(new java.sql.Date(System.currentTimeMillis()));
+				exame.setObs(obs);
+				System.out.println("obs "+obs);
 
 				exame.setNomeMedico(p);
 			}
