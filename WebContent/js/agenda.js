@@ -507,7 +507,7 @@
     
     
     function dateFormat(value, row, index) {
-    	   return moment(value).format('DD/MM/YYYY hh:mm');
+    	   return moment(value).format('DD/MM/YYYY HH:mm');
     	}
     
     function nomeFormat(value, row, index) {
