@@ -18,8 +18,7 @@ public boolean register(Exame exame){
 	
 	 Transaction tx = null;	
 	 try {
-		 tx = session.getTransaction();
-		 tx.begin();
+		 tx = session.beginTransaction(); 
 		 session.saveOrUpdate(exame);		
 		 tx.commit();
 	 } catch (Exception e) {
@@ -39,8 +38,7 @@ public boolean isExameExists(Exame exame){
 	 boolean result = false;
 	 Transaction tx = null;
 	 try{
-		 tx = session.getTransaction();
-		 tx.begin();
+		 tx = session.beginTransaction(); 
 		 Query query = session.createQuery("from Exame where Id='"+exame.getId()+"'");
 		 Exame e = (Exame)query.uniqueResult();
 		 tx.commit();
@@ -61,8 +59,7 @@ public Exame isExameExists(Long id){
 	 Transaction tx = null;
 	 System.out.println("teste");
 	 try{
-		 tx = session.getTransaction();
-		 tx.begin();
+		 tx = session.beginTransaction(); 
 		 Query query = session.createQuery("from Exame where Id='"+id+"'");
 		 exame =  (Exame) session.load(Exame.class, new Long(id));
 		 System.out.println("teste222");
@@ -85,8 +82,7 @@ public boolean delete(Exame e){
 	boolean result = false;
 	Transaction tx = null;
 	try{
-		 tx = session.getTransaction();
-		 tx.begin();
+		tx = session.beginTransaction(); 
 		 Query query = session.createQuery("from Exame where id='"+e.getId()+"'");
 		  session.delete(e);
 		 result=true;
@@ -107,8 +103,7 @@ public List<Exame> getListOfExame(){
     Session session = HibernateUtil.openSession();
     Transaction tx = null;        
     try {
-        tx = session.getTransaction();
-        tx.begin();
+    	tx = session.beginTransaction(); 
         list = session.createQuery("from Exame").list();                        
         tx.commit();
     } catch (Exception e) {
@@ -127,8 +122,7 @@ public List<Exame> getListOfExameSemLaudo(Date mes_ref,Date mes_ref2){
     Session session = HibernateUtil.openSession();
     Transaction tx = null;        
     try {
-        tx = session.getTransaction();
-        tx.begin();
+    	tx = session.beginTransaction(); 
         list = session.createQuery("from Exame where laudo is NULL AND cast(dtEntrada, date) BETWEEN '"+mes_ref+"' AND '"+mes_ref2+"'").list();                        
         tx.commit();
     } catch (Exception e) {
@@ -147,8 +141,7 @@ public List<Exame> getListOfExameComLaudo(Date mes_ref,Date mes_ref2){
     Session session = HibernateUtil.openSession();
     Transaction tx = null;        
     try {
-        tx = session.getTransaction();
-        tx.begin();
+    	tx = session.beginTransaction(); 
         list = session.createQuery("from Exame where laudo is NOT NULL AND cast(dtEntrada, date) BETWEEN '"+mes_ref+"' AND '"+mes_ref2+"'").list();                        
         tx.commit();
     } catch (Exception e) {

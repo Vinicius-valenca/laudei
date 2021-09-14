@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
 <link href="css/bootstrap-template.min.css" rel="stylesheet">
-
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <link rel="stylesheet" href="css/bootstrap-table.css">
 <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 <link href="css/font.css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
