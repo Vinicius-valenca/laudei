@@ -13,7 +13,8 @@ public boolean register(Pessoa user){
 	
 	 Transaction tx = null;	
 	 try {
-		 tx = session.beginTransaction(); 
+		 tx = session.getTransaction();
+		 tx.begin();
 		 session.saveOrUpdate(user);		
 		 tx.commit();
 	 } catch (Exception e) {
@@ -34,7 +35,8 @@ public boolean isUserExists(Pessoa user){
 	 boolean result = false;
 	 Transaction tx = null;
 	 try{
-		 tx = session.beginTransaction(); 
+		 tx = session.getTransaction();
+		 tx.begin();
 		 Query query = session.createQuery("from Pessoa where id='"+user.getId()+"'");
 		 Pessoa u = (Pessoa)query.uniqueResult();
 		 tx.commit();
@@ -55,7 +57,8 @@ public Pessoa isUserExists(Long id){
 	 Transaction tx = null;
 	
 	 try{
-		 tx = session.beginTransaction(); 
+		 tx = session.getTransaction();
+		 tx.begin();
 		 Query query = session.createQuery("from Pessoa where Id='"+id+"'");
 		 pessoa =  (Pessoa) session.load(Pessoa.class, new Long(id));
 		 System.out.println("teste!????!" + pessoa);
@@ -76,7 +79,8 @@ public boolean delete(Pessoa p){
 	boolean result = false;
 	Transaction tx = null;
 	try{
-		tx = session.beginTransaction(); 
+		 tx = session.getTransaction();
+		 tx.begin();
 		 Query query = session.createQuery("from Pessoa where Id='"+p.getId()+"'");
 		  session.delete(p);
 		 result=true;

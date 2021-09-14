@@ -25,8 +25,9 @@ public class LoginService {
         Transaction tx = null;
         Pessoa pessoa = null;
         try {
-        	
-        	tx = session.beginTransaction();           
+       	
+        	tx = session.getTransaction();
+            tx.begin();
             Query query = session.createQuery("from Pessoa where email='"+email+"'");
             pessoa = (Pessoa)query.uniqueResult();
             if (!tx.wasCommitted())
@@ -47,7 +48,8 @@ public class LoginService {
         Session session = HibernateUtil.openSession();
         Transaction tx = null;        
         try {
-        	tx = session.beginTransaction(); 
+            tx = session.getTransaction();
+            tx.begin();
             list = session.createQuery("from Pessoa").list();                        
             tx.commit();
         } catch (Exception e) {
