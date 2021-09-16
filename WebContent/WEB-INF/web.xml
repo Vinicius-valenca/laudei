@@ -45,6 +45,7 @@
 	<servlet-mapping>
 		<servlet-name>LaudoServlet</servlet-name>
 		<url-pattern>/salvarLaudo</url-pattern>
+		<url-pattern>/validarLaudo</url-pattern>
 	</servlet-mapping>
 		<servlet-mapping>
 		<servlet-name>ExameServlet</servlet-name>

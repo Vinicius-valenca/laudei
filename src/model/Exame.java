@@ -4,10 +4,12 @@ package model;
 import java.io.Serializable;
 import java.sql.Blob;
 import java.util.Date;
+import java.util.UUID;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,6 +20,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
+
 @Entity
 @Table(name = "Exames")
 public class Exame implements Serializable {
@@ -25,6 +30,11 @@ public class Exame implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	@Column(name = "code", unique = true, nullable = false)
+	@Type(type="pg-uuid")
+	private UUID code;
 	private String nomePaciente;
 	@OneToOne
 	@JoinColumn(name = "nomeClinica", referencedColumnName = "id")
@@ -138,7 +148,7 @@ public class Exame implements Serializable {
 	}
 
 	public Exame(Long id, String nomePaciente, Pessoa nomeClinica, Pessoa nomeMedico, Date dtEntrada, Date dtLaudo,
-			String tpExame, String examenome, String exameLink, Boolean laudoVisto, String laudo, String obs) {
+			String tpExame, String examenome, String exameLink, Boolean laudoVisto, String laudo, String obs, UUID code) {
 		super();
 		this.id = id;
 		this.nomePaciente = nomePaciente;
@@ -152,6 +162,15 @@ public class Exame implements Serializable {
 		this.laudoVisto = laudoVisto;
 		this.laudo = laudo;
 		this.obs = obs;
+		this.code = code;
+	}
+
+	public UUID getCode() {
+		return code;
+	}
+
+	public void setCode(UUID code) {
+		this.code = code;
 	}
 
 	public String getExamenome() {
