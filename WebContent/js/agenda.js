@@ -532,7 +532,7 @@
     			
     			console.log(JSON.stringify(row))
     					
-
+var validar = "Acesso ao laudo na plataforma pelo link www.laudeitelemedicina.com.br/validar digitando o seguinte codigo: "+row.code  
     			
 					$('#form-cliente').each (function(){
 									  this.reset();
@@ -563,7 +563,8 @@
 						$("#editor").val("");
 					}else{
 				        
-						$("#editor").val(row.laudo);
+						$("#editor").val(row.laudo + validar);
+						
 						//copyClipboard(row.laudo)
 
 						
