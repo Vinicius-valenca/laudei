@@ -679,6 +679,43 @@
     		}
     	});
     	
+    	
+    	$("#btnValidar").click(function() {    		
+    		var form = $( "#form-externo" );
+    		form.validate();    		
+    		if(form.valid()){
+    			$("#form-externo").ajaxSubmit({url: 'validarLaudo', type: 'post',success: 
+       			 function(data){
+       			 var teste = JSON.parse(data)
+    			
+    					
+       			 
+       			if(data != "null"){       				
+                       $('#codigo').hide();
+                       	    				
+					 $('#nomeLaudo').empty();
+					 $('#nomeLaudo').append("Laudo - "+JSON.stringify(teste.tpExame)+" - "+JSON.stringify(teste.nomePaciente).split('.')[0]);
+					
+					$("#laudo").val(JSON.stringify(teste.laudo));
+                       	    					
+                       $('#exame').show();
+                       
+                   }else{
+                        new Noty({
+                type: 'error',
+                layout: 'topRight',
+                timeout: '600',
+                text: 'Verifique o codigo digitado.',
+            }).show();
+                   }
+       			 $('#myModal').modal('hide');
+       		
+       			}} )
+    		}else{
+    			   Erro();
+    		}
+    	});
+    	
     	$("#btnDeletar").click(function() {
     		if (!$(this).hasClass('disabled')) {
     			

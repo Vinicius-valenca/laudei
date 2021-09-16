@@ -78,7 +78,28 @@ public Exame isExameExists(Long id){
 	 return exame;
 }
 
-
+public Exame isExameExists(String uuid){
+	 Session session = HibernateUtil.openSession();
+	 Exame exame=null;
+	 Transaction tx = null;
+	 
+	 try{
+		 tx = session.getTransaction();
+		 tx.begin();
+		 Query query = session.createQuery("from Exame where code='"+uuid+"'");
+		 exame = (Exame)query.uniqueResult();
+		 
+		 System.out.println(exame);
+		 tx.commit();
+	 }catch(Exception ex){
+		 if(tx!=null){
+			 tx.rollback();
+		 }
+	 }finally{
+		 session.close();
+	 }
+	 return exame;
+}
 
 public boolean delete(Exame e){  
 	Session session = HibernateUtil.openSession();
