@@ -30,10 +30,12 @@ public class Exame implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@GenericGenerator(name = "uuid", strategy = "uuid2")
-	@GeneratedValue(generator = "uuid")
-	@Column(name = "code", unique = true, nullable = false)
-	@Type(type="pg-uuid")
+	
+	@Id  
+	 @Type(type="org.hibernate.type.PostgresUUIDType")
+	@Column(updatable = false, nullable = false, columnDefinition = "uuid DEFAULT uuid_generate_v4()",unique = true)
+	@GeneratedValue(generator = "UUID")
+	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
 	private UUID code;
 	private String nomePaciente;
 	@OneToOne
