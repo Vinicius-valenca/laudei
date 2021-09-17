@@ -532,7 +532,7 @@
     			
     			console.log(JSON.stringify(row))
     					
-var validar = "Acesso ao laudo na plataforma pelo link www.laudeitelemedicina.com.br/validar digitando o seguinte codigo: "+row.code  
+var validar = "\n\nAcesso ao laudo na plataforma pelo link www.laudeitelemedicina.com.br/validar digitando o seguinte código: "+row.code  
     			
 					$('#form-cliente').each (function(){
 									  this.reset();
@@ -570,6 +570,10 @@ var validar = "Acesso ao laudo na plataforma pelo link www.laudeitelemedicina.co
 						
 					}
 					
+					
+
+					
+					
 					if($("#tpperfil").val()==="2"){	
 						 //$('#editor').data("wysihtml5").disable();
 						
@@ -583,6 +587,9 @@ var validar = "Acesso ao laudo na plataforma pelo link www.laudeitelemedicina.co
 					}
 					
 					$('#myModal').modal('show');
+					var ta = document.querySelector('textarea');
+					
+					autosize(ta);
     			 
     		}
     	};
@@ -622,6 +629,9 @@ var validar = "Acesso ao laudo na plataforma pelo link www.laudeitelemedicina.co
     	  $temp.remove();
 
     }
+    
+   
+	
     
     $(document).ready(function(){
     	
@@ -681,6 +691,8 @@ var validar = "Acesso ao laudo na plataforma pelo link www.laudeitelemedicina.co
     	});
     	
     	
+    	
+    	
     	$("#btnValidar").click(function() {    		
     		var form = $( "#form-externo" );
     		form.validate();    		
@@ -697,10 +709,15 @@ var validar = "Acesso ao laudo na plataforma pelo link www.laudeitelemedicina.co
 					 $('#nomeLaudo').empty();
 					 $('#nomeLaudo').append("Laudo - "+JSON.stringify(teste.tpExame)+" - "+JSON.stringify(teste.nomePaciente).split('.')[0]);
 					
-					$("#laudo").val(JSON.stringify(teste.laudo));
+					 var newline = String.fromCharCode(13, 10);
+					 
+					 
+					$("#laudo").val(JSON.stringify(teste.laudo).replaceAll('\\n', newline));
                        	    					
                        $('#exame').show();
-                       
+                       var ta = document.querySelector('textarea');
+       				
+   					autosize(ta);
                    }else{
                         new Noty({
                 type: 'error',
@@ -709,7 +726,7 @@ var validar = "Acesso ao laudo na plataforma pelo link www.laudeitelemedicina.co
                 text: 'Verifique o codigo digitado.',
             }).show();
                    }
-       			 $('#myModal').modal('hide');
+       			 
        		
        			}} )
     		}else{
