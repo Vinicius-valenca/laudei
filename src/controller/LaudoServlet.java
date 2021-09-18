@@ -105,7 +105,7 @@ public class LaudoServlet extends HttpServlet {
 
 		} catch (Exception ex) {
 
-			// ex.printStackTrace();
+			ex.printStackTrace();
 			out.print(gson.toJson(resposta));
 			out.flush();
 			out.close();
@@ -129,7 +129,7 @@ public class LaudoServlet extends HttpServlet {
 			
 		
 			Exame exame = null;
-			exame = exameService.isExameExists(code);
+			exame = exameService.isExameExistsUUID(code);
 			
 
 			System.out.println("exame " + exame);

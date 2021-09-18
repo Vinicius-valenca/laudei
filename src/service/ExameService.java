@@ -63,8 +63,8 @@ public Exame isExameExists(Long id){
 	 try{
 		 tx = session.getTransaction();
 		 tx.begin();
-		 Query query = session.createQuery("from Exame where Id='"+id+"'");
-		 exame =  (Exame) session.load(Exame.class, new Long(id));
+		 Query query = session.createQuery("from Exame where id='"+id+"'");
+		 exame =  (Exame)query.uniqueResult();
 		 System.out.println("teste222");
 		 System.out.println(exame);
 		 tx.commit();
@@ -78,7 +78,7 @@ public Exame isExameExists(Long id){
 	 return exame;
 }
 
-public Exame isExameExists(String uuid){
+public Exame isExameExistsUUID(String uuid){
 	 Session session = HibernateUtil.openSession();
 	 Exame exame=null;
 	 Transaction tx = null;
