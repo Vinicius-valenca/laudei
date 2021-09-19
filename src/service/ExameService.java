@@ -9,7 +9,6 @@ import org.hibernate.Transaction;
 
 import hibernate.util.HibernateUtil;
 import model.Exame;
-import model.Pessoa;
 public class ExameService {
 	
 public boolean register(Exame exame){
@@ -151,11 +150,9 @@ public List<Exame> getListOfExameSemLaudo(Date mes_ref,Date mes_ref2){
         tx = session.getTransaction();
         tx.begin();
         list = session.createQuery("from Exame where laudo is NULL AND cast(dtEntrada, date) BETWEEN '"+mes_ref+"' AND '"+mes_ref2+"'").list();                        
-        tx.commit();
+      
     } catch (Exception e) {
-        if (tx != null) {
-            tx.rollback();
-        }
+       
         e.printStackTrace();
     } finally {
         session.close();
@@ -171,11 +168,9 @@ public List<Exame> getListOfExameComLaudo(Date mes_ref,Date mes_ref2){
         tx = session.getTransaction();
         tx.begin();
         list = session.createQuery("from Exame where laudo is NOT NULL AND cast(dtEntrada, date) BETWEEN '"+mes_ref+"' AND '"+mes_ref2+"'").list();                        
-        tx.commit();
+       
     } catch (Exception e) {
-        if (tx != null) {
-            tx.rollback();
-        }
+       
         e.printStackTrace();
     } finally {
         session.close();
