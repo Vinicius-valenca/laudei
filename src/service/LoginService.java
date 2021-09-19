@@ -30,12 +30,9 @@ public class LoginService {
             tx.begin();
             Query query = session.createQuery("from Pessoa where email='"+email+"'");
             pessoa = (Pessoa)query.uniqueResult();
-            if (!tx.wasCommitted())
-                tx.commit();
+           
         } catch (Exception e) {
-            if (tx != null) {
-                tx.rollback();
-            }
+           
             e.printStackTrace();
         } finally {
             session.close();
