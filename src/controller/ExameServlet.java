@@ -207,13 +207,13 @@ public class ExameServlet extends HttpServlet {
 			// System.out.println(list);
 			System.out.println("id" + request.getParameter("id"));
 			String id = request.getParameter("id");
-			Pessoa p = new Pessoa();
+			Exame e = new Exame();
+			ExameService exameService = new ExameService();
 
-			p.setId(Long.valueOf(id));
+			e.setId(Long.valueOf(id));
 
-			RegisterService registerService = new RegisterService();
-
-			resposta = registerService.delete(p);
+			
+			resposta = exameService.delete(e);
 
 			System.out.println("Deletou?" + resposta);
 
