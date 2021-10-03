@@ -202,9 +202,7 @@ public class ExameServlet extends HttpServlet {
 
 		try {
 
-			// LoginService loginService = new LoginService();
-			// List<Pessoa> list = loginService.getListOfPessoa();
-			// System.out.println(list);
+			
 			System.out.println("id" + request.getParameter("id"));
 			String id = request.getParameter("id");
 			Exame e = new Exame();
