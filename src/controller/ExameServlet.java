@@ -315,7 +315,7 @@ public class ExameServlet extends HttpServlet {
 			String id = request.getParameter("id");
 			Exame e = new Exame();
 			ExameService exameService = new ExameService();
-			e.setId(Long.valueOf(id));
+			e = exameService.isExameExists(Long.valueOf(id));
 
 			FTPClient client = new FTPClient();
 			client.connect("ftp.zeituneinformatica.com.br", 21);
