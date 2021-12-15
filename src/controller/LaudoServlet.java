@@ -39,6 +39,9 @@ public class LaudoServlet extends HttpServlet {
 			if (url.equalsIgnoreCase("/salvarLaudo")) {
 				salvarLaudo(request, response);
 
+			}else if (url.equalsIgnoreCase("/vistoLaudo")) {
+				vistoLaudo(request, response);
+
 			} else if (url.equalsIgnoreCase("/validarLaudo")) {
 				validarLaudo(request, response);
 
@@ -98,6 +101,47 @@ public class LaudoServlet extends HttpServlet {
 
 			System.out.println("Salvou?" + resposta);
 
+			out.print(gson.toJson(resposta));
+
+			out.flush();
+			out.close();
+
+		} catch (Exception ex) {
+
+			ex.printStackTrace();
+			out.print(gson.toJson(resposta));
+			out.flush();
+			out.close();
+
+		}
+	}
+	
+	public void vistoLaudo(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		boolean resposta = false;
+		response.setContentType("text/plain; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		Gson gson = new Gson();
+		RegisterService registerService = new RegisterService();
+		ExameService exameService = new ExameService();
+
+		try {
+
+			
+			System.out.println("id" + request.getParameter("id"));
+			String idExame = request.getParameter("id");
+			
+			Exame exame = null;
+			exame = exameService.isExameExists(Long.valueOf(idExame));
+			System.out.println(exame);
+			if(!exame.getLaudoVisto()) {
+				exame.setLaudoVisto(true);
+				System.out.println("setLaudoVisto?" + exame.getLaudoVisto());
+				resposta = exameService.register(exame);
+				System.out.println("Salvou?" + resposta);
+			}
+			
+		
 			out.print(gson.toJson(resposta));
 
 			out.flush();

@@ -514,6 +514,13 @@
     	
     	  return value.split('.')[0]
     	}
+    	
+    	 
+    function vistoFormat(value, row, index) {
+    	if(value){
+    	return "visto"}else{
+    	return "Nao"}
+    	}
     startDateFormat = moment(moment().utc().valueOf()).format('MM/YYYY');
 	$('#mes_referencia').datepicker({
 		format: "mm/yyyy",
@@ -580,6 +587,17 @@ var validar = "\n\nAcesso ao laudo na plataforma pelo link www.laudeitelemedicin
 						//$('#editor').data('wysihtml5').editor.composer.disable();
 						//$('#editor').attr('contenteditable', false);
 						$('textarea[name="laudoobs"]').prop('disabled', false); // disable
+						
+						$("#form-cliente").ajaxSubmit({url: 'vistoLaudo', type: 'post',data : {
+                id : row.id
+            },success: 
+       			 function(data){
+       			if(data == "true"){       				
+                       //Salvo();
+                       	    		
+                   }else{
+                       //Erro();
+                   }}});
 					}else{
 						
 						//$('#editor').data('wysihtml5').editor.composer.enable();
@@ -689,6 +707,10 @@ var validar = "\n\nAcesso ao laudo na plataforma pelo link www.laudeitelemedicin
     			   Erro();
     		}
     	});
+    	
+    
+    			
+       			
     	
     	
     	
