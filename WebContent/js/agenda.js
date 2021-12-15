@@ -518,8 +518,9 @@
     	 
     function vistoFormat(value, row, index) {
     	if(value){
-    	return "visto"}else{
-    	return "Nao"}
+    	return "<a href='#'><i class='icon-large icon-check'></i></a>"
+    	}else{
+    	return "<a href='#'><i class='icon-large icon-check-empty'></i></a>"}
     	}
     startDateFormat = moment(moment().utc().valueOf()).format('MM/YYYY');
 	$('#mes_referencia').datepicker({

@@ -112,7 +112,7 @@
 												<th data-field="nomeClinica.nome_completo" data-width="120" data-halign="center"
 												data-align="center" data-sortable="true">Clinica</th>
 												<th data-halign="center" data-align="center"
-												data-width="60" data-formatter="vistoFormat">LaudoVisto</th>
+												data-width="60" data-formatter="vistoFormat">Visto</th>
 												<th data-halign="center" data-align="center"
 												data-width="60" data-formatter="actionFormatter1"
 												data-events="actionEvents1">Exame</th>
@@ -163,6 +163,8 @@
 											
 												<th data-field="nomeClinica.nome_completo" data-width="120" data-halign="center"
 												data-align="center" data-sortable="true">Clinica</th>
+												<th data-halign="center" data-align="center"
+												data-width="60" data-formatter="vistoFormat">Visto</th>
 												<th data-halign="center" data-align="center"
 												data-width="60" data-formatter="actionFormatter1"
 												data-events="actionEvents1">Exame</th>
