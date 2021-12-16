@@ -518,9 +518,9 @@
     	 
     function vistoFormat(value, row, index) {
     	if(value){
-    	return "<a href='#'><i class='icon-large icon-check'></i></a>"
+    	return "<i class='icon-large icon-check'></i>"
     	}else{
-    	return "<a href='#'><i class='icon-large icon-check-empty'></i></a>"}
+    	return "<i class='icon-large icon-check-empty'></i>"}
     	}
     startDateFormat = moment(moment().utc().valueOf()).format('MM/YYYY');
 	$('#mes_referencia').datepicker({
@@ -769,6 +769,44 @@ var validar = "\n\nAcesso ao laudo na plataforma pelo link www.laudeitelemedicin
    			 function(data){
    			if(data == "true"){
                    Salvo();
+                    mes_ref = $('#mes_referencia').val();  
+   		$.ajax({
+   			type : 'GET',
+   			url : 'listarExamesComLaudo',
+   			data: { mes_ref : $('#mes_referencia').val() } ,
+   			contentType : 'application/json; charset=utf-8',
+   			dataType : 'json',
+   			success : function(retornoJson) {
+   				$('#table').bootstrapTable('load', retornoJson);
+   				
+   			
+   					console.log("retornoJson", retornoJson);
+   					//var lista= JSON.parse(retornoJson);	
+   					//console.log("lista", lista);
+   					//popularCampos(lista);
+   					
+   				
+   			}
+   		});
+   		
+   		$.ajax({
+   			type : 'GET',
+   			url : 'listarExamesSemLaudo',
+   			data: { mes_ref : mes_ref } ,
+   			contentType : 'application/json; charset=utf-8',
+   			dataType : 'json',
+   			success : function(retornoJson) {
+   				$('#table2').bootstrapTable('load', retornoJson);
+   				
+   					console.log("retornoJson", retornoJson);
+   					//var lista= JSON.parse(retornoJson);	
+   					//console.log("lista", lista);
+   					//popularCampos(lista);
+   					
+   				
+   			}
+   		});
+  
                }else{
                    Erro();
                }
@@ -777,6 +815,8 @@ var validar = "\n\nAcesso ao laudo na plataforma pelo link www.laudeitelemedicin
    			}} )
     		
     	});
+    	
+    	
     	
     	$("#logout").click(function() {
     		
@@ -930,6 +970,47 @@ $("#perfil").click(function() {
    			}
    		});
        });
+       
+       $('#myModal').on('hidden.bs.modal', function () {
+  mes_ref = $('#mes_referencia').val();  
+   		$.ajax({
+   			type : 'GET',
+   			url : 'listarExamesComLaudo',
+   			data: { mes_ref : $('#mes_referencia').val() } ,
+   			contentType : 'application/json; charset=utf-8',
+   			dataType : 'json',
+   			success : function(retornoJson) {
+   				$('#table').bootstrapTable('load', retornoJson);
+   				
+   			
+   					console.log("retornoJson", retornoJson);
+   					//var lista= JSON.parse(retornoJson);	
+   					//console.log("lista", lista);
+   					//popularCampos(lista);
+   					
+   				
+   			}
+   		});
+   		
+   		$.ajax({
+   			type : 'GET',
+   			url : 'listarExamesSemLaudo',
+   			data: { mes_ref : mes_ref } ,
+   			contentType : 'application/json; charset=utf-8',
+   			dataType : 'json',
+   			success : function(retornoJson) {
+   				$('#table2').bootstrapTable('load', retornoJson);
+   				
+   					console.log("retornoJson", retornoJson);
+   					//var lista= JSON.parse(retornoJson);	
+   					//console.log("lista", lista);
+   					//popularCampos(lista);
+   					
+   				
+   			}
+   		});
+  
+})
        
     });
     
