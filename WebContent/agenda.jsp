@@ -104,9 +104,9 @@
 											<th data-field="tpExame" data-halign="center" data-align="center"
 												data-width="110" data-sortable="true">Tipo Exame</th>
 											<th data-field="dtEntrada" data-halign="center"
-												data-align="center" data-width="90" data-sortable="true" data-formatter="dateFormat">Data entrada</th>
+												data-align="center" data-width="90" data-sortable="true" data-sorter="datesSorter" data-formatter="dateFormat">Data entrada</th>
 												<th data-field="dtLaudo" data-halign="center"
-												data-align="center" data-width="90" data-sortable="true" data-formatter="dateFormat">Data laudo</th>
+												data-align="center" data-width="90" data-sortable="true" data-sorter="datesSorter" data-formatter="dateFormat">Data laudo</th>
 											<th data-field="nomeMedico.nome_completo" data-width="120" data-halign="center"
 												data-align="center" data-sortable="true">Medico</th>
 												<th data-field="nomeClinica.nome_completo" data-width="120" data-halign="center"
@@ -158,7 +158,7 @@
 											<th data-field="tpExame" data-halign="center" data-align="center"
 												data-width="110" data-sortable="true">Tipo Exame</th>
 											<th data-field="dtEntrada" data-halign="center"
-												data-align="center" data-width="90" data-sortable="true" data-formatter="dateFormat">Data entrada</th>
+												data-align="center" data-width="90" data-sortable="true" data-sorter="datesSorter" data-formatter="dateFormat">Data entrada</th>
 												
 											
 												<th data-field="nomeClinica.nome_completo" data-width="120" data-halign="center"
