@@ -15,7 +15,10 @@
 <link rel="stylesheet" href="css/bootstrap-datepicker3.min.css">
 <link rel=  "stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 <link rel="stylesheet" href="css/bootstrap3-wysihtml5.min.css"/>
-
+   <link rel="stylesheet" href="css/site.css">
+        <link rel="stylesheet" href="css/richtext.min.css">
+      
+        
 
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -36,7 +39,7 @@
 <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-datepicker.pt-BR.min.js"></script>
 <script src="js/buscar-cep.js"></script> 
-
+<script type="text/javascript" src="js/jquery.richtext.js"></script>
 <script src="js/jquery.mask.min.js"></script>
 <script src="js/jquery.maskMoney.js"></script>
 <script src="js/moment.js"></script>

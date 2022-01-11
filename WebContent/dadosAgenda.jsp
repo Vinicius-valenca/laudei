@@ -64,8 +64,11 @@
 					
     <div class="form-group">
         
-        <textarea id="editor" name="laudo" class="form-control editor" rows="3" style="overflow: hidden" onkeyup="this.style.height='24px'; this.style.height = this.scrollHeight + 12 + 'px';"></textarea>
-    </div>
+        
+
+            <textarea class="contentRich" name="editor" id="editor"></textarea>
+
+        </div>
 
 				</div>
 				
@@ -73,7 +76,8 @@
 					<h5>Observação:</h2>
     <div class="form-group">
         
-        <textarea id="obs" name="obs" class="form-control" rows="3"></textarea>
+            <textarea class="contentRich1" id="obs" name="obs"></textarea>
+        
         
         <textarea name="hide" id="hide" style="display:none;"></textarea>
     </div>
