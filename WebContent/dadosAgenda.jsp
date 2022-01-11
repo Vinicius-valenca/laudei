@@ -66,7 +66,7 @@
         
         
 
-            <textarea class="contentRich" name="editor" id="editor"></textarea>
+            <textarea class="contentRich" name="laudo" id="editor"></textarea>
 
         </div>
 
