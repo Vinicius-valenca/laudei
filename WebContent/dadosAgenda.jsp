@@ -115,7 +115,7 @@
         </div>
 			</div>
 			
-						<div class="col-lg-3 col-xs-3">
+	<!-- 					<div class="col-lg-3 col-xs-3">
 					<div class="form-group">
         <button type="button" id="btnsformatacao" class="btn btn-primary">Copiar sem formatação</button>
         </div>
@@ -125,7 +125,7 @@
 					<div class="form-group">
         <button type="button" id="btncformatacao" class="btn btn-primary">Copiar com formatação</button>
         </div>
-			</div>
+			</div> -->
 			
 			
 			<div class="col-lg-3 col-xs-3">
