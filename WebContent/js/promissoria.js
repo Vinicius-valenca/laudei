@@ -4,6 +4,22 @@ $(document).ready(function(){
 		language : "pt-BR"
 	});
 	
+    
+    function stateFormatter(value, row, index) {
+    
+   if (representantes.indexOf(row.id) !== -1) {
+     return {
+       checked: true
+     };
+   } else {
+     return {
+       checked: false
+     };
+   }
+   return value;
+ }
+   
+	
 	$("#logout").click(function() {
 		
 		$.ajax({

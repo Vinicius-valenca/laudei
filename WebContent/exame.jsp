@@ -61,6 +61,8 @@
 		<div class="panel-heading">Enviar exames</div>
 	</a>
 	
+	
+	
          
 				<div class="col-lg-9 col-xs-9">
 					<div class="form-group">
@@ -74,16 +76,55 @@
 										</select>
 					</div>
 				</div>
+				
+			
 
 		
 		
 		
 		
 	
-	</div>
+	
 	
 					
 		<div id="hidden_div">
+		
+			<div class=" col-xs-12  col-lg-5  col-md-5">
+					<div class="form-group" style="margin-top: 14px;">
+<a href="#myModal" id="btnAdicionar" role="button" class="btn" data-toggle="modal" data-backdrop="static" data-keyboard="false"> <i class='icon-large icon-plus-sign'></i> Adicionar PF</a>
+</div></div>
+
+<div class="panel panel-default">
+   													 <table id="table_representantes"
+           data-toggle="table"
+           data-search="true"
+           data-locale="pt-BR"
+           data-show-toggle="true"
+             data-click-to-select="true"
+               data-show-columns="true"
+  data-show-columns-toggle-all="true"
+           data-url="AgendaServlet"
+           data-mobile-responsive="true"
+           data-check-on-init="true"
+           data-sortable="false"
+           data-sort-name="nome_completo">
+        <thead>
+        <tr>
+            <th data-field="state" data-checkbox="true" ></th>
+											<th data-field="nome_completo" data-halign="center" data-width="200"
+												data-align="center" >Nome</th>
+											<th data-field="email" data-halign="center" data-width="160"
+												data-align="center" >Email</th>
+											<th data-field="cpf" data-halign="center" data-align="center"
+												data-width="80" >CPF</th>
+											<th data-field="celular" data-halign="center"
+												data-align="center" data-width="80" >Celular</th>
+											
+											
+        </tr>
+        </thead>
+    </table>
+    </div>
 
 <form action="enviarExame" class="dropzone" id="my-awesome-dropzone" method="post" enctype="multipart/form-data;charset=UTF-8" >
 					<div class="row">
@@ -105,7 +146,7 @@
 
 </div>
 		
-		
+		</div>
 
 					</div>
     </div>
