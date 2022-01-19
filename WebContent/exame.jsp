@@ -125,10 +125,10 @@
         </thead>
     </table>
     
-   
+   </div>
 						
 
-								
+								<div class="panel panel-default">
 
 									<a data-target="#item-telefones">
 										<div class="panel-heading">Informa&ccedil;&otilde;es
@@ -179,20 +179,6 @@
 												</div>
 
 
-
-												<div class="col-lg-3 col-xs-12">
-
-
-													<div class="form-group">
-														<label>Telefone</label>
-														<div class="input-group">
-															<input id="telefone" name="telefone" type="text"
-																class="telefone form-control">
-														</div>
-
-													</div>
-												</div>
-
 												<div class="col-lg-3 col-xs-12">
 
 
@@ -215,41 +201,7 @@
 
 										</div>
 
-										<div class="col-lg-12 col-xs-12">
-											<div class="row">
-												<div class="col-lg-3 col-xs-12">
-													<div class="form-group">
-														<label>RG nº</label> <input id="rg" name="rg" type="text"
-															class="form-control rg">
-													</div>
-												</div>
-												<div class="col-lg-3 col-xs-12">
-													<div class="form-group">
-														<label>Órgão Expedidor</label> <input id="expedidor"
-															name="expedidor" type="text" class=" form-control">
-													</div>
-												</div>
-												<div class="col-lg-3 col-xs-12">
-													<div class="form-group">
-														<label for="dtexpedicao">Data de expedição</label>
-														<!-- Datepicker as text field -->
-														<div class="input-group date"
-															data-date-format="dd/mm/yyyy">
-															<input type="text" class="form-control"
-																name="dtexpedicao" id="dtexpedicao"
-																placeholder="dd/mm/yyyy">
-															<div class="input-group-addon">
-																<span class="glyphicon glyphicon-th"></span>
-															</div>
-														</div>
-													</div>
-												</div>
-
-
-
-											</div>
-
-										</div>
+										
 
 										<div class="col-lg-12 col-xs-12">
 											<div class="row">
@@ -261,13 +213,13 @@
 												</div>
 												<div class="col-lg-3 col-xs-12">
 													<div class="form-group">
-														<label>Nacionalidade</label> <input id="nacionalidade"
+														<label>Empresa</label> <input id="nacionalidade"
 															name="nacionalidade" type="text" class="form-control">
 													</div>
 												</div>
 												<div class="col-lg-3 col-xs-12">
 													<div class="form-group">
-														<label for="dtnascimento">Data de nascimento</label>
+														<label for="dtnascimento">Data do exame</label>
 														<!-- Datepicker as text field -->
 														<div class="input-group date"
 															data-date-format="dd/mm/yyyy">
@@ -287,129 +239,22 @@
 
 										</div>
 
-										<div class="col-lg-12 col-xs-12">
-											<div class="row">
-
-
-
-												<div class="col-lg-3 col-xs-12">
-													<div class="form-group">
-														<label>Estado Civil</label> <select class="form-control"
-															id="estadocivil" name="estadocivil">
-															<option>Selecione uma opção</option>
-															<option value="Solteiro">Solteiro</option>
-															<option value="Casado">Casado</option>
-															<option value="Separado">Separado</option>
-															<option value="Divorciado">Divorciado</option>
-															<option value="Viúvo">Viúvo</option>
-														</select>
-													</div>
-												</div>
-
-
-
-
-
-
-
-
-
-												<div class="col-lg-3 col-xs-12 casado viuvo divorciado"
-													style="display: none;">
-
-
-													<div class="form-group">
-														<label>Regime de Casamento</label> <select
-															class="form-control" id="regime_casamento"
-															name="regime_casamento">
-															<option>Selecione uma opção</option>
-															<option value="comunhão parcial">comunhão
-																parcial</option>
-															<option value="comunhão universal">comunhão
-																universal</option>
-															<option value="participação final nos aquestos">participação
-																final nos aquestos</option>
-															<option value="separação convencional de bens com pacto">separação
-																convencional de bens com pacto</option>
-															<option value="separação convencional de bens sem pacto">separação
-																convencional de bens sem pacto</option>															
-
-														</select>
-													</div>
-												</div>
-
-												<div class="col-lg-3 col-xs-12 casado" style="display: none;">
-
-
-													<div class="form-group">
-														<label for="data-pagamento">Data de casamento</label>
-														<!-- Datepicker as text field -->
-														<div class="input-group date"
-															data-date-format="dd/mm/yyyy">
-															<input type="text" class="form-control"
-																name="dtcasamento" id="dtcasamento"
-																placeholder="dd/mm/yyyy">
-															<div class="input-group-addon">
-																<span class="glyphicon glyphicon-th"></span>
-															</div>
-														</div>
-													</div>
-													
-													<div class="form-group">
-														<label>CPF do cônjuge</label> <input id="cpf_conjuge" name="cpf_conjuge" type="text"
-															class="cpf form-control  cpf">
-													</div>
-													
-													
-												</div>
-											
-									
 										
-										<div class="col-lg-3 col-xs-12 solteiro"
-													style="display: none;">
 
 
-													<div class="form-group">
-														<label>Possui Uniao Estável?</label> <select
-															class="form-control" id="regime_casamento1"
-															name="regime_casamento">
-															<option>Selecione uma opção</option>
-															<option value="com união estável">com união estável</option>
-															<option value="sem união estável">sem união estável</option>
-															
-
-														</select>
-													</div>
-												</div>
-
-												<div class="col-lg-3 col-xs-12 solteiro1" style="display: none;">
-
-
-													<div class="form-group">
-														<label for="data-pagamento">Data da união estável</label>
-														<!-- Datepicker as text field -->
-														<div class="input-group date"
-															data-date-format="dd/mm/yyyy">
-															<input type="text" class="form-control"
-																name="dtuniao" id="dtuniao"
-																placeholder="dd/mm/yyyy">
-															<div class="input-group-addon">
-																<span class="glyphicon glyphicon-th"></span>
-															</div>
-														</div>
-													</div>
-													
-													
-													<div class="form-group">
-														<label>CPF do cônjuge</label> <input id="cpf_conjuge1" name="cpf_conjuge1" type="text"
-															class="cpf form-control  cpf">
-													</div>
 												
-													
-													
-												</div>
-											</div>
-	</div>
+
+
+
+
+
+
+
+
+
+												
+
+					
 	
 										
 
@@ -420,7 +265,7 @@
 
 												<div class="col-lg-4 col-xs-12">
 													<div class="form-group">
-														<label>Profissão</label> <input id="profissao"
+														<label>Solicitante</label> <input id="profissao"
 															name="profissao" type="text" class="form-control">
 													</div>
 												</div>
@@ -440,7 +285,7 @@
 											<div class="row">
 												<div class="col-lg-8 col-xs-12">
 													<div class="form-group">
-														<label>Nome da Mãe</label> <input id="nome_mae"
+														<label>CRM Solicitante</label> <input id="nome_mae"
 															name="nome_mae" type="text" class="form-control">
 													</div>
 												</div>
@@ -455,7 +300,21 @@
 
 												<div class="col-lg-8 col-xs-12">
 													<div class="form-group">
-														<label>Nome do Pai</label> <input id="nome_pai"
+														<label>Peso</label> <input id="nome_pai"
+															name="nome_pai" type="text" class="form-control">
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+										
+											<div class="col-lg-12 col-xs-12">
+											<div class="row">
+
+												<div class="col-lg-8 col-xs-12">
+													<div class="form-group">
+														<label>Altura</label> <input id="nome_pai"
 															name="nome_pai" type="text" class="form-control">
 													</div>
 												</div>
@@ -464,26 +323,11 @@
 
 										</div>
 
-										<div class="col-lg-12 col-xs-12">
-											<div class="row">												
-												<div class="col-lg-12 col-xs-12">
-													<div class="form-group">
-														<label>Pessoa Politicamente Exposta (Resolução 29
-															de 07/12/17 - COAF) </label> <label class="radio-inline">
-															<input type="radio" name="pessoa_politica" value="Sim">Sim
-														</label> <label class="radio-inline"> <input type="radio"
-															name="pessoa_politica" value="Não">Não
-														</label>
-
-													</div>
-												</div>
-
-											</div>
-
-										</div>
+										
 
 
 									</div>
+								
 							
 
 </div>
