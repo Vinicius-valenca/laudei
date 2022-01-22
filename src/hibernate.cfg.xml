@@ -19,5 +19,6 @@
 		<property name="javax.persistence.schema-generation.database.action">create/update</property>
 		<mapping class="model.Pessoa" />
 		<mapping class="model.Exame" />
+		<mapping class="model.Paciente" />
 	</session-factory>
 </hibernate-configuration>
