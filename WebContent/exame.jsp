@@ -88,14 +88,10 @@
 	
 					
 		<div id="hidden_div">
-		
-			<div class=" col-xs-12  col-lg-5  col-md-5">
-					<div class="form-group" style="margin-top: 14px;">
-<a href="#myModal" id="btnAdicionar" role="button" class="btn" data-toggle="modal" data-backdrop="static" data-keyboard="false"> <i class='icon-large icon-plus-sign'></i> Adicionar PF</a>
-</div></div>
+
 
 <div class="panel panel-default">
-   													 <table id="table_representantes"
+   													 <table id="table_pacientes"
            data-toggle="table"
            data-search="true"
            data-locale="pt-BR"
@@ -167,7 +163,7 @@
 											<div class="row">
 											
 																							
-												<div class="col-lg-4 col-xs-12">
+												<div class="col-lg-3 col-xs-12">
 													<div class="form-group">
 														<label>Sexo</label> <label class="radio-inline">
 															<input type="radio" name="sexo" value="M">Masculino
@@ -193,7 +189,21 @@
 													</div>
 												</div>
 
-
+<div class="col-lg-3 col-xs-12">
+													<div class="form-group">
+														<label for="dtnascimento">Data nascimento</label>
+														<!-- Datepicker as text field -->
+														<div class="input-group date"
+															data-date-format="dd/mm/yyyy">
+															<input type="text" class="form-control"
+																name="dtnascimento" id="dtnascimento"
+																placeholder="dd/mm/yyyy">
+															<div class="input-group-addon">
+																<span class="glyphicon glyphicon-th"></span>
+															</div>
+														</div>
+													</div>
+												</div>
 
 
 
@@ -211,27 +221,23 @@
 															class="cpf form-control  cpf">
 													</div>
 												</div>
+												
 												<div class="col-lg-3 col-xs-12">
 													<div class="form-group">
-														<label>Empresa</label> <input id="nacionalidade"
-															name="nacionalidade" type="text" class="form-control">
+														<label>Peso</label> <input id="peso"
+															name="peso" type="text" class="form-control">
 													</div>
 												</div>
+												
+												
 												<div class="col-lg-3 col-xs-12">
 													<div class="form-group">
-														<label for="dtnascimento">Data do exame</label>
-														<!-- Datepicker as text field -->
-														<div class="input-group date"
-															data-date-format="dd/mm/yyyy">
-															<input type="text" class="form-control"
-																name="dtnascimento" id="dtnascimento"
-																placeholder="dd/mm/yyyy">
-															<div class="input-group-addon">
-																<span class="glyphicon glyphicon-th"></span>
-															</div>
-														</div>
+														<label>Altura</label> <input id=""altura""
+															name="altura" type="text" class="form-control">
 													</div>
 												</div>
+												
+											
 
 
 
@@ -260,15 +266,30 @@
 
 										<div class="col-lg-12 col-xs-12">
 											<div class="row">
-
-
-
-												<div class="col-lg-4 col-xs-12">
+	<div class="col-lg-3 col-xs-12">
 													<div class="form-group">
-														<label>Solicitante</label> <input id="profissao"
-															name="profissao" type="text" class="form-control">
+														<label>Empresa</label> <input id="empresa"
+															name="empresa" type="text" class="form-control">
 													</div>
 												</div>
+												<div class="col-lg-3 col-xs-12">
+													<div class="form-group">
+														<label for="dtexame">Data do exame</label>
+														<!-- Datepicker as text field -->
+														<div class="input-group date"
+															data-date-format="dd/mm/yyyy">
+															<input type="text" class="form-control"
+																name="dtexame" id="dtexame"
+																placeholder="dd/mm/yyyy">
+															<div class="input-group-addon">
+																<span class="glyphicon glyphicon-th"></span>
+															</div>
+														</div>
+													</div>
+												</div>
+
+
+												
 
 
 											</div>
@@ -283,10 +304,17 @@
 
 										<div class="col-lg-12 col-xs-12">
 											<div class="row">
-												<div class="col-lg-8 col-xs-12">
+											
+											<div class="col-lg-7 col-xs-12">
 													<div class="form-group">
-														<label>CRM Solicitante</label> <input id="nome_mae"
-															name="nome_mae" type="text" class="form-control">
+														<label>Solicitante</label> <input id="solicitante"
+															name="solicitante" type="text" class="form-control">
+													</div>
+												</div>
+												<div class="col-lg-3 col-xs-12">
+													<div class="form-group">
+														<label>CRM Solicitante</label> <input id="crm"
+															name="crm" type="text" class="form-control">
 													</div>
 												</div>
 
@@ -295,33 +323,8 @@
 
 										</div>
 
-										<div class="col-lg-12 col-xs-12">
-											<div class="row">
-
-												<div class="col-lg-8 col-xs-12">
-													<div class="form-group">
-														<label>Peso</label> <input id="nome_pai"
-															name="nome_pai" type="text" class="form-control">
-													</div>
-												</div>
-
-											</div>
-
-										</div>
-										
-											<div class="col-lg-12 col-xs-12">
-											<div class="row">
-
-												<div class="col-lg-8 col-xs-12">
-													<div class="form-group">
-														<label>Altura</label> <input id="nome_pai"
-															name="nome_pai" type="text" class="form-control">
-													</div>
-												</div>
-
-											</div>
-
-										</div>
+									
+											
 
 										
 

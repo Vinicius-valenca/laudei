@@ -5,6 +5,7 @@
       
       
       
+      
     function actionFormatter(value, row, index) {
     	return "<a href='#'><i class='icon-large icon-edit edit'></i></a>"
     	

@@ -4,6 +4,17 @@ $(document).ready(function(){
 		language : "pt-BR"
 	});
 	
+	
+
+    $('#table_pacientes').on('check.bs.table', function (e, row) {
+	     
+    	$("#nome_completo").val(row.nome_completo);
+    	$("#email").val(row.email);
+    	
+	        	console.log (row);
+	        
+	     
+	   });
     
     function stateFormatter(value, row, index) {
     
