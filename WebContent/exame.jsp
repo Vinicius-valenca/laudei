@@ -106,7 +106,7 @@
            data-sort-name="nome_completo">
         <thead>
         <tr>
-            <th data-field="state" data-checkbox="true" data-formatter="stateFormatter"></th>
+            <th data-field='selected' data-radio="true" ></th>
 											<th data-field="nome_completo" data-halign="center" data-width="200"
 												data-align="center" >Nome</th>
 											<th data-field="email" data-halign="center" data-width="160"
