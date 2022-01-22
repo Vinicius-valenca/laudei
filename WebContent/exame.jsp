@@ -98,7 +98,7 @@
            data-show-toggle="true"
              data-click-to-select="true"
                data-show-columns="true"
-  data-show-columns-toggle-all="true"
+               
            data-url="AgendaServlet"
            data-mobile-responsive="true"
            data-check-on-init="true"
@@ -106,7 +106,7 @@
            data-sort-name="nome_completo">
         <thead>
         <tr>
-            <th data-field="state" data-checkbox="true" ></th>
+            <th data-field="state" data-checkbox="true" data-formatter="stateFormatter"></th>
 											<th data-field="nome_completo" data-halign="center" data-width="200"
 												data-align="center" >Nome</th>
 											<th data-field="email" data-halign="center" data-width="160"

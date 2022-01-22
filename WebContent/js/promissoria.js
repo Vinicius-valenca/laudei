@@ -17,18 +17,19 @@ $(document).ready(function(){
 	   });
     
     function stateFormatter(value, row, index) {
+        if (value == 1) {
+          return {
+            checked: true
+          };
+        } else {
+          return {
+            checked: false
+          };
+        }
+        return value;
+      }
     
-   if (representantes.indexOf(row.id) !== -1) {
-     return {
-       checked: true
-     };
-   } else {
-     return {
-       checked: false
-     };
-   }
-   return value;
- }
+    
    
 	
 	$("#logout").click(function() {
