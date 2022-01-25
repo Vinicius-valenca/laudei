@@ -60,13 +60,33 @@ $(document).ready(function(){
 
 function showDiv(divId, element)
 {
-    document.getElementById(divId).style.display = element.value != 0 ? 'block' : 'none';
-    $("#tpexame").val(element.value);
+	
+	if($("#tpperfil").val()==4){
+		document.getElementById("hidden_div1").style.display = element.value != 0 ? 'block' : 'none';
+	    $("#tpexame").val(element.value);
+	}else{
+		document.getElementById("hidden_div").style.display = element.value != 0 ? 'block' : 'none';
+	    $("#tpexame").val(element.value);
+	}
+    
    
 }
 
 
 //"myAwesomeDropzone" is the camelized version of the HTML element's ID
 Dropzone.options.myAwesomeDropzone = {
+		//autoProcessQueue: false,
+
+		//maxFiles: 1,
+	
+		timeout:6000
+  };
+
+//"myAwesomeDropzone" is the camelized version of the HTML element's ID
+Dropzone.options.myAwesomeDropzone1 = {
+		autoProcessQueue: false,
+
+		maxFiles: 1,
+	
 		timeout:6000
   };
