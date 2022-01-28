@@ -135,7 +135,7 @@
 														<table id="table_pacientes" data-toggle="table"
 															data-search="true" data-locale="pt-BR"
 															data-show-toggle="true" data-click-to-select="true"
-															data-show-columns="true" data-url="AgendaServlet"
+															data-show-columns="true" data-url="PacienteServlet"
 															data-mobile-responsive="true" data-check-on-init="true"
 															data-sortable="false" data-sort-name="nome_completo">
 															<thead>
@@ -268,8 +268,8 @@
 
 																	<div class="col-lg-3 col-xs-12">
 																		<div class="form-group">
-																			<label>Altura</label> <input id=""
-																				altura""
+																			<label>Altura</label> <input id="
+																				altura"
 															name="altura" type="text"
 																				class="form-control">
 																		</div>

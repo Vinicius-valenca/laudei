@@ -42,6 +42,7 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.net.ftp.FTPClient;
 
 import model.Exame;
+import model.Paciente;
 import model.Pessoa;
 import service.ExameService;
 import service.LoginService;
@@ -85,7 +86,10 @@ public class ExameServlet extends HttpServlet {
 			if (url.equalsIgnoreCase("/enviarExame")) {
 				save(request, response);
 
-			} else if (url.equalsIgnoreCase("/atualizarExame")) {
+			} else if (url.equalsIgnoreCase("/enviarExame2")) {
+				save2(request, response);
+
+			}else if (url.equalsIgnoreCase("/atualizarExame")) {
 				delete(request, response);
 
 			} else if (url.equalsIgnoreCase("/listarExamesSemLaudo")) {
@@ -181,6 +185,110 @@ public class ExameServlet extends HttpServlet {
 
 					System.out.println("uploaded");
 				}
+			}
+		} catch (FileUploadException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		finally {
+
+			writer.close();
+		}
+
+	}
+	
+	
+	public void save2(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if (!ServletFileUpload.isMultipartContent(request)) {
+			throw new IllegalArgumentException(
+					"Request is not multipart, please 'multipart/form-data' enctype for your form.");
+		}
+
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF8");
+
+		ServletFileUpload uploadHandler = new ServletFileUpload(new DiskFileItemFactory());
+		PrintWriter writer = response.getWriter();
+
+		System.out.println(new File(request.getServletContext().getRealPath("/") + "images/"));
+		HttpSession session = request.getSession(true);
+		Pessoa p = new Pessoa();
+		p = (Pessoa) session.getAttribute("user");
+
+		try {
+			List<FileItem> items = uploadHandler.parseRequest(request);
+			Exame exame = new Exame();
+			Paciente p1 = new Paciente();
+			exame.setNomeClinica(p);
+			for (FileItem item : items) {
+				if (item.isFormField()) {
+					
+					// Process regular form field (input
+					// type="text|radio|checkbox|etc", select, etc).
+					String fieldname = item.getFieldName();
+					String fieldvalue = item.getString("UTF-8").trim();
+					System.out.println(fieldname);
+					System.out.println(fieldvalue);
+					if(fieldname.equals("tpexame")){
+						exame.setTpExame(fieldvalue);
+					}else{
+						p1.montarPaciente(item);
+					}
+					
+				} else {
+					// Process form file field (input type="file").
+					String fieldname = item.getFieldName();
+					String filename = FilenameUtils.getName(item.getName());
+					InputStream filecontent = item.getInputStream();
+					int dotIndex = item.getName().lastIndexOf('.');
+					String nome = (dotIndex == -1) ? item.getName() : item.getName().substring(0, dotIndex);
+					
+
+
+					byte[] examedata = new byte[(int) item.getSize()];
+					try {
+
+						filecontent.read(examedata);
+						filecontent.close();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+//if(p1.getNome_completo().isEmpty()){
+	System.out.println(filename);
+	exame.setExamenome(removerAcentos(item.getName()));
+	exame.setDtEntrada(new java.sql.Date(System.currentTimeMillis()));
+	exame.setNomePaciente(removerAcentos(filename));
+//}else{	
+	//exame.setExamenome(removerAcentos(p1.getNome_completo()));
+	//exame.setDtEntrada(new java.sql.Date(System.currentTimeMillis()));
+	//exame.setNomePaciente(removerAcentos(p1.getNome_completo()));
+	//exame.setNoomePaciente(p1);
+//}
+					
+
+					FTPUploader ftpUploader = new FTPUploader("ftp.zeituneinformatica.com.br",
+							"laudeisistema@laudeitelemedicina.com.br", "Pa6?Eo%D8#ix");
+					// FTP server path is relative. So if FTP account HOME
+					// directory is "/home/pankaj/public_html/" and you need to
+					// upload
+					// files to
+					// "/home/pankaj/public_html/wp-content/uploads/image2/",
+					// you should pass directory parameter as
+					// "/wp-content/uploads/image2/"
+					ftpUploader.uploadFile(item.getInputStream(), removerAcentos(item.getName()), "/");
+					ftpUploader.disconnect();
+					System.out.println("Done");
+
+					ExameService exameService = new ExameService();
+
+	//				exame.setNomePaciente(nomePaciente);
+					
+					Boolean resposta = exameService.register(exame);
+
+					System.out.println("uploaded");
+				}
+				
 			}
 		} catch (FileUploadException e1) {
 			// TODO Auto-generated catch block

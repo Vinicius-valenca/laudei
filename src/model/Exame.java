@@ -44,6 +44,8 @@ public class Exame implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "nomeMedico", referencedColumnName = "id")
 	private Pessoa nomeMedico;
+	//@JoinColumn(name = "paciente", referencedColumnName = "id")
+	//private Paciente noomePaciente;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtEntrada;
 	@Temporal(TemporalType.TIMESTAMP)
@@ -68,13 +70,17 @@ public class Exame implements Serializable {
 		this.obs = obs;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Exame [id=" + id + ", nomePaciente=" + nomePaciente + ", nomeClinica=" + nomeClinica + ", nomeMedico="
-				+ nomeMedico + ", dtEntrada=" + dtEntrada + ", dtLaudo=" + dtLaudo + ", tpExame=" + tpExame + ", obs="
-				+ obs + ", examenome=" + examenome + ", exameLink=" + exameLink + ", laudoVisto=" + laudoVisto
-				+ ", laudo=" + laudo + "]";
+		return "Exame [id=" + id + ", code=" + code + ", nomePaciente=" + nomePaciente + ", nomeClinica=" + nomeClinica
+				+ ", nomeMedico=" + nomeMedico + ", dtEntrada=" + dtEntrada
+				+ ", dtLaudo=" + dtLaudo + ", tpExame=" + tpExame + ", obs=" + obs + ", examenome=" + examenome
+				+ ", exameLink=" + exameLink + ", laudoVisto=" + laudoVisto + ", laudo=" + laudo + "]";
 	}
+
+
 
 	private String laudo;
 
@@ -149,22 +155,25 @@ public class Exame implements Serializable {
 		this.laudo = laudo;
 	}
 
-	public Exame(Long id, String nomePaciente, Pessoa nomeClinica, Pessoa nomeMedico, Date dtEntrada, Date dtLaudo,
-			String tpExame, String examenome, String exameLink, Boolean laudoVisto, String laudo, String obs, UUID code) {
+	
+
+	public Exame(Long id, UUID code, String nomePaciente, Pessoa nomeClinica, Pessoa nomeMedico, Paciente noomePaciente,
+			Date dtEntrada, Date dtLaudo, String tpExame, String obs, String examenome, String exameLink,
+			Boolean laudoVisto, String laudo) {
 		super();
 		this.id = id;
+		this.code = code;
 		this.nomePaciente = nomePaciente;
 		this.nomeClinica = nomeClinica;
 		this.nomeMedico = nomeMedico;
 		this.dtEntrada = dtEntrada;
 		this.dtLaudo = dtLaudo;
 		this.tpExame = tpExame;
+		this.obs = obs;
 		this.examenome = examenome;
 		this.exameLink = exameLink;
 		this.laudoVisto = laudoVisto;
 		this.laudo = laudo;
-		this.obs = obs;
-		this.code = code;
 	}
 
 	public UUID getCode() {

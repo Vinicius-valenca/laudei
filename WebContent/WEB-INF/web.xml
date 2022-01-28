@@ -24,6 +24,11 @@
 		<servlet-class>controller.AgendaServlet</servlet-class>
 	</servlet>
 	<servlet>
+		<display-name>PacienteServlet</display-name>
+		<servlet-name>PacienteServlet</servlet-name>
+		<servlet-class>controller.PacienteServlet</servlet-class>
+	</servlet>
+	<servlet>
 		<display-name>LaudoServlet</display-name>
 		<servlet-name>LaudoServlet</servlet-name>
 		<servlet-class>controller.LaudoServlet</servlet-class>
@@ -41,6 +46,10 @@
 	<servlet-mapping>
 		<servlet-name>AgendaServlet</servlet-name>
 		<url-pattern>/AgendaServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PacienteServlet</servlet-name>
+		<url-pattern>/PacienteServlet</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>LaudoServlet</servlet-name>
