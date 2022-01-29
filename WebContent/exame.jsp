@@ -176,18 +176,25 @@
 
 															<div class="col-lg-12 col-xs-12">
 																<div class="row">
-																	<div class="col-lg-7 col-xs-12">
+																	<div class="col-lg-6 col-xs-12">
 																		<div class="form-group">
 																			<label>Nome Completo</label> <input
 																				id="nome_completo" name="nome_completo" type="text"
 																				class="form-control">
 																		</div>
 																	</div>
-																	<div class="col-lg-4 col-xs-12">
+																	<div class="col-lg-3 col-xs-12">
 																		<div class="form-group">
 																			<label>Email</label> <input id="email" name="email"
 																				type="email" class="form-control"
 																				placeholder="cliente@gmail.com">
+																		</div>
+																	</div>
+																	
+																	<div class="col-lg-3 col-xs-12">
+																		<div class="form-group">
+																			<label>CPF</label> <input id="cpf" name="cpf"
+																				type="text" class="cpf form-control  cpf">
 																		</div>
 																	</div>
 
@@ -211,7 +218,7 @@
 																	</div>
 
 
-																	<div class="col-lg-3 col-xs-12">
+																	<div class="col-lg-2 col-xs-12">
 
 
 																		<div class="form-group">
@@ -241,24 +248,7 @@
 																		</div>
 																	</div>
 
-
-
-																</div>
-
-															</div>
-
-
-
-															<div class="col-lg-12 col-xs-12">
-																<div class="row">
-																	<div class="col-lg-3 col-xs-12">
-																		<div class="form-group">
-																			<label>CPF</label> <input id="cpf" name="cpf"
-																				type="text" class="cpf form-control  cpf">
-																		</div>
-																	</div>
-
-																	<div class="col-lg-3 col-xs-12">
+<div class="col-lg-2 col-xs-12">
 																		<div class="form-group">
 																			<label>Peso</label> <input id="peso" name="peso"
 																				type="text" class="form-control">
@@ -266,7 +256,7 @@
 																	</div>
 
 
-																	<div class="col-lg-3 col-xs-12">
+																	<div class="col-lg-2 col-xs-12">
 																		<div class="form-group">
 																			<label>Altura</label> <input id="
 																				altura"
@@ -275,13 +265,13 @@
 																		</div>
 																	</div>
 
-
-
-
-
 																</div>
 
 															</div>
+
+
+
+															
 
 
 
@@ -304,12 +294,7 @@
 
 															<div class="col-lg-12 col-xs-12">
 																<div class="row">
-																	<div class="col-lg-3 col-xs-12">
-																		<div class="form-group">
-																			<label>Empresa</label> <input id="empresa"
-																				name="empresa" type="text" class="form-control">
-																		</div>
-																	</div>
+																	
 																	<div class="col-lg-3 col-xs-12">
 																		<div class="form-group">
 																			<label for="dtexame">Data do exame</label>
@@ -330,20 +315,9 @@
 
 
 
-																</div>
 
 
-
-
-
-															</div>
-
-
-
-															<div class="col-lg-12 col-xs-12">
-																<div class="row">
-
-																	<div class="col-lg-7 col-xs-12">
+																	<div class="col-lg-6 col-xs-12">
 																		<div class="form-group">
 																			<label>Solicitante</label> <input id="solicitante"
 																				name="solicitante" type="text" class="form-control">
@@ -353,6 +327,20 @@
 																		<div class="form-group">
 																			<label>CRM Solicitante</label> <input id="crm"
 																				name="crm" type="text" class="form-control">
+																		</div>
+																	</div>
+																	<div class="col-lg-7 col-xs-12">
+																		<div class="form-group">
+																			<label>Indicacao</label> <input id="Indicacao"
+																				name="Indicacao" type="text" class="form-control">
+																		</div>
+																	</div>
+																	
+																
+																	<div class="col-lg-3 col-xs-12">
+																		<div class="form-group">
+																			<label>Empresa</label> <input id="empresa"
+																				name="empresa" type="text" class="form-control">
 																		</div>
 																	</div>
 
