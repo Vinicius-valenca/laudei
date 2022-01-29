@@ -150,8 +150,7 @@ public class ExameServlet extends HttpServlet {
 					InputStream filecontent = item.getInputStream();
 					int dotIndex = item.getName().lastIndexOf('.');
 					String nome = (dotIndex == -1) ? item.getName() : item.getName().substring(0, dotIndex);
-					exame.setNomePaciente(nome);
-
+					
 					byte[] examedata = new byte[(int) item.getSize()];
 					try {
 
@@ -164,7 +163,7 @@ public class ExameServlet extends HttpServlet {
 					System.out.println(filename);
 					exame.setExamenome(removerAcentos(item.getName()));
 					exame.setDtEntrada(new java.sql.Date(System.currentTimeMillis()));
-					exame.setNomePaciente(removerAcentos(filename));
+					
 
 					FTPUploader ftpUploader = new FTPUploader("ftp.zeituneinformatica.com.br",
 							"laudeisistema@laudeitelemedicina.com.br", "Pa6?Eo%D8#ix");
@@ -258,7 +257,7 @@ public class ExameServlet extends HttpServlet {
 	System.out.println(filename);
 	exame.setExamenome(removerAcentos(item.getName()));
 	exame.setDtEntrada(new java.sql.Date(System.currentTimeMillis()));
-	exame.setNomePaciente(removerAcentos(filename));
+	//exame.setNomePaciente(removerAcentos(filename));
 //}else{	
 	//exame.setExamenome(removerAcentos(p1.getNome_completo()));
 	//exame.setDtEntrada(new java.sql.Date(System.currentTimeMillis()));
