@@ -43,7 +43,8 @@ public class Exame implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "nomeMedico", referencedColumnName = "id")
 	private Pessoa nomeMedico;
-	@JoinColumn(name = "paciente", referencedColumnName = "id")
+	@OneToOne
+	@JoinColumn(name = "nomePaciente", referencedColumnName = "id")
 	private Paciente nomePaciente;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtEntrada;

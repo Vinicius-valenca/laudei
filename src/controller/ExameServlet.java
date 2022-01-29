@@ -163,7 +163,7 @@ public class ExameServlet extends HttpServlet {
 					System.out.println(filename);
 					exame.setExamenome(removerAcentos(item.getName()));
 					exame.setDtEntrada(new java.sql.Date(System.currentTimeMillis()));
-					
+					exame.setNomePaciente(null);
 
 					FTPUploader ftpUploader = new FTPUploader("ftp.zeituneinformatica.com.br",
 							"laudeisistema@laudeitelemedicina.com.br", "Pa6?Eo%D8#ix");
