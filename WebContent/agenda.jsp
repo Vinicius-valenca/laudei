@@ -99,7 +99,7 @@
         <tr>
             
 											
-											<th data-field="nomePaciente" data-halign="center" data-width="150"
+											<th data-field="examenome" data-halign="center" data-width="150"
 												data-align="left" data-formatter="nomeFormat" data-sortable="true">Nome Paciente</th>
 											<th data-field="tpExame" data-halign="center" data-align="center"
 												data-width="110" data-sortable="true">Tipo Exame</th>
@@ -153,7 +153,7 @@
         <tr>
             
 											
-											<th data-field="nomePaciente" data-halign="center" data-width="150"
+											<th data-field="examenome" data-halign="center" data-width="150"
 												data-align="left" data-formatter="nomeFormat" data-sortable="true">Nome Paciente</th>
 											<th data-field="tpExame" data-halign="center" data-align="center"
 												data-width="110" data-sortable="true">Tipo Exame</th>

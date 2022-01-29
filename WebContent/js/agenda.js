@@ -299,10 +299,11 @@ var validar = "\n\nAcesso ao laudo na plataforma pelo link www.laudeitelemedicin
    			contentType : 'application/json; charset=utf-8',
    			dataType : 'json',
    			success : function(retornoJson) {
+   				console.log("retornoJson", retornoJson);
    				$('#table').bootstrapTable('load', retornoJson);
    				
    			
-   					console.log("retornoJson", retornoJson);
+   					
    					//var lista= JSON.parse(retornoJson);	
    					//console.log("lista", lista);
    					//popularCampos(lista);
@@ -318,9 +319,10 @@ var validar = "\n\nAcesso ao laudo na plataforma pelo link www.laudeitelemedicin
    			contentType : 'application/json; charset=utf-8',
    			dataType : 'json',
    			success : function(retornoJson) {
+   				console.log("retornoJson", retornoJson);
    				$('#table2').bootstrapTable('load', retornoJson);
    				
-   					console.log("retornoJson", retornoJson);
+   					
    					//var lista= JSON.parse(retornoJson);	
    					//console.log("lista", lista);
    					//popularCampos(lista);

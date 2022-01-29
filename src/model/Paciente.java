@@ -3,7 +3,7 @@ package model;
 
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
-import java.sql.Date;
+import java.util.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

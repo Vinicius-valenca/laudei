@@ -37,15 +37,14 @@ public class Exame implements Serializable {
 	@GeneratedValue(generator = "UUID")
 	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
 	private UUID code;
-	private String nomePaciente;
 	@OneToOne
 	@JoinColumn(name = "nomeClinica", referencedColumnName = "id")
 	private Pessoa nomeClinica;
 	@OneToOne
 	@JoinColumn(name = "nomeMedico", referencedColumnName = "id")
 	private Pessoa nomeMedico;
-	//@JoinColumn(name = "paciente", referencedColumnName = "id")
-	//private Paciente noomePaciente;
+	@JoinColumn(name = "paciente", referencedColumnName = "id")
+	private Paciente nomePaciente;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtEntrada;
 	@Temporal(TemporalType.TIMESTAMP)
@@ -72,13 +71,7 @@ public class Exame implements Serializable {
 
 
 
-	@Override
-	public String toString() {
-		return "Exame [id=" + id + ", code=" + code + ", nomePaciente=" + nomePaciente + ", nomeClinica=" + nomeClinica
-				+ ", nomeMedico=" + nomeMedico + ", dtEntrada=" + dtEntrada
-				+ ", dtLaudo=" + dtLaudo + ", tpExame=" + tpExame + ", obs=" + obs + ", examenome=" + examenome
-				+ ", exameLink=" + exameLink + ", laudoVisto=" + laudoVisto + ", laudo=" + laudo + "]";
-	}
+
 
 
 
@@ -92,13 +85,7 @@ public class Exame implements Serializable {
 		this.id = id;
 	}
 
-	public String getNomePaciente() {
-		return nomePaciente;
-	}
 
-	public void setNomePaciente(String nomePaciente) {
-		this.nomePaciente = nomePaciente;
-	}
 
 	public Pessoa getNomeClinica() {
 		return nomeClinica;
@@ -157,15 +144,16 @@ public class Exame implements Serializable {
 
 	
 
-	public Exame(Long id, UUID code, String nomePaciente, Pessoa nomeClinica, Pessoa nomeMedico, Paciente noomePaciente,
+
+	public Exame(Long id, UUID code, Pessoa nomeClinica, Pessoa nomeMedico, Paciente nomePaciente,
 			Date dtEntrada, Date dtLaudo, String tpExame, String obs, String examenome, String exameLink,
 			Boolean laudoVisto, String laudo) {
 		super();
 		this.id = id;
 		this.code = code;
-		this.nomePaciente = nomePaciente;
 		this.nomeClinica = nomeClinica;
 		this.nomeMedico = nomeMedico;
+		this.nomePaciente = nomePaciente;
 		this.dtEntrada = dtEntrada;
 		this.dtLaudo = dtLaudo;
 		this.tpExame = tpExame;
@@ -174,6 +162,24 @@ public class Exame implements Serializable {
 		this.exameLink = exameLink;
 		this.laudoVisto = laudoVisto;
 		this.laudo = laudo;
+	}
+
+	
+
+	public Paciente getNomePaciente() {
+		return nomePaciente;
+	}
+
+	public void setNomePaciente(Paciente nomePaciente) {
+		this.nomePaciente = nomePaciente;
+	}
+
+	@Override
+	public String toString() {
+		return "Exame [id=" + id + ", code=" + code +  ", nomeClinica=" + nomeClinica
+				+ ", nomeMedico=" + nomeMedico + ", nomePaciente=" + nomePaciente + ", dtEntrada=" + dtEntrada
+				+ ", dtLaudo=" + dtLaudo + ", tpExame=" + tpExame + ", obs=" + obs + ", examenome=" + examenome
+				+ ", exameLink=" + exameLink + ", laudoVisto=" + laudoVisto + ", laudo=" + laudo + "]";
 	}
 
 	public UUID getCode() {
@@ -185,7 +191,11 @@ public class Exame implements Serializable {
 	}
 
 	public String getExamenome() {
-		return examenome;
+		if(nomePaciente.getId() != null){
+			return nomePaciente.getNome_completo();
+		}else{
+			return examenome;
+		}
 	}
 
 	public void setExamenome(String examenome) {
