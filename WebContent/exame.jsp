@@ -157,7 +157,9 @@
 
 													</div>
 
-
+<form action="enviarExame" class="dropzone"
+														id="my-awesome-dropzone1" method="post"
+														enctype="multipart/form-data;charset=UTF-8">
 													<div class="panel panel-default">
 
 														<a data-target="#item-telefones">
@@ -367,9 +369,7 @@
 
 
 
-													<form action="enviarExame" class="dropzone"
-														id="my-awesome-dropzone1" method="post"
-														enctype="multipart/form-data;charset=UTF-8">
+													
 														<div class="row">
 															<div class="col-lg-12">
 

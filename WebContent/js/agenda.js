@@ -69,7 +69,7 @@ var validar = "\n\nAcesso ao laudo na plataforma pelo link www.laudeitelemedicin
 									});
 					$("#id").val(row.id);
 					 $('#nomeLaudo').empty();
-					 $('#nomeLaudo').append("Laudo - "+row.tpExame+" - "+row.nomePaciente.split('.')[0]);
+					 $('#nomeLaudo').append("Laudo - "+row.tpExame+" - "+row.examenome.split('.')[0]);
 					$("#idPessoa").val($("#idPessoa1").val());
 					
 					$("#examenome").val(row.examenome);
