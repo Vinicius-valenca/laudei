@@ -6,6 +6,7 @@
 <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 <link href="css/font.css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
 <link href="css/font-awesome.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
 
 <link href="css/style.css" rel="stylesheet">
 <link href="css/pages/dashboard.css" rel="stylesheet">
@@ -56,6 +57,7 @@
 <script src="js/bootstrap-wysihtml5.pt-BR.js"></script>
 <script src="js/jquery.wysihtml5_size_matters.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
 
 <script src="js/autosize.js"></script>

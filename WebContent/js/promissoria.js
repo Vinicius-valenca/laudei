@@ -1,10 +1,50 @@
 $(document).ready(function(){
+	$("#tags").select2({
+	
+	
+  ajax: {
+                url: "AgendaServlet",
+                dataType: 'json',
+                data: function (params) {
+
+                    return {
+                        name: params.term
+                    };
+                },
+                processResults: function (data, page) {
+           
+                    return { results: data };
+                }
+            
+        },
+  tags: true,
+  createTag: function (params) {
+    return {
+      id: params.term,
+      email: params.term,
+      newOption: true
+    }
+  },
+   templateResult: function (data) {
+    var $result = $("<span></span>");
+
+    $result.text(data.email);
+
+    if (data.newOption) {
+      $result.append(" <em>(Novo)</em>");
+    }
+
+    return $result;
+  }
+});
+
+
 	$('.date').datepicker({
 		startDate : "01/01/1900",
 		language : "pt-BR"
 	});
 	
-	
+
 
     $('#table_pacientes').on('check.bs.table', function (e, row) {
 	     

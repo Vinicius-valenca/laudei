@@ -178,6 +178,10 @@
 
 															<div class="col-lg-12 col-xs-12">
 																<div class="row">
+																
+																<select id='tags'>
+<option value="test">Test</option>
+</select>
 																	<div class="col-lg-6 col-xs-12">
 																		<div class="form-group">
 																			<label>Nome Completo</label> <input
