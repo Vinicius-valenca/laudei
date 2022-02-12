@@ -19,7 +19,8 @@
    <link rel="stylesheet" href="css/site.css">
         <link rel="stylesheet" href="css/richtext.min.css">
       
-        
+       <link rel="stylesheet" href="css/site.css">
+        <link rel="stylesheet" href="css/bootstrap-select.min.css">    
 
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -57,7 +58,7 @@
 <script src="js/bootstrap-wysihtml5.pt-BR.js"></script>
 <script src="js/jquery.wysihtml5_size_matters.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script src="js/select2.min.js"></script>
 
 
 <script src="js/autosize.js"></script>

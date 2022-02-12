@@ -1,42 +1,25 @@
 $(document).ready(function(){
-	$("#tags").select2({
 	
 	
-  ajax: {
-                url: "AgendaServlet",
-                dataType: 'json',
-                data: function (params) {
+	var lastResults = [];
 
-                    return {
-                        name: params.term
-                    };
-                },
-                processResults: function (data, page) {
-           
-                    return { results: data };
-                }
-            
-        },
-  tags: true,
-  createTag: function (params) {
-    return {
-      id: params.term,
-      email: params.term,
-      newOption: true
-    }
-  },
-   templateResult: function (data) {
-    var $result = $("<span></span>");
+	
+	$('#tags').select2({
+	    width: '100%',
+	    allowClear: true,
+	    multiple: true,
+	    maximumSelectionSize: 1,
+	    placeholder: "Start typing",
+	    data: [
+	            { id: 1, text: "Nikhilesh"},
+	            { id: 2, text: "Raju"    }
+	          ]    
+	});
+	
 
-    $result.text(data.email);
 
-    if (data.newOption) {
-      $result.append(" <em>(Novo)</em>");
-    }
-
-    return $result;
-  }
-});
+	
+	
 
 
 	$('.date').datepicker({
