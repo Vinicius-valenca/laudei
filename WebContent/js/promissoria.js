@@ -1,26 +1,28 @@
 $(document).ready(function(){
 	
 	
-	var lastResults = [];
+	var groups_array = [];
 
-	
-	$('#tags').select2({
-	    width: '100%',
-	    allowClear: true,
-	    multiple: true,
-	    maximumSelectionSize: 1,
-	    placeholder: "Start typing",
-	    data: [
-	            { id: 1, text: "Nikhilesh"},
-	            { id: 2, text: "Raju"    }
-	          ]    
+	$.getJSON('SolicitanteServlet', function (data) {
+	    $.each(data, function (index) {
+	        groups_array.push({
+	            id: data[index].id,
+	            text: data[index].email,
+	            newOption: false
+	        });
+	    });
+	    // Call val() or select2() method here
+	    $(".js-example-tags").select2({data: groups_array});
 	});
 	
-
-
 	
-	
+	$(".js-example-tags").select2({
+		  tags: true
+		});
 
+	$('.js-example-tags').on('select2:select', function (e) {
+		  alert("entrei")
+		});
 
 	$('.date').datepicker({
 		startDate : "01/01/1900",

@@ -9,6 +9,11 @@
 		<servlet-class>controller.LoginServlet</servlet-class>
 	</servlet>
 	  <servlet>
+		<display-name>SolicitanteServlet</display-name>
+		<servlet-name>SolicitanteServlet</servlet-name>
+		<servlet-class>controller.SolicitanteServlet</servlet-class>
+	</servlet>
+	  <servlet>
 		<display-name>ExameServlet</display-name>
 		<servlet-name>ExameServlet</servlet-name>
 		<servlet-class>controller.ExameServlet</servlet-class>
@@ -42,6 +47,10 @@
 	<servlet-mapping>
 		<servlet-name>PromissoriaServlet</servlet-name>
 		<url-pattern>/emitirPromissoria</url-pattern>
+	</servlet-mapping>
+		<servlet-mapping>
+		<servlet-name>SolicitanteServlet</servlet-name>
+		<url-pattern>/SolicitanteServlet</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>AgendaServlet</servlet-name>

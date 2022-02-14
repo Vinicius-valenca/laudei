@@ -179,7 +179,7 @@
 															<div class="col-lg-12 col-xs-12">
 																<div class="row">
 																
-<input type="text" id="tags" />
+
 																	<div class="col-lg-6 col-xs-12">
 																		<div class="form-group">
 																			<label>Nome Completo</label> <input
@@ -323,8 +323,9 @@
 
 																	<div class="col-lg-6 col-xs-12">
 																		<div class="form-group">
-																			<label>Solicitante</label> <input id="solicitante"
-																				name="solicitante" type="text" class="form-control">
+																			<label>Solicitante</label> <select data-width="100%" id="solicitante" name="solicitante" class="form-control js-example-tags">
+ <option>Selecione uma opção</option>
+</select>
 																		</div>
 																	</div>
 																	<div class="col-lg-3 col-xs-12">

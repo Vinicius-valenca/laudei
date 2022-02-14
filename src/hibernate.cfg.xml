@@ -20,5 +20,6 @@
 		<mapping class="model.Pessoa" />
 		<mapping class="model.Exame" />
 		<mapping class="model.Paciente" />
+			<mapping class="model.Solicitante" />
 	</session-factory>
 </hibernate-configuration>
