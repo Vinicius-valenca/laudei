@@ -90,6 +90,31 @@ $(document).ready(function(){
 	});
 	
 	
+		$("#submit-all").click(function() {
+		
+		
+		var form = $( "#my-awesome-dropzone1" );
+    		form.validate();    		
+    		if(form.valid()){
+    			$("#my-awesome-dropzone1").ajaxSubmit({url: 'enviarExame', type: 'post',success: 
+       			 function(data){
+       			if(data == "true"){       				
+                       Salvo();
+                       	    		
+                   }else{
+                       Erro();
+                   }
+       			 $('#myModal').modal('hide');
+       		
+       			}} )
+    		}else{
+    			   Erro();
+    		}
+    		
+   
+		
+	});
+	
 	$("#perfil").click(function() {
 		
 		$('#myModal2').modal('show');
@@ -124,17 +149,31 @@ Dropzone.options.myAwesomeDropzone = {
   };
 
 
-Dropzone.options.myAwesomeDropzone1 = { // The camelized version of the ID of the form element
+Dropzone.options.myDropzone= {
+    url: 'enviarExame',
+    autoProcessQueue: false,
+    uploadMultiple: false,
+    parallelUploads: 1,
+    maxFiles: 1,
+    addRemoveLinks: true,
+    init: function() {
+        dzClosure = this; // Makes sure that 'this' is understood inside the functions below.
 
-		  // The configuration we've talked about above
-		  autoProcessQueue: false,
-		  parallelUploads: 1,
-		  maxFiles: 1
+        // for Dropzone to process the queue (instead of default form behavior):
+        document.getElementById("submit-all").addEventListener("click", function(e) {
+            // Make sure that the form isn't actually being sent.
+            e.preventDefault();
+            e.stopPropagation();
+            dzClosure.processQueue();
+        });
 
-		 
-		  
-		 
-		}
+        //send all the form data along with the files:
+        this.on("sendingmultiple", function(data, xhr, formData) {
+            formData.append("firstname", jQuery("#firstname").val());
+            formData.append("lastname", jQuery("#lastname").val());
+        });
+    }
+}
 
 
 
