@@ -55,6 +55,9 @@ public class Exame implements Serializable {
 	private String examenome;
 	private String exameLink;
 	private Boolean laudoVisto;
+	@OneToOne
+	@JoinColumn(name = "Solicitante", referencedColumnName = "id")
+	private Solicitante solicitante;
 
 	
 
@@ -146,9 +149,21 @@ public class Exame implements Serializable {
 	
 
 
-	public Exame(Long id, UUID code, Pessoa nomeClinica, Pessoa nomeMedico, Paciente nomePaciente,
-			Date dtEntrada, Date dtLaudo, String tpExame, String obs, String examenome, String exameLink,
-			Boolean laudoVisto, String laudo) {
+	
+
+	public Paciente getNomePaciente() {
+		return nomePaciente;
+	}
+
+	public void setNomePaciente(Paciente nomePaciente) {
+		this.nomePaciente = nomePaciente;
+	}
+
+	
+
+	public Exame(Long id, UUID code, Pessoa nomeClinica, Pessoa nomeMedico, Paciente nomePaciente, Date dtEntrada,
+			Date dtLaudo, String tpExame, String obs, String examenome, String exameLink, Boolean laudoVisto,
+			Solicitante solicitante, String laudo) {
 		super();
 		this.id = id;
 		this.code = code;
@@ -162,25 +177,24 @@ public class Exame implements Serializable {
 		this.examenome = examenome;
 		this.exameLink = exameLink;
 		this.laudoVisto = laudoVisto;
+		this.solicitante = solicitante;
 		this.laudo = laudo;
-	}
-
-	
-
-	public Paciente getNomePaciente() {
-		return nomePaciente;
-	}
-
-	public void setNomePaciente(Paciente nomePaciente) {
-		this.nomePaciente = nomePaciente;
 	}
 
 	@Override
 	public String toString() {
-		return "Exame [id=" + id + ", code=" + code +  ", nomeClinica=" + nomeClinica
-				+ ", nomeMedico=" + nomeMedico + ", nomePaciente=" + nomePaciente + ", dtEntrada=" + dtEntrada
-				+ ", dtLaudo=" + dtLaudo + ", tpExame=" + tpExame + ", obs=" + obs + ", examenome=" + examenome
-				+ ", exameLink=" + exameLink + ", laudoVisto=" + laudoVisto + ", laudo=" + laudo + "]";
+		return "Exame [id=" + id + ", code=" + code + ", nomeClinica=" + nomeClinica + ", nomeMedico=" + nomeMedico
+				+ ", nomePaciente=" + nomePaciente + ", dtEntrada=" + dtEntrada + ", dtLaudo=" + dtLaudo + ", tpExame="
+				+ tpExame + ", obs=" + obs + ", examenome=" + examenome + ", exameLink=" + exameLink + ", laudoVisto="
+				+ laudoVisto + ", solicitante=" + solicitante + ", laudo=" + laudo + "]";
+	}
+
+	public Solicitante getSolicitante() {
+		return solicitante;
+	}
+
+	public void setSolicitante(Solicitante solicitante) {
+		this.solicitante = solicitante;
 	}
 
 	public UUID getCode() {

@@ -1,3 +1,5 @@
+
+
 $(document).ready(function(){
 	
 	
@@ -121,11 +123,19 @@ Dropzone.options.myAwesomeDropzone = {
 		timeout:6000
   };
 
-//"myAwesomeDropzone" is the camelized version of the HTML element's ID
-Dropzone.options.myAwesomeDropzone1 = {
-		autoProcessQueue: false,
 
-		maxFiles: 1,
-	
-		timeout:6000
-  };
+Dropzone.options.myAwesomeDropzone1 = { // The camelized version of the ID of the form element
+
+		  // The configuration we've talked about above
+		  autoProcessQueue: false,
+		  parallelUploads: 1,
+		  maxFiles: 1
+
+		 
+		  
+		 
+		}
+
+
+
+

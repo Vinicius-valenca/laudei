@@ -164,8 +164,8 @@
 
 													</div>
 
-<form action="enviarExame" class="dropzone"
-														id="my-awesome-dropzone1" method="post"
+<form action="enviarExame" id="my-awesome-dropzone1" class="dropzone"
+														 method="post"
 														enctype="multipart/form-data;charset=UTF-8">
 													<div class="panel panel-default">
 
@@ -379,31 +379,18 @@
 
 
 
+													<div class="dropzone-previews"></div> <!-- this is were the previews should be shown. -->
+														<input type="hidden" name="tpexame" id="tpexame">
 													
-														<div class="row">
-															<div class="col-lg-12">
-
-
-
-																<input type="hidden" name="tpexame" id="tpexame">
-
-
-
-
-
-
-															</div>
-
-														</div>
-														
+												
 													</form>
+
 <div class="row">
 															<div class="col-lg-12">
 																<br> <input type="button" name="submit"
 																	value="Submit" id="submit-all" class="btn" />
 															</div>
-														</div>
-
+														</div>		
 												</div>
 
 											</div>
