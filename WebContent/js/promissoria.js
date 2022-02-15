@@ -4,24 +4,38 @@ $(document).ready(function(){
 	var groups_array = [];
 
 	$.getJSON('SolicitanteServlet', function (data) {
+	//console.log(data);
 	    $.each(data, function (index) {
-	        groups_array.push({
-	            id: data[index].id,
-	            text: data[index].email,
-	            newOption: false
-	        });
+	    var newOption = new Option(data[index].nome_completo, data[index].crm, false, false);
+	     $('#solicitante').append(newOption).trigger('change');
+	       
 	    });
-	    // Call val() or select2() method here
-	    $(".js-example-tags").select2({data: groups_array});
+	    
 	});
 	
+	$(document).on('keyup', '.select2-search__field', function(e){
+	
+    e.target.value = e.target.value.toUpperCase()
+    $(".select2-results__option--highlighte").val(e.target.value.toUpperCase());
+});
+
+
+
 	
 	$(".js-example-tags").select2({
 		  tags: true
 		});
 
 	$('.js-example-tags').on('select2:select', function (e) {
-		  alert("entrei")
+		  if(/^\d+$/.test($('#solicitante').select2('data')[0]['id'])){
+		   $("#crm").val($('#solicitante').select2('data')[0]['id'])
+		  }else{
+		   $("#crm").val('')
+		   $("#crm").attr("readonly", false); 
+		  }
+		  
+		 
+		  
 		});
 
 	$('.date').datepicker({

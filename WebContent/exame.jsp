@@ -8,12 +8,19 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<style type="text/css">
+
+  .select2-search__field {
+     text-transform: uppercase; !important;
+}
+  .select2-results__option--highlighted {
+     text-transform: uppercase; !important;
+}
+
+</style>
 <jsp:include page="imports.jsp" />
 <link rel="stylesheet" href="css/promissoria.css">
 <script src="js/promissoria.js"></script>
-<script>
-	
-</script>
 
 
 </head>
@@ -331,7 +338,7 @@
 																	<div class="col-lg-3 col-xs-12">
 																		<div class="form-group">
 																			<label>CRM Solicitante</label> <input id="crm"
-																				name="crm" type="text" class="form-control">
+																				name="crm" type="text" class="form-control" readonly>
 																		</div>
 																	</div>
 																	<div class="col-lg-7 col-xs-12">
