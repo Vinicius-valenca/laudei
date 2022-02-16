@@ -52,7 +52,7 @@ $(document).ready(function(){
     	$("#nome_completo").val(row.nome_completo);
     	$("#email").val(row.email);
     	$("#cpf").val(row.cpf);
-    	$("#sexo").val(row.sexo);
+    	$("input[name=sexo][value=" + row.sexo + "]").attr('checked', 'checked');
     	$("#celular").val(row.celular);
     	$("#dtnascimento").val(row.dtnascimento);
     	$("#peso").val(row.peso);
