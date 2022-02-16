@@ -164,7 +164,7 @@
 
 													</div>
 
-<form action="enviarExame" id="my-awesome-dropzone1" class="dropzone" method="post" enctype="multipart/form-data;charset=UTF-8">
+<form action="enviarExame" method="post" enctype="multipart/form-data;charset=UTF-8">
 													<div class="panel panel-default">
 
 														<a data-target="#item-telefones">

@@ -51,7 +51,13 @@ $(document).ready(function(){
 	     
     	$("#nome_completo").val(row.nome_completo);
     	$("#email").val(row.email);
-    	
+    	$("#cpf").val(row.cpf);
+    	$("#sexo").val(row.sexo);
+    	$("#celular").val(row.celular);
+    	$("#dtnascimento").val(row.dtnascimento);
+    	$("#peso").val(row.peso);
+    	$("#altura").val(row.altura);
+    	$("#dtexame").val(row.dtexame);
 	        	console.log (row);
 	        
 	     
@@ -139,12 +145,9 @@ function showDiv(divId, element)
 }
 
 
-//"myAwesomeDropzone" is the camelized version of the HTML element's ID
-Dropzone.options.myAwesomeDropzone = {
-		//autoProcessQueue: false,
 
-		//maxFiles: 1,
-	
+Dropzone.options.myAwesomeDropzone = {
+		
 		timeout:6000
   };
 
@@ -157,11 +160,11 @@ Dropzone.options.myDropzone= {
     maxFiles: 1,
     addRemoveLinks: true,
     init: function() {
-        dzClosure = this; // Makes sure that 'this' is understood inside the functions below.
+        dzClosure = this; 
 
-        // for Dropzone to process the queue (instead of default form behavior):
+        
         document.getElementById("submit-all").addEventListener("click", function(e) {
-            // Make sure that the form isn't actually being sent.
+           
             e.preventDefault();
             e.stopPropagation();
             dzClosure.processQueue();
@@ -169,8 +172,19 @@ Dropzone.options.myDropzone= {
 
         //send all the form data along with the files:
         this.on("sendingmultiple", function(data, xhr, formData) {
-            formData.append("firstname", jQuery("#firstname").val());
-            formData.append("lastname", jQuery("#lastname").val());
+            formData.append("nome_completo", jQuery("#nome_completo").val());
+            formData.append("email", jQuery("#email").val());
+            formData.append("cpf", jQuery("#cpf").val());
+            formData.append("sexo", jQuery("#sexo").val());
+            formData.append("celular", jQuery("#celular").val());
+            formData.append("dtnascimento", jQuery("#dtnascimento").val());
+            formData.append("peso", jQuery("#peso").val());
+            formData.append("altura", jQuery("#altura").val());
+            formData.append("dtexame", jQuery("#dtexame").val());
+            formData.append("solicitante", jQuery("#solicitante").val());
+            formData.append("empresa", jQuery("#empresa").val());
+            formData.append("indicacao", jQuery("#indicacao").val());
+        
         });
     }
 }
