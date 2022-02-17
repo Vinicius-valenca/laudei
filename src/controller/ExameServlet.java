@@ -142,7 +142,7 @@ public class ExameServlet extends HttpServlet {
 					System.out.println(fieldname);
 					System.out.println(fieldvalue);
 					// ... (do your job here)
-					exame.setTpExame(fieldvalue);
+					//exame.setTpExame(fieldvalue);
 				} else {
 					// Process form file field (input type="file").
 					String fieldname = item.getFieldName();

@@ -48,7 +48,8 @@ $(document).ready(function(){
 
 
     $('#table_pacientes').on('check.bs.table', function (e, row) {
-	     
+    	$("#pacid").val(row.id);
+    	 
     	$("#nome_completo").val(row.nome_completo);
     	$("#email").val(row.email);
     	$("#cpf").val(row.cpf);
@@ -96,30 +97,6 @@ $(document).ready(function(){
 	});
 	
 	
-		$("#submit-all").click(function() {
-		
-		
-		var form = $( "#my-awesome-dropzone1" );
-    		form.validate();    		
-    		if(form.valid()){
-    			$("#my-awesome-dropzone1").ajaxSubmit({url: 'enviarExame', type: 'post',success: 
-       			 function(data){
-       			if(data == "true"){       				
-                       Salvo();
-                       	    		
-                   }else{
-                       Erro();
-                   }
-       			 $('#myModal').modal('hide');
-       		
-       			}} )
-    		}else{
-    			   Erro();
-    		}
-    		
-   
-		
-	});
 	
 	$("#perfil").click(function() {
 		
@@ -155,7 +132,7 @@ Dropzone.options.myAwesomeDropzone = {
 Dropzone.options.myDropzone= {
     url: 'enviarExame',
     autoProcessQueue: false,
-    uploadMultiple: false,
+    uploadMultiple: true,
     parallelUploads: 1,
     maxFiles: 1,
     addRemoveLinks: true,
@@ -163,15 +140,14 @@ Dropzone.options.myDropzone= {
         dzClosure = this; 
 
         
-        document.getElementById("submit-all").addEventListener("click", function(e) {
-           
-            e.preventDefault();
-            e.stopPropagation();
-            dzClosure.processQueue();
-        });
 
         //send all the form data along with the files:
         this.on("sendingmultiple", function(data, xhr, formData) {
+
+            formData.append("solicitante", jQuery("#solicitante").val());
+            
+            formData.append("pacid", jQuery("#pacid").val());
+            
             formData.append("nome_completo", jQuery("#nome_completo").val());
             formData.append("email", jQuery("#email").val());
             formData.append("cpf", jQuery("#cpf").val());
@@ -184,7 +160,15 @@ Dropzone.options.myDropzone= {
             formData.append("solicitante", jQuery("#solicitante").val());
             formData.append("empresa", jQuery("#empresa").val());
             formData.append("indicacao", jQuery("#indicacao").val());
+
         
+        });
+        
+
+        document.getElementById("submit-all").addEventListener("click", function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            dzClosure.processQueue();
         });
     }
 }
