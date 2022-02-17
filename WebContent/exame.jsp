@@ -194,19 +194,26 @@
 																	</div>
 																	<div class="col-lg-3 col-xs-12">
 																		<div class="form-group">
-																			<label>Email</label> <input id="email" name="email"
-																				type="email" class="form-control"
-																				placeholder="cliente@gmail.com">
-																		</div>
-																	</div>
-																	
-																	<div class="col-lg-3 col-xs-12">
-																		<div class="form-group">
 																			<label>CPF</label> <input id="cpf" name="cpf"
 																				type="text" class="cpf form-control  cpf">
 																		</div>
 																	</div>
-
+<div class="col-lg-3 col-xs-12">
+																		<div class="form-group">
+																			<label for="dtnascimento">Data nascimento</label>
+																			<!-- Datepicker as text field -->
+																			<div class="input-group date"
+																				data-date-format="dd/mm/yyyy">
+																				<input type="text" class="form-control"
+																					name="dtnascimento" id="dtnascimento"
+																					placeholder="dd/mm/yyyy">
+																				<div class="input-group-addon">
+																					<span class="glyphicon glyphicon-th"></span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	
 																</div>
 
 															</div>
@@ -241,21 +248,16 @@
 																		</div>
 																	</div>
 
+																	
+																	
 																	<div class="col-lg-3 col-xs-12">
 																		<div class="form-group">
-																			<label for="dtnascimento">Data nascimento</label>
-																			<!-- Datepicker as text field -->
-																			<div class="input-group date"
-																				data-date-format="dd/mm/yyyy">
-																				<input type="text" class="form-control"
-																					name="dtnascimento" id="dtnascimento"
-																					placeholder="dd/mm/yyyy">
-																				<div class="input-group-addon">
-																					<span class="glyphicon glyphicon-th"></span>
-																				</div>
-																			</div>
+																			<label>Email</label> <input id="email" name="email"
+																				type="email" class="form-control"
+																				placeholder="cliente@gmail.com">
 																		</div>
 																	</div>
+																	
 
 <div class="col-lg-2 col-xs-12">
 																		<div class="form-group">
