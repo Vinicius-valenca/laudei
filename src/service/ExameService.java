@@ -149,7 +149,7 @@ public List<Exame> getListOfExameSemLaudo(Date mes_ref,Date mes_ref2){
     try {
         tx = session.getTransaction();
         tx.begin();
-        list = session.createQuery("from Exame where laudo is NULL AND cast(dtEntrada, date) BETWEEN '"+mes_ref+"' AND '"+mes_ref2+"'").list();                        
+        list = session.createQuery("from Exame where laudo is NULL AND cast(dtEntrada as date) BETWEEN '"+mes_ref+"' AND '"+mes_ref2+"'").list();                        
       
     } catch (Exception e) {
        
@@ -167,7 +167,7 @@ public List<Exame> getListOfExameComLaudo(Date mes_ref,Date mes_ref2){
     try {
         tx = session.getTransaction();
         tx.begin();
-        list = session.createQuery("from Exame where laudo is NOT NULL AND cast(dtEntrada, date) BETWEEN '"+mes_ref+"' AND '"+mes_ref2+"'").list();                        
+        list = session.createQuery("from Exame where laudo is NOT NULL AND cast(dtEntrada as date) BETWEEN '"+mes_ref+"' AND '"+mes_ref2+"'").list();                        
        
     } catch (Exception e) {
        
