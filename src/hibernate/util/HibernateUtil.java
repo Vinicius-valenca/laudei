@@ -1,10 +1,14 @@
 package hibernate.util;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class HibernateUtil {
 
@@ -14,10 +18,19 @@ public class HibernateUtil {
 	static {
 		try {
 
+			Map<String,String> jdbcUrlSettings = new HashMap<>();
+			String jdbcDbUrl = System.getenv("JDBC_DATABASE_URL");
+			if (null != jdbcDbUrl) {
+			  jdbcUrlSettings.put("hibernate.connection.url", System.getenv("JDBC_DATABASE_URL"));
+			}
+
+
 			Configuration hibConfiguration = new Configuration().addResource("hibernate.cfg.xml").configure();
 
-			serviceRegistry = new ServiceRegistryBuilder().applySettings(hibConfiguration.getProperties())
-					.buildServiceRegistry();
+			serviceRegistry = new StandardServiceRegistryBuilder().
+				    configure("hibernate.cfg.xml").
+				    applySettings(jdbcUrlSettings).
+				    build();
 
 			sessionFactory = hibConfiguration.buildSessionFactory(serviceRegistry);
 			
