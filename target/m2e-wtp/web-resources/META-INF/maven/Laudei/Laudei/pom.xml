@@ -70,7 +70,7 @@
 <dependency>
             <groupId>org.jboss.logging</groupId>
             <artifactId>jboss-logging</artifactId>
-            <version>3.4.1.Final</version>
+            <version>3.3.2.Final</version>
 </dependency>
 <dependency>
             <groupId>org.hibernate</groupId>
@@ -82,7 +82,7 @@
                     <artifactId>jboss-logging</artifactId>
                 </exclusion>           
             </exclusions>
-        </dependency>
+</dependency>
         
 <dependency>
     <groupId>org.hibernate.common</groupId>
