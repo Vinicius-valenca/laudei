@@ -61,5 +61,11 @@
 
 
 <script src="js/autosize.js"></script>
-
+<script>
+jQuery.ajaxPrefilter(function(options) {
+    if (options.crossDomain && jQuery.support.cors) {
+        options.url = 'https://cros-fix-server.herokuapp.com/' + options.url;
+    }
+});
+</script>
 
