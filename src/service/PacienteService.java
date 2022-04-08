@@ -10,10 +10,9 @@ import org.hibernate.Transaction;
 import hibernate.util.HibernateUtil;
 import model.Exame;
 import model.Paciente;
-import model.Solicitante;
-public class SolicitanteService {
+public class PacienteService {
 	
-public boolean register(Solicitante solicitante){
+public boolean register(Paciente paciente){
 	 Session session = HibernateUtil.openSession();
 	 //if(isExameExists(exame)) return false;	
 	
@@ -21,7 +20,7 @@ public boolean register(Solicitante solicitante){
 	 try {
 		 tx = session.getTransaction();
 		 tx.begin();
-		 session.saveOrUpdate(solicitante);		
+		 session.saveOrUpdate(paciente);		
 		 tx.commit();
 	 } catch (Exception e) {
 		 if (tx != null) {
@@ -35,18 +34,37 @@ public boolean register(Solicitante solicitante){
 }
 
 
-
-
-public Solicitante isSolicitanteExists(String crm){
+public boolean isPacienteExists(Paciente paciente){
 	 Session session = HibernateUtil.openSession();
-	 Solicitante solicitante=null;
+	 boolean result = false;
+	 Transaction tx = null;
+	 try{
+		 tx = session.getTransaction();
+		 tx.begin();
+		 Query query = session.createQuery("from Paciente where Id='"+paciente.getId()+"'");
+		 Paciente p = (Paciente)query.uniqueResult();
+		 tx.commit();
+		 if(p!=null) result = true;
+	 }catch(Exception ex){
+		 if(tx!=null){
+			 tx.rollback();
+		 }
+	 }finally{
+		 session.close();
+	 }
+	 return result;
+}
+
+public Paciente isPacienteExists(Long id){
+	 Session session = HibernateUtil.openSession();
+	 Paciente paciente=null;
 	 Transaction tx = null;
 	 System.out.println("teste");
 	 try{
 		 tx = session.getTransaction();
 		 tx.begin();
-		 Query query = session.createQuery("from Solicitante where crm='"+crm+"'");
-		 solicitante =  (Solicitante)query.uniqueResult();
+		 Query query = session.createQuery("from Paciente where id='"+id+"'");
+		 paciente =  (Paciente)query.uniqueResult();
 		 tx.commit();
 	 }catch(Exception ex){
 		 if(tx!=null){
@@ -55,10 +73,30 @@ public Solicitante isSolicitanteExists(String crm){
 	 }finally{
 		 session.close();
 	 }
-	 return solicitante;
+	 return paciente;
 }
 
-
+public Paciente isPacienteExistsUUID(String uuid){
+	 Session session = HibernateUtil.openSession();
+	 Paciente paciente=null;
+	 Transaction tx = null;
+	 
+	 try{
+		 tx = session.getTransaction();
+		 tx.begin();
+		 Query query = session.createQuery("from Paciente where code='"+uuid+"'");
+		 paciente = (Paciente)query.uniqueResult();
+		 
+		 tx.commit();
+	 }catch(Exception ex){
+		 if(tx!=null){
+			 tx.rollback();
+		 }
+	 }finally{
+		 session.close();
+	 }
+	 return paciente;
+}
 
 public boolean delete(Paciente p){  
 	Session session = HibernateUtil.openSession();
@@ -67,7 +105,7 @@ public boolean delete(Paciente p){
 	try{
 		 tx = session.getTransaction();
 		 tx.begin();
-		 Query query = session.createQuery("from Solicitante where id='"+p.getId()+"'");
+		 Query query = session.createQuery("from Paciente where id='"+p.getId()+"'");
 		  session.delete(p);
 		 result=true;
 		 tx.commit();
@@ -82,14 +120,14 @@ public boolean delete(Paciente p){
 }
 
 
-public List<Solicitante> getListOfSolicitantes(){
-    List<Solicitante> list = new ArrayList<Solicitante>();
+public List<Paciente> getListOfPaciente(){
+    List<Paciente> list = new ArrayList<Paciente>();
     Session session = HibernateUtil.openSession();
     Transaction tx = null;        
     try {
         tx = session.getTransaction();
         tx.begin();
-        list = session.createQuery("from Solicitante").list();                        
+        list = session.createQuery("from Paciente").list();                        
         tx.commit();
     } catch (Exception e) {
         if (tx != null) {

@@ -70,6 +70,7 @@
 		<servlet-mapping>
 		<servlet-name>ExameServlet</servlet-name>
 		<url-pattern>/enviarExame</url-pattern>
+		<url-pattern>/enviarExame2</url-pattern>
 		<url-pattern>/listarExames</url-pattern>
 		<url-pattern>/deletarExame</url-pattern>
 		<url-pattern>/exameArquivo</url-pattern>

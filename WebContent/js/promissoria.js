@@ -113,9 +113,11 @@ function showDiv(divId, element)
 	if($("#tpperfil").val()==4){
 		document.getElementById("hidden_div1").style.display = element.value != 0 ? 'block' : 'none';
 	    $("#tpexame").val(element.value);
+	    $("#tpexame2").val(element.value);
 	}else{
 		document.getElementById("hidden_div").style.display = element.value != 0 ? 'block' : 'none';
 	    $("#tpexame").val(element.value);
+	    $("#tpexame2").val(element.value);
 	}
     
    
@@ -130,7 +132,7 @@ Dropzone.options.myAwesomeDropzone = {
 
 
 Dropzone.options.myDropzone= {
-    url: 'enviarExame',
+    url: 'enviarExame2',
     autoProcessQueue: false,
     uploadMultiple: true,
     parallelUploads: 1,
@@ -158,9 +160,10 @@ Dropzone.options.myDropzone= {
             formData.append("altura", jQuery("#altura").val());
             formData.append("dtexame", jQuery("#dtexame").val());
             formData.append("solicitante", jQuery("#solicitante").val());
+                 formData.append("crm", jQuery("#crm").val());
             formData.append("empresa", jQuery("#empresa").val());
             formData.append("indicacao", jQuery("#indicacao").val());
-
+			formData.append("tpexame2", jQuery("#tpexame2").val());
         
         });
         
@@ -169,6 +172,18 @@ Dropzone.options.myDropzone= {
             e.preventDefault();
             e.stopPropagation();
             dzClosure.processQueue();
+            
+            
+        });
+        
+        var _this=this;
+        dzClosure.on('complete',function(){
+            console.log("enviado!");
+            _this.removeAllFiles();
+            document.getElementById("enviarExame2").reset();
+            $("#tpexame1").val("0");
+            $('#table_pacientes').bootstrapTable('refresh');
+            
         });
     }
 }

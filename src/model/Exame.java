@@ -43,6 +43,8 @@ public class Exame implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "nomeMedico", referencedColumnName = "id")
 	private Pessoa nomeMedico;
+	
+	private String nPaciente;
 	@OneToOne
 	@JoinColumn(name = "nomePaciente", referencedColumnName = "id")
 	private Paciente nomePaciente;
@@ -161,15 +163,24 @@ public class Exame implements Serializable {
 
 	
 
-	public Exame(Long id, UUID code, Pessoa nomeClinica, Pessoa nomeMedico, Paciente nomePaciente, Date dtEntrada,
+	public String getNpaciente() {
+		return nPaciente;
+	}
+
+	public void setNpaciente(String npaciente) {
+		this.nPaciente = npaciente;
+	}
+
+	public Exame(Long id, UUID code, Pessoa nomeClinica, Pessoa nomeMedico, String nPaciente, Date dtEntrada,
 			Date dtLaudo, String tpExame, String obs, String examenome, String exameLink, Boolean laudoVisto,
-			Solicitante solicitante, String laudo) {
+			Solicitante solicitante, String laudo, Paciente nomePaciente) {
 		super();
 		this.id = id;
 		this.code = code;
 		this.nomeClinica = nomeClinica;
 		this.nomeMedico = nomeMedico;
 		this.nomePaciente = nomePaciente;
+		this.nPaciente = nPaciente;
 		this.dtEntrada = dtEntrada;
 		this.dtLaudo = dtLaudo;
 		this.tpExame = tpExame;

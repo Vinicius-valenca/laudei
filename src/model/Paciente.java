@@ -216,7 +216,7 @@ public class Paciente implements Serializable {
 
 	public void montarPaciente(FileItem item)
 			throws NumberFormatException, UnsupportedEncodingException, ParseException {
-		if (item.getFieldName().equals("id")) {
+		if (item.getFieldName().equals("pacid")) {
 			if (!item.getString("UTF-8").trim().isEmpty()) {
 				System.out.println("if");
 				this.setId(Long.valueOf(item.getString("UTF-8").trim()));
@@ -235,6 +235,10 @@ public class Paciente implements Serializable {
 			this.setSexo(item.getString("UTF-8").trim());
 		} else if (item.getFieldName().equals("celular")) {
 			this.setCelular(item.getString("UTF-8").trim());
+		} else if (item.getFieldName().equals("peso")) {
+			this.setPeso(item.getString("UTF-8").trim());
+		} else if (item.getFieldName().equals("altura")) {
+			this.setAltura(item.getString("UTF-8").trim());
 		} 
 	}
 

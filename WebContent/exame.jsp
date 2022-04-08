@@ -164,7 +164,7 @@
 
 													</div>
 
-<form action="enviarExame" method="post" enctype="multipart/form-data;charset=UTF-8">
+<form id="enviarExame2" action="enviarExame2" method="post" enctype="multipart/form-data;charset=UTF-8">
 													<div class="panel panel-default">
 
 														<a data-target="#item-telefones">
@@ -174,7 +174,7 @@
 														<div id="item-info"
 															class="panel-body panel-branco collapse in">
 
-
+<input type="hidden" name="tpexame2" id="tpexame2">
 
 
 															<input id="pacid" name="pacid" type="hidden"
@@ -382,14 +382,14 @@
 													
 														<input type="hidden" name="tpexame" id="tpexame">
 													
-												
-													</form>
-
-<div class="row">
-															<div class="col-lg-12">
+												<div class="col-lg-12">
 																<br> <input type="button" name="submit"
 																	value="Submit" id="submit-all" class="btn" />
 															</div>
+													</form>
+
+<div class="row">
+															
 														</div>		
 												</div>
 

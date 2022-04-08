@@ -44,9 +44,12 @@ import org.apache.commons.net.ftp.FTPClient;
 import model.Exame;
 import model.Paciente;
 import model.Pessoa;
+import model.Solicitante;
 import service.ExameService;
 import service.LoginService;
+import service.PacienteService;
 import service.RegisterService;
+import service.SolicitanteService;
 import util.FTPUploader;
 
 public class ExameServlet extends HttpServlet {
@@ -57,8 +60,7 @@ public class ExameServlet extends HttpServlet {
 	public void init() {
 		fileSavePath = getServletContext().getRealPath("/") + File.separator
 				+ UPLOAD_DIRECTORY;/*
-									 * save uploaded files to a 'Upload'
-									 * directory in the web app
+									 * save uploaded files to a 'Upload' directory in the web app
 									 */
 		if (!(new File(fileSavePath)).exists()) {
 			(new File(fileSavePath)).mkdir(); // creates the directory if it
@@ -74,7 +76,7 @@ public class ExameServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		option(request, response);
-
+		System.out.println(request.getServletPath());
 	}
 
 	protected void option(HttpServletRequest request, HttpServletResponse response)
@@ -89,7 +91,7 @@ public class ExameServlet extends HttpServlet {
 			} else if (url.equalsIgnoreCase("/enviarExame2")) {
 				save2(request, response);
 
-			}else if (url.equalsIgnoreCase("/atualizarExame")) {
+			} else if (url.equalsIgnoreCase("/atualizarExame")) {
 				delete(request, response);
 
 			} else if (url.equalsIgnoreCase("/listarExamesSemLaudo")) {
@@ -150,7 +152,7 @@ public class ExameServlet extends HttpServlet {
 					InputStream filecontent = item.getInputStream();
 					int dotIndex = item.getName().lastIndexOf('.');
 					String nome = (dotIndex == -1) ? item.getName() : item.getName().substring(0, dotIndex);
-					
+
 					byte[] examedata = new byte[(int) item.getSize()];
 					try {
 
@@ -164,7 +166,7 @@ public class ExameServlet extends HttpServlet {
 					exame.setExamenome(removerAcentos(item.getName()));
 					exame.setDtEntrada(new java.sql.Date(System.currentTimeMillis()));
 					exame.setNomePaciente(null);
-
+					exame.setNpaciente(nome);
 					FTPUploader ftpUploader = new FTPUploader("ftp.zeituneinformatica.com.br",
 							"laudeisistema@laudeitelemedicina.com.br", "Pa6?Eo%D8#ix");
 					// FTP server path is relative. So if FTP account HOME
@@ -196,8 +198,7 @@ public class ExameServlet extends HttpServlet {
 		}
 
 	}
-	
-	
+
 	public void save2(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		if (!ServletFileUpload.isMultipartContent(request)) {
 			throw new IllegalArgumentException(
@@ -210,6 +211,9 @@ public class ExameServlet extends HttpServlet {
 		ServletFileUpload uploadHandler = new ServletFileUpload(new DiskFileItemFactory());
 		PrintWriter writer = response.getWriter();
 
+		SolicitanteService solicitanteService = new SolicitanteService();
+		Solicitante solicitante = null;
+		Solicitante solicitanteTMP = new Solicitante();
 		System.out.println(new File(request.getServletContext().getRealPath("/") + "images/"));
 		HttpSession session = request.getSession(true);
 		Pessoa p = new Pessoa();
@@ -222,19 +226,23 @@ public class ExameServlet extends HttpServlet {
 			exame.setNomeClinica(p);
 			for (FileItem item : items) {
 				if (item.isFormField()) {
-					
+
 					// Process regular form field (input
 					// type="text|radio|checkbox|etc", select, etc).
 					String fieldname = item.getFieldName();
 					String fieldvalue = item.getString("UTF-8").trim();
 					System.out.println(fieldname);
 					System.out.println(fieldvalue);
-					if(fieldname.equals("tpexame")){
+					if (fieldname.equals("tpexame2")) {
 						exame.setTpExame(fieldvalue);
-					}else{
+					} else if (fieldname.equals("crm")) {
+						solicitanteTMP.setCrm(fieldvalue);
+					} else if (fieldname.equals("solicitante")) {
+						solicitanteTMP.setNome_completo(fieldvalue);
+					} else {
 						p1.montarPaciente(item);
 					}
-					
+
 				} else {
 					// Process form file field (input type="file").
 					String fieldname = item.getFieldName();
@@ -242,8 +250,6 @@ public class ExameServlet extends HttpServlet {
 					InputStream filecontent = item.getInputStream();
 					int dotIndex = item.getName().lastIndexOf('.');
 					String nome = (dotIndex == -1) ? item.getName() : item.getName().substring(0, dotIndex);
-					
-
 
 					byte[] examedata = new byte[(int) item.getSize()];
 					try {
@@ -254,17 +260,30 @@ public class ExameServlet extends HttpServlet {
 						e.printStackTrace();
 					}
 //if(p1.getNome_completo().isEmpty()){
-	System.out.println(filename);
-	exame.setExamenome(removerAcentos(item.getName()));
-	exame.setDtEntrada(new java.sql.Date(System.currentTimeMillis()));
-	//exame.setNomePaciente(removerAcentos(filename));
+					System.out.println(filename);
+					exame.setExamenome(removerAcentos(item.getName()));
+					exame.setDtEntrada(new java.sql.Date(System.currentTimeMillis()));
+					exame.setNpaciente(removerAcentos(p1.getNome_completo()));
 //}else{	
-	//exame.setExamenome(removerAcentos(p1.getNome_completo()));
-	//exame.setDtEntrada(new java.sql.Date(System.currentTimeMillis()));
-	//exame.setNomePaciente(removerAcentos(p1.getNome_completo()));
-	//exame.setNoomePaciente(p1);
+					// exame.setExamenome(removerAcentos(p1.getNome_completo()));
+					// exame.setDtEntrada(new java.sql.Date(System.currentTimeMillis()));
+					System.out.println("id" + p1.getId());
+					if (p1.getId() == null) {
+						PacienteService pacienteService = new PacienteService();
+
+						Boolean resposta = pacienteService.register(p1);
+					}
+
+					solicitante = solicitanteService.isSolicitanteExists(solicitanteTMP.getCrm());
+					if (solicitante != null) {
+						exame.setSolicitante(solicitante);
+					} else {
+						exame.setSolicitante(solicitanteTMP);
+						solicitanteService.register(solicitanteTMP);
+					}
+
+					exame.setNomePaciente(p1);
 //}
-					
 
 					FTPUploader ftpUploader = new FTPUploader("ftp.zeituneinformatica.com.br",
 							"laudeisistema@laudeitelemedicina.com.br", "Pa6?Eo%D8#ix");
@@ -281,13 +300,13 @@ public class ExameServlet extends HttpServlet {
 
 					ExameService exameService = new ExameService();
 
-	//				exame.setNomePaciente(nomePaciente);
-					
+					// exame.setNomePaciente(nomePaciente);
+
 					Boolean resposta = exameService.register(exame);
 
-					System.out.println("uploaded");
+					System.out.println("uploaded2");
 				}
-				
+
 			}
 		} catch (FileUploadException e1) {
 			// TODO Auto-generated catch block
@@ -309,7 +328,6 @@ public class ExameServlet extends HttpServlet {
 
 		try {
 
-			
 			System.out.println("id" + request.getParameter("id"));
 			String id = request.getParameter("id");
 			Exame e = new Exame();
@@ -317,7 +335,6 @@ public class ExameServlet extends HttpServlet {
 
 			e.setId(Long.valueOf(id));
 
-			
 			resposta = exameService.delete(e);
 
 			System.out.println("Deletou?" + resposta);
@@ -370,9 +387,9 @@ public class ExameServlet extends HttpServlet {
 
 			java.sql.Date mes_RefConvertida = createDateFromMesRef(mes_ref);
 			java.sql.Date mes_RefConvertida1 = createDateFromMesRefPlus(mes_ref);
-			List<Exame> list = exameService.getListOfExameSemLaudo(mes_RefConvertida,mes_RefConvertida1);
+			List<Exame> list = exameService.getListOfExameSemLaudo(mes_RefConvertida, mes_RefConvertida1);
 
-			//System.out.println(list);
+			// System.out.println(list);
 
 			out.print(gson.toJson(list));
 			out.flush();
@@ -395,9 +412,9 @@ public class ExameServlet extends HttpServlet {
 
 			java.sql.Date mes_RefConvertida = createDateFromMesRef(mes_ref);
 			java.sql.Date mes_RefConvertida1 = createDateFromMesRefPlus(mes_ref);
-			List<Exame> list = exameService.getListOfExameComLaudo(mes_RefConvertida,mes_RefConvertida1);
+			List<Exame> list = exameService.getListOfExameComLaudo(mes_RefConvertida, mes_RefConvertida1);
 
-			//System.out.println(list);
+			// System.out.println(list);
 
 			out.print(gson.toJson(list));
 			out.flush();
@@ -457,22 +474,21 @@ public class ExameServlet extends HttpServlet {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		return new java.sql.Date(sdf.parse(converterMesRef(mes_ref)).getTime());
 	}
-	
+
 	public static java.sql.Date createDateFromMesRefPlus(String mes_ref) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		return new java.sql.Date(sdf.parse(converterMesRefPlus(mes_ref)).getTime());
 	}
-	
-	
-	public static String converterMesRef(String dt){
+
+	public static String converterMesRef(String dt) {
 		String[] v = dt.split("/");
 		String temp = v[1] + "-" + v[0] + "-01";
 		return temp;
 	}
-	
-	public static String converterMesRefPlus(String dt){
+
+	public static String converterMesRefPlus(String dt) {
 		String[] v = dt.split("/");
-		String temp = v[1] + "-" + String.valueOf(Integer.valueOf(v[0])+1) + "-01";
+		String temp = v[1] + "-" + String.valueOf(Integer.valueOf(v[0]) + 1) + "-01";
 		return temp;
 	}
 
